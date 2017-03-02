@@ -29,8 +29,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHR-cv-f7K">
-                                                    <rect key="frame" x="8" y="12" width="43" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dashboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHR-cv-f7K">
+                                                    <rect key="frame" x="8" y="12" width="84" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -211,6 +211,27 @@
                                             <segue destination="Mc5-HJ-hoe" kind="show" id="IJy-hQ-GGu"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pFl-Cr-bPQ">
+                                        <rect key="frame" x="0.0" y="440" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pFl-Cr-bPQ" id="91e-KD-nJm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="License et Contributions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcg-j5-PgU">
+                                                    <rect key="frame" x="8" y="9" width="307" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="52Y-rn-hMZ" kind="show" id="O6v-VY-Cko"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -225,10 +246,10 @@
             </objects>
             <point key="canvasLocation" x="2412" y="1056"/>
         </scene>
-        <!--LeftMenuNavigationController-->
+        <!--Navigation-->
         <scene sceneID="ulL-X5-0z0">
             <objects>
-                <navigationController storyboardIdentifier="LeftMenuNavigationController" title="LeftMenuNavigationController" id="4r5-73-DvR" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LeftMenuNavigationController" title="LeftMenuNavigationController" id="4r5-73-DvR" userLabel="Navigation" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="JZg-kR-LEk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -244,44 +265,58 @@
             </objects>
             <point key="canvasLocation" x="2412" y="124"/>
         </scene>
-        <!--News-->
+        <!--Dashboard-->
         <scene sceneID="394-Nh-D5H">
             <objects>
-                <viewController storyboardIdentifier="news" id="dlw-kW-g3X" customClass="ViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="av2-ie-o05">
+                <viewController storyboardIdentifier="news" id="dlw-kW-g3X" customClass="DashboardController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="av2-ie-o05">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g97-zm-4Jx">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="353" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="bmh-kC-tob" customClass="NewsCell" customModule="Calvin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="cell" id="bmh-kC-tob" customClass="DashboardCell" customModule="Calvin" customModuleProvider="target">
+                                <rect key="frame" x="11" y="10" width="353" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejl-4S-tr5">
-                                            <rect key="frame" x="4" y="15" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejl-4S-tr5">
+                                            <rect key="frame" x="10" y="10" width="333" height="30"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" metaFont="system" size="17"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </label>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.49513094190140844" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ejl-4S-tr5" secondAttribute="trailing" constant="10" id="FQP-hW-DMY"/>
+                                    <constraint firstItem="ejl-4S-tr5" firstAttribute="top" secondItem="bmh-kC-tob" secondAttribute="top" constant="10" id="GcJ-KP-aHW"/>
+                                    <constraint firstItem="ejl-4S-tr5" firstAttribute="leading" secondItem="bmh-kC-tob" secondAttribute="leading" constant="10" id="Tfj-BD-Psc"/>
+                                    <constraint firstAttribute="bottom" secondItem="ejl-4S-tr5" secondAttribute="bottom" constant="10" id="jia-KE-lQE"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="text" destination="ejl-4S-tr5" id="rMT-5b-QHx"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="News" id="bIV-5h-f6x">
+                    <navigationItem key="navigationItem" title="Dashboard" id="bIV-5h-f6x">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="2ig-bL-Twh">
                             <connections>
                                 <segue destination="4r5-73-DvR" kind="presentation" id="9ga-lB-H1f"/>
@@ -310,10 +345,10 @@
             </objects>
             <point key="canvasLocation" x="148" y="-693"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutoriel - Bienvenue-->
         <scene sceneID="Kdx-Ms-nfv">
             <objects>
-                <viewController storyboardIdentifier="page1" id="w4r-oE-5Sq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page1" id="w4r-oE-5Sq" userLabel="Tutoriel - Bienvenue" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hEz-sb-bwa"/>
                         <viewControllerLayoutGuide type="bottom" id="3Kz-Cq-nCA"/>
@@ -377,10 +412,10 @@ Wei Jonathan et Zimmermann Arion</string>
             </objects>
             <point key="canvasLocation" x="148" y="-1438.8305847076463"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutoriel - Page 2-->
         <scene sceneID="0iw-dB-r8d">
             <objects>
-                <viewController storyboardIdentifier="page2" id="0vt-BO-ExY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page2" id="0vt-BO-ExY" userLabel="Tutoriel - Page 2" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6ZJ-7f-9Gj"/>
                         <viewControllerLayoutGuide type="bottom" id="v3b-QK-M1B"/>
@@ -389,7 +424,7 @@ Wei Jonathan et Zimmermann Arion</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGs-yP-0G1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGs-yP-0G1">
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <string key="text">Afin de connaître toutes les nouveautés au Collège Calvin, afin de savoir où ta classe est, afin de garder un oeil sur tes notes, afin de te faire aider, mais surtout afin de manger, nous, chouettes que nous sommes, nous te guiderons à travers les chemins tortueux que constitue Calvin.</string>
                                 <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="14"/>
@@ -409,10 +444,10 @@ Wei Jonathan et Zimmermann Arion</string>
             </objects>
             <point key="canvasLocation" x="1152.8" y="-1440.6296851574214"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutoriel - Page 3-->
         <scene sceneID="DYR-Cu-Fnf">
             <objects>
-                <viewController storyboardIdentifier="page3" id="Lvi-9s-t2L" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page3" id="Lvi-9s-t2L" userLabel="Tutoriel - Page 3" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jr5-yM-hdY"/>
                         <viewControllerLayoutGuide type="bottom" id="Mmn-XX-nuv"/>
@@ -450,10 +485,10 @@ L'application synchronize  les événements les plus importants à Calvin avec l
             </objects>
             <point key="canvasLocation" x="2213.5999999999999" y="-1439.7301349325339"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutoriel - Commencer-->
         <scene sceneID="ux7-yr-5ZN">
             <objects>
-                <viewController storyboardIdentifier="page4" id="DmU-rH-nRP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page4" id="DmU-rH-nRP" userLabel="Tutoriel - Commencer" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aKb-2M-N69"/>
                         <viewControllerLayoutGuide type="bottom" id="2Y0-kP-e9H"/>
@@ -497,10 +532,10 @@ toutes les possiblités que t'offre cette application ainsi qu'à la configurer 
             </objects>
             <point key="canvasLocation" x="3188" y="-1439.7301349325339"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Menu-->
         <scene sceneID="vcJ-CE-sK3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PAH-qG-bna" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PAH-qG-bna" userLabel="Menu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" alpha="0.20000000000000001" contentMode="scaleToFill" barStyle="black" id="7q6-Ig-vmr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -547,9 +582,60 @@ toutes les possiblités que t'offre cette application ainsi qu'à la configurer 
             </objects>
             <point key="canvasLocation" x="1054" y="1056"/>
         </scene>
+        <!--License et Contributions-->
+        <scene sceneID="ci9-YQ-j3h">
+            <objects>
+                <viewController id="52Y-rn-hMZ" userLabel="License et Contributions" customClass="CalendarViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fuW-0a-hR6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vca-QC-Rgb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XFH-xB-u9g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-PA-30Y" customClass="BackgroundView" customModule="Calvin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="wL0-th-4vr">
+                                <rect key="frame" x="20" y="84" width="335" height="563"/>
+                                <string key="text">Chef de Projet: Wei Jonathan
+Développeur: Zimmermann Arion
+Logo: Favet Olivier
+
+Vos données personnelles sont encryptées à l'intérieur de votre machine. Votre nom ne sera jamais stocké, ni sur Internet, ni sur votre appareil.
+Cette application est opensource et sous license GNU GPLv3. Si quelqu'un s'interesse au code source, il est disponible sur GitHub. 
+git:thedreamer979/Calvinus</string>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vca-QC-Rgb" firstAttribute="top" secondItem="wL0-th-4vr" secondAttribute="bottom" constant="20" id="9EG-qF-aMO"/>
+                            <constraint firstItem="wL0-th-4vr" firstAttribute="leading" secondItem="XFH-xB-u9g" secondAttribute="leading" constant="20" id="Udz-d3-iPp"/>
+                            <constraint firstAttribute="trailing" secondItem="wL0-th-4vr" secondAttribute="trailing" constant="20" id="cZx-mR-DkL"/>
+                            <constraint firstItem="wL0-th-4vr" firstAttribute="top" secondItem="fuW-0a-hR6" secondAttribute="bottom" constant="20" id="zbc-nB-jD8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="License et Contributions" id="hMU-UW-h7q" userLabel="Horaires">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="HQd-cC-DBt">
+                            <connections>
+                                <segue destination="4r5-73-DvR" kind="presentation" id="3HS-RR-flg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gx-yw-36r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.5999999999999" y="2116.1919040479761"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9ga-lB-H1f"/>
         <segue reference="sb9-4j-Ije"/>
+        <segue reference="9ga-lB-H1f"/>
     </inferredMetricsTieBreakers>
 </document>

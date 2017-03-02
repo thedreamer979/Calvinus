@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8DE23BC658448A42E8F7CFAE /* Pods_Calvin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F827CEDA8C25212D42B25B /* Pods_Calvin.framework */; };
-		D512CA781E64B748006861C1 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D512CA771E64B748006861C1 /* NewsCell.swift */; };
+		D512CA781E64B748006861C1 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D512CA771E64B748006861C1 /* DashboardCell.swift */; };
 		D521F0831E3BC50E0058026C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521F0821E3BC50E0058026C /* AppDelegate.swift */; };
-		D521F0851E3BC50E0058026C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521F0841E3BC50E0058026C /* ViewController.swift */; };
+		D521F0851E3BC50E0058026C /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521F0841E3BC50E0058026C /* DashboardController.swift */; };
 		D521F0881E3BC50E0058026C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D521F0861E3BC50E0058026C /* Main.storyboard */; };
 		D521F08A1E3BC50E0058026C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D521F0891E3BC50E0058026C /* Assets.xcassets */; };
 		D521F08D1E3BC50E0058026C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D521F08B1E3BC50E0058026C /* LaunchScreen.storyboard */; };
@@ -42,10 +42,10 @@
 /* Begin PBXFileReference section */
 		36F827CEDA8C25212D42B25B /* Pods_Calvin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calvin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB166F8C9B0295A8FEAF5424 /* Pods-Calvin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calvin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calvin/Pods-Calvin.release.xcconfig"; sourceTree = "<group>"; };
-		D512CA771E64B748006861C1 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		D512CA771E64B748006861C1 /* DashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
 		D521F07F1E3BC50E0058026C /* Calvin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calvin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D521F0821E3BC50E0058026C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D521F0841E3BC50E0058026C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D521F0841E3BC50E0058026C /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		D521F0871E3BC50E0058026C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D521F0891E3BC50E0058026C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D521F08C1E3BC50E0058026C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -124,16 +124,16 @@
 			isa = PBXGroup;
 			children = (
 				D521F0821E3BC50E0058026C /* AppDelegate.swift */,
-				D521F0841E3BC50E0058026C /* ViewController.swift */,
 				D5417F0B1E62E38100030E15 /* TutorialViewController.swift */,
-				D512CA771E64B748006861C1 /* NewsCell.swift */,
+				D521F0841E3BC50E0058026C /* DashboardController.swift */,
+				D512CA771E64B748006861C1 /* DashboardCell.swift */,
 				D5417F0F1E62FE2100030E15 /* BackgroundView.swift */,
 				D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */,
 				D521F0861E3BC50E0058026C /* Main.storyboard */,
-				D521F0891E3BC50E0058026C /* Assets.xcassets */,
-				D5417F0D1E62FB7500030E15 /* calvin.jpg */,
-				D521F08E1E3BC50E0058026C /* Info.plist */,
 				D521F08B1E3BC50E0058026C /* LaunchScreen.storyboard */,
+				D5417F0D1E62FB7500030E15 /* calvin.jpg */,
+				D521F0891E3BC50E0058026C /* Assets.xcassets */,
+				D521F08E1E3BC50E0058026C /* Info.plist */,
 			);
 			path = Calvin;
 			sourceTree = "<group>";
@@ -352,10 +352,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5417F101E62FE2100030E15 /* BackgroundView.swift in Sources */,
-				D521F0851E3BC50E0058026C /* ViewController.swift in Sources */,
+				D521F0851E3BC50E0058026C /* DashboardController.swift in Sources */,
 				D5417F0C1E62E38100030E15 /* TutorialViewController.swift in Sources */,
 				D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */,
-				D512CA781E64B748006861C1 /* NewsCell.swift in Sources */,
+				D512CA781E64B748006861C1 /* DashboardCell.swift in Sources */,
 				D521F0831E3BC50E0058026C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

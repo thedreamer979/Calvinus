@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let firstLaunch = !UserDefaults.standard.bool(forKey: "notFirstLaunch")
         
-        if firstLaunch || true {
+        if firstLaunch {
             UserDefaults.standard.set(true, forKey: "notFirstLaunch")
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "tutorial")
         }

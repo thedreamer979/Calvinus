@@ -10,9 +10,10 @@ import UIKit
 import EventKit
 import SideMenu
 
-class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class DashboardController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let eventStore = EKEventStore()
+    var news = [NSAttributedString]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidAppear(_ animated: Bool) {
         self.updateCalendar()
+        request(withID: "news", controller: self, callback: self.loadNews)
     }
     
     func updateCalendar() {
@@ -79,7 +81,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
             }
             
             for entry in splitted {
-                let event = entry.components(separatedBy: ":")
+                let event = entry.components(separatedBy: "|")
 
                 let newEvent = EKEvent(eventStore: eventStore)
                 
@@ -99,15 +101,38 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
     
+    func loadNews(data: String) {
+        let splitted = data.components(separatedBy: "\n")
+        
+        if splitted.count > 0 && splitted[0] != "NaN" {
+            
+            var id = 0
+            
+            for entry in splitted {
+                if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                    let path = dir.appendingPathComponent("news" + String(id) + ".html")
+                    
+                    do {
+                        try entry.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+                    } catch {
+                        
+                    }
+                }
+                
+                id += 1
+            }
+        }
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return self.news.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! NewsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! DashboardCell
         
-        cell.text.attributedText = NSAttributedString(string: "C'est la lutte finale asdhfciakwefc7kaiwefcuawzefc7zdfjuncaszdluifczawliezrti7lkwczefcli7azslifuzcsiludzfliasdufnc")
-        cell.text.preferredMaxLayoutWidth = 50
+        cell.text.attributedText = self.news[indexPath.item]
+        cell.text.preferredMaxLayoutWidth = collectionView.bounds.width - 40
         
         return cell
     }

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class NewsCell : UICollectionViewCell {
+class DashboardCell : UICollectionViewCell {
     @IBOutlet weak var text: UILabel!
-    
-    func update() {
-        self.layer.cornerRadius = 10.0
-        self.sizeToFit()
-        self.layoutIfNeeded()
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.layer.cornerRadius = 10
     }
 }
