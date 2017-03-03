@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CVCalendar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Calvin.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5D17B58C4D9903CDC6FD8277AB5386DF</key>
+		<key>1B7FB3BAD8AA4A1F7EFBDA7C841CB4CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9C8DD820BE16F728568F9D44ED4CA7ED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E2EF0A874A01FFC4D77FBAEED4802A12</key>
+		<key>A289415531658FAC245436D13B0EDFD4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

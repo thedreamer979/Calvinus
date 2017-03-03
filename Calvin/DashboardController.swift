@@ -39,11 +39,32 @@ class DashboardController: UICollectionViewController, UICollectionViewDelegateF
         if let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
+        
+        request(withID: "news", controller: self, callback: self.downloadNews)
+        
+        self.updateCalendar()
+        self.updateNews()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.updateCalendar()
-        request(withID: "news", controller: self, callback: self.loadNews)
+    func updateNews() {
+        self.news.removeAll()
+        
+        let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        do {
+            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
+            
+            let theNews = directoryContents.filter{ $0.pathExtension == "html" }
+            
+            let options = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType,
+                           NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue] as [String : Any]
+            
+            for entry in theNews {
+                try self.news.append(NSAttributedString(url: entry, options: options, documentAttributes: nil))
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
     func updateCalendar() {
@@ -60,7 +81,7 @@ class DashboardController: UICollectionViewController, UICollectionViewDelegateF
                 }
             })
         } else if status == EKAuthorizationStatus.authorized {
-            request(withID: "calendar", controller: self, callback: addEvents)
+            request(withID: "calendar", controller: self, callback: self.addEvents)
         }
     }
 
@@ -101,7 +122,7 @@ class DashboardController: UICollectionViewController, UICollectionViewDelegateF
         }
     }
     
-    func loadNews(data: String) {
+    func downloadNews(data: String) {
         let splitted = data.components(separatedBy: "\n")
         
         if splitted.count > 0 && splitted[0] != "NaN" {
@@ -113,13 +134,18 @@ class DashboardController: UICollectionViewController, UICollectionViewDelegateF
                     let path = dir.appendingPathComponent("news" + String(id) + ".html")
                     
                     do {
-                        try entry.write(to: path, atomically: false, encoding: String.Encoding.utf8)
-                    } catch {
-                        
+                        try ("<section style='color: white; text-align: justify'>" + entry + "</section>").write(to: path, atomically: false, encoding: String.Encoding.utf8)
+                    } catch let error {
+                        print(error)
                     }
                 }
                 
                 id += 1
+            }
+            
+            DispatchQueue.main.async() {
+                self.updateNews()
+                self.collectionView?.reloadData()
             }
         }
     }
@@ -137,4 +163,3 @@ class DashboardController: UICollectionViewController, UICollectionViewDelegateF
         return cell
     }
 }
-
