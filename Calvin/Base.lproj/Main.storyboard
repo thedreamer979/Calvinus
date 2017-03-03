@@ -189,6 +189,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="CKa-82-ENO" kind="show" id="zwB-LS-b4T"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BLU-1g-37x">
                                         <rect key="frame" x="0.0" y="396" width="375" height="44"/>
@@ -553,7 +556,7 @@ toutes les possiblités que t'offre cette application ainsi qu'à la configurer 
         <!--Horaires-->
         <scene sceneID="npF-Yj-yj0">
             <objects>
-                <viewController id="SgD-vi-pyj" userLabel="Horaires" customClass="CalendarViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SgD-vi-pyj" userLabel="Horaires" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bkE-BE-yG3"/>
                         <viewControllerLayoutGuide type="bottom" id="XJC-mI-Bi0"/>
@@ -605,7 +608,7 @@ toutes les possiblités que t'offre cette application ainsi qu'à la configurer 
 Développeur: Zimmermann Arion
 Logo: Favet Olivier
 
-Vos données personnelles sont encryptées à l'intérieur de votre machine. Votre nom ne sera jamais stocké, ni sur Internet, ni sur votre appareil.
+Vos données personnelles sont encryptées à l'intérieur de votre machine. Votre nom complet ne sera jamais stocké, ni sur Internet, ni sur votre appareil.
 Cette application est opensource et sous license GNU GPLv3. Si quelqu'un s'interesse au code source, il est disponible sur GitHub. 
 git:thedreamer979/Calvinus</string>
                                 <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="14"/>
@@ -631,11 +634,63 @@ git:thedreamer979/Calvinus</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gx-yw-36r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053.5999999999999" y="2116.1919040479761"/>
+            <point key="canvasLocation" x="1054" y="2876"/>
+        </scene>
+        <!--Plan-->
+        <scene sceneID="EDx-2f-iLb">
+            <objects>
+                <viewController id="CKa-82-ENO" userLabel="Plan" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oyU-jr-Zlo"/>
+                        <viewControllerLayoutGuide type="bottom" id="n8K-p8-mHO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4kC-Bx-iYO" customClass="UIImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YxE-dS-bSY" customClass="BackgroundView" customModule="Calvin" customModuleProvider="target">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XYH-UF-x2r">
+                                <rect key="frame" x="0.0" y="64" width="375" height="192"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan_global.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-E8-1we">
+                                <rect key="frame" x="0.0" y="253" width="375" height="414"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VgX-E8-1we" firstAttribute="bottom" secondItem="n8K-p8-mHO" secondAttribute="top" id="2vS-Q3-dqs"/>
+                            <constraint firstItem="n8K-p8-mHO" firstAttribute="top" secondItem="XYH-UF-x2r" secondAttribute="bottom" constant="411" id="N4M-rH-bT7"/>
+                            <constraint firstItem="XYH-UF-x2r" firstAttribute="top" secondItem="oyU-jr-Zlo" secondAttribute="bottom" id="Wpw-Gd-guG"/>
+                            <constraint firstItem="XYH-UF-x2r" firstAttribute="leading" secondItem="VgX-E8-1we" secondAttribute="leading" id="fZs-oe-YXY"/>
+                            <constraint firstItem="VgX-E8-1we" firstAttribute="leading" secondItem="4kC-Bx-iYO" secondAttribute="leading" id="fiV-hC-EGv"/>
+                            <constraint firstItem="VgX-E8-1we" firstAttribute="top" secondItem="oyU-jr-Zlo" secondAttribute="bottom" constant="189" id="mjs-s3-fDv"/>
+                            <constraint firstItem="XYH-UF-x2r" firstAttribute="trailing" secondItem="VgX-E8-1we" secondAttribute="trailing" id="nxH-Uv-5kJ"/>
+                            <constraint firstAttribute="trailing" secondItem="VgX-E8-1we" secondAttribute="trailing" id="oVh-VG-EcC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Plan" id="8T0-Dm-k6Y" userLabel="Horaires">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="dzf-LC-kpX">
+                            <connections>
+                                <segue destination="4r5-73-DvR" kind="presentation" id="RXe-nG-2vA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oYn-D6-bjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.5999999999999" y="2005.5472263868066"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plan.jpg" width="1364" height="822"/>
+        <image name="plan_global.jpg" width="852" height="1166"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sb9-4j-Ije"/>
-        <segue reference="9ga-lB-H1f"/>
+        <segue reference="RXe-nG-2vA"/>
+        <segue reference="UhN-Pm-ZjT"/>
     </inferredMetricsTieBreakers>
 </document>
