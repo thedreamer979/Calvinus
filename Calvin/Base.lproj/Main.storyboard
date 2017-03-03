@@ -556,7 +556,7 @@ toutes les possiblités que t'offre cette application ainsi qu'à la configurer 
         <!--Horaires-->
         <scene sceneID="npF-Yj-yj0">
             <objects>
-                <viewController id="SgD-vi-pyj" userLabel="Horaires" sceneMemberID="viewController">
+                <viewController id="SgD-vi-pyj" userLabel="Horaires" customClass="BasicViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bkE-BE-yG3"/>
                         <viewControllerLayoutGuide type="bottom" id="XJC-mI-Bi0"/>
@@ -564,13 +564,6 @@ toutes les possiblités que t'offre cette application ainsi qu'à la configurer 
                     <view key="view" contentMode="scaleToFill" id="PHu-Sl-e0b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRn-MW-E7P" customClass="BackgroundView" customModule="Calvin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Horaires" id="ier-Zh-7nJ" userLabel="Horaires">
@@ -588,7 +581,7 @@ toutes les possiblités que t'offre cette application ainsi qu'à la configurer 
         <!--License et Contributions-->
         <scene sceneID="ci9-YQ-j3h">
             <objects>
-                <viewController id="52Y-rn-hMZ" userLabel="License et Contributions" customClass="CalendarViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="52Y-rn-hMZ" userLabel="License et Contributions" customClass="BasicViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fuW-0a-hR6"/>
                         <viewControllerLayoutGuide type="bottom" id="Vca-QC-Rgb"/>
@@ -597,11 +590,6 @@ toutes les possiblités que t'offre cette application ainsi qu'à la configurer 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-PA-30Y" customClass="BackgroundView" customModule="Calvin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="wL0-th-4vr">
                                 <rect key="frame" x="20" y="84" width="335" height="563"/>
                                 <string key="text">Chef de Projet: Wei Jonathan
@@ -639,33 +627,25 @@ git:thedreamer979/Calvinus</string>
         <!--Plan-->
         <scene sceneID="EDx-2f-iLb">
             <objects>
-                <viewController id="CKa-82-ENO" userLabel="Plan" sceneMemberID="viewController">
+                <viewController id="CKa-82-ENO" userLabel="Plan" customClass="BasicViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oyU-jr-Zlo"/>
-                        <viewControllerLayoutGuide type="bottom" id="n8K-p8-mHO"/>
+                        <viewControllerLayoutGuide type="top" id="Day-Ud-2i3"/>
+                        <viewControllerLayoutGuide type="bottom" id="pOJ-vS-b4x"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4kC-Bx-iYO">
+                    <view key="view" contentMode="scaleToFill" id="bkx-Ub-Oqe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YxE-dS-bSY" customClass="BackgroundView" customModule="Calvin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XYH-UF-x2r">
-                                <rect key="frame" x="0.0" y="220" width="375" height="226"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6Bh-GK-Qgr">
+                                <rect key="frame" x="0.0" y="230" width="375" height="226"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XYH-UF-x2r" firstAttribute="leading" secondItem="4kC-Bx-iYO" secondAttribute="leading" id="4P4-3K-SCd"/>
-                            <constraint firstItem="XYH-UF-x2r" firstAttribute="leading" secondItem="YxE-dS-bSY" secondAttribute="leading" id="51V-ZO-0Dy"/>
-                            <constraint firstItem="XYH-UF-x2r" firstAttribute="top" secondItem="oyU-jr-Zlo" secondAttribute="bottom" constant="156" id="EGf-Ro-lhS"/>
-                            <constraint firstAttribute="trailing" secondItem="XYH-UF-x2r" secondAttribute="trailing" id="EVR-rf-tK2"/>
-                            <constraint firstItem="XYH-UF-x2r" firstAttribute="centerY" secondItem="YxE-dS-bSY" secondAttribute="centerY" id="PxK-jk-eZy"/>
-                            <constraint firstItem="XYH-UF-x2r" firstAttribute="trailing" secondItem="YxE-dS-bSY" secondAttribute="trailing" id="XbA-hU-NGs"/>
-                            <constraint firstItem="YxE-dS-bSY" firstAttribute="bottom" secondItem="n8K-p8-mHO" secondAttribute="top" id="fJi-xg-lN3"/>
-                            <constraint firstItem="XYH-UF-x2r" firstAttribute="centerY" secondItem="4kC-Bx-iYO" secondAttribute="centerY" id="oeg-Mo-6pj"/>
+                            <constraint firstItem="6Bh-GK-Qgr" firstAttribute="top" secondItem="Day-Ud-2i3" secondAttribute="bottom" constant="166" id="Gm6-pc-7lN"/>
+                            <constraint firstAttribute="trailing" secondItem="6Bh-GK-Qgr" secondAttribute="trailing" id="b0l-co-Zni"/>
+                            <constraint firstItem="pOJ-vS-b4x" firstAttribute="top" secondItem="6Bh-GK-Qgr" secondAttribute="bottom" constant="211" id="mHx-9X-hvr"/>
+                            <constraint firstItem="6Bh-GK-Qgr" firstAttribute="leading" secondItem="bkx-Ub-Oqe" secondAttribute="leading" id="nDR-TZ-990"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Plan" id="8T0-Dm-k6Y" userLabel="Horaires">
@@ -685,7 +665,7 @@ git:thedreamer979/Calvinus</string>
         <image name="plan.jpg" width="1364" height="822"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RXe-nG-2vA"/>
+        <segue reference="ZFp-H4-Hpa"/>
         <segue reference="UhN-Pm-ZjT"/>
     </inferredMetricsTieBreakers>
 </document>

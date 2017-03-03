@@ -12,15 +12,7 @@ class BackgroundView : UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.realInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.realInit()
-    }
-    
-    func realInit() {
+        
         let imageView = UIImageView(image: UIImage(named: "calvin.jpg"))
         imageView.frame = self.bounds
         imageView.contentMode = .scaleAspectFill
@@ -37,5 +29,9 @@ class BackgroundView : UIView {
         self.addSubview(imageView)
         self.addSubview(blurEffectView)
         self.addSubview(vibrancyEffectView)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 }
