@@ -644,32 +644,28 @@ git:thedreamer979/Calvinus</string>
                         <viewControllerLayoutGuide type="top" id="oyU-jr-Zlo"/>
                         <viewControllerLayoutGuide type="bottom" id="n8K-p8-mHO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4kC-Bx-iYO" customClass="UIImageView">
+                    <view key="view" contentMode="scaleToFill" id="4kC-Bx-iYO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YxE-dS-bSY" customClass="BackgroundView" customModule="Calvin" customModuleProvider="target">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YxE-dS-bSY" customClass="BackgroundView" customModule="Calvin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XYH-UF-x2r">
-                                <rect key="frame" x="0.0" y="64" width="375" height="192"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan_global.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-E8-1we">
-                                <rect key="frame" x="0.0" y="253" width="375" height="414"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XYH-UF-x2r">
+                                <rect key="frame" x="0.0" y="220" width="375" height="226"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VgX-E8-1we" firstAttribute="bottom" secondItem="n8K-p8-mHO" secondAttribute="top" id="2vS-Q3-dqs"/>
-                            <constraint firstItem="n8K-p8-mHO" firstAttribute="top" secondItem="XYH-UF-x2r" secondAttribute="bottom" constant="411" id="N4M-rH-bT7"/>
-                            <constraint firstItem="XYH-UF-x2r" firstAttribute="top" secondItem="oyU-jr-Zlo" secondAttribute="bottom" id="Wpw-Gd-guG"/>
-                            <constraint firstItem="XYH-UF-x2r" firstAttribute="leading" secondItem="VgX-E8-1we" secondAttribute="leading" id="fZs-oe-YXY"/>
-                            <constraint firstItem="VgX-E8-1we" firstAttribute="leading" secondItem="4kC-Bx-iYO" secondAttribute="leading" id="fiV-hC-EGv"/>
-                            <constraint firstItem="VgX-E8-1we" firstAttribute="top" secondItem="oyU-jr-Zlo" secondAttribute="bottom" constant="189" id="mjs-s3-fDv"/>
-                            <constraint firstItem="XYH-UF-x2r" firstAttribute="trailing" secondItem="VgX-E8-1we" secondAttribute="trailing" id="nxH-Uv-5kJ"/>
-                            <constraint firstAttribute="trailing" secondItem="VgX-E8-1we" secondAttribute="trailing" id="oVh-VG-EcC"/>
+                            <constraint firstItem="XYH-UF-x2r" firstAttribute="leading" secondItem="4kC-Bx-iYO" secondAttribute="leading" id="4P4-3K-SCd"/>
+                            <constraint firstItem="XYH-UF-x2r" firstAttribute="leading" secondItem="YxE-dS-bSY" secondAttribute="leading" id="51V-ZO-0Dy"/>
+                            <constraint firstItem="XYH-UF-x2r" firstAttribute="top" secondItem="oyU-jr-Zlo" secondAttribute="bottom" constant="156" id="EGf-Ro-lhS"/>
+                            <constraint firstAttribute="trailing" secondItem="XYH-UF-x2r" secondAttribute="trailing" id="EVR-rf-tK2"/>
+                            <constraint firstItem="XYH-UF-x2r" firstAttribute="centerY" secondItem="YxE-dS-bSY" secondAttribute="centerY" id="PxK-jk-eZy"/>
+                            <constraint firstItem="XYH-UF-x2r" firstAttribute="trailing" secondItem="YxE-dS-bSY" secondAttribute="trailing" id="XbA-hU-NGs"/>
+                            <constraint firstItem="YxE-dS-bSY" firstAttribute="bottom" secondItem="n8K-p8-mHO" secondAttribute="top" id="fJi-xg-lN3"/>
+                            <constraint firstItem="XYH-UF-x2r" firstAttribute="centerY" secondItem="4kC-Bx-iYO" secondAttribute="centerY" id="oeg-Mo-6pj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Plan" id="8T0-Dm-k6Y" userLabel="Horaires">
@@ -687,7 +683,6 @@ git:thedreamer979/Calvinus</string>
     </scenes>
     <resources>
         <image name="plan.jpg" width="1364" height="822"/>
-        <image name="plan_global.jpg" width="852" height="1166"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RXe-nG-2vA"/>
