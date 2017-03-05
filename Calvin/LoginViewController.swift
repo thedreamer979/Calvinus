@@ -44,7 +44,8 @@ class LoginViewContrller : UIViewController {
 
                 self.progress.setProgress(1.0, animated: true)
                 
-                self.show(UIViewController, sender: <#T##Any?#>)
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "Dashboard")
+                self.present(controller!, animated: true, completion: nil)
             }
         }
     }

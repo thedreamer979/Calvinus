@@ -271,7 +271,7 @@
         <!--Dashboard-->
         <scene sceneID="394-Nh-D5H">
             <objects>
-                <viewController storyboardIdentifier="news" id="dlw-kW-g3X" customClass="DashboardController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dashboard" id="dlw-kW-g3X" customClass="DashboardController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="av2-ie-o05">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -746,6 +746,6 @@ git:thedreamer979/Calvinus</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UhN-Pm-ZjT"/>
-        <segue reference="ZFp-H4-Hpa"/>
+        <segue reference="9ga-lB-H1f"/>
     </inferredMetricsTieBreakers>
 </document>
