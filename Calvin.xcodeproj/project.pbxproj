@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8DE23BC658448A42E8F7CFAE /* Pods_Calvin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F827CEDA8C25212D42B25B /* Pods_Calvin.framework */; };
+		D50732E31E6CA09D00B6A98D /* Calvin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50732E21E6CA09D00B6A98D /* Calvin.swift */; };
 		D512CA781E64B748006861C1 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D512CA771E64B748006861C1 /* DashboardCell.swift */; };
 		D521F0831E3BC50E0058026C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521F0821E3BC50E0058026C /* AppDelegate.swift */; };
 		D521F0851E3BC50E0058026C /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521F0841E3BC50E0058026C /* DashboardController.swift */; };
@@ -22,6 +23,7 @@
 		D542E14A1E6B60BE00991EFB /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D542E1491E6B60BE00991EFB /* TimetableViewController.swift */; };
 		D5595D6F1E6A10DB00EB160F /* plan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5595D6E1E6A10DB00EB160F /* plan.jpg */; };
 		D5595D711E6A119C00EB160F /* plan_global.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5595D701E6A119C00EB160F /* plan_global.jpg */; };
+		D57942E11E6C91D80071E286 /* GoToCalvinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57942E01E6C91D80071E286 /* GoToCalvinController.swift */; };
 		D59B66AE1E6C4100005DFE39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B66AD1E6C4100005DFE39 /* LoginViewController.swift */; };
 		D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */; };
 		D5F9D6481E6A194100EFE03E /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F9D6471E6A194100EFE03E /* BasicViewController.swift */; };
@@ -47,6 +49,7 @@
 /* Begin PBXFileReference section */
 		36F827CEDA8C25212D42B25B /* Pods_Calvin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calvin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB166F8C9B0295A8FEAF5424 /* Pods-Calvin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calvin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calvin/Pods-Calvin.release.xcconfig"; sourceTree = "<group>"; };
+		D50732E21E6CA09D00B6A98D /* Calvin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calvin.swift; sourceTree = "<group>"; };
 		D512CA771E64B748006861C1 /* DashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
 		D521F07F1E3BC50E0058026C /* Calvin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calvin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D521F0821E3BC50E0058026C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 		D542E1491E6B60BE00991EFB /* TimetableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableViewController.swift; sourceTree = "<group>"; };
 		D5595D6E1E6A10DB00EB160F /* plan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plan.jpg; sourceTree = "<group>"; };
 		D5595D701E6A119C00EB160F /* plan_global.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plan_global.jpg; sourceTree = "<group>"; };
+		D57942E01E6C91D80071E286 /* GoToCalvinController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoToCalvinController.swift; sourceTree = "<group>"; };
 		D59B66AD1E6C4100005DFE39 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZEntrepriseServer.swift; sourceTree = "<group>"; };
@@ -139,7 +143,9 @@
 				D59B66AD1E6C4100005DFE39 /* LoginViewController.swift */,
 				D521F0841E3BC50E0058026C /* DashboardController.swift */,
 				D542E1491E6B60BE00991EFB /* TimetableViewController.swift */,
+				D57942E01E6C91D80071E286 /* GoToCalvinController.swift */,
 				D5F9D6471E6A194100EFE03E /* BasicViewController.swift */,
+				D50732E21E6CA09D00B6A98D /* Calvin.swift */,
 				D512CA771E64B748006861C1 /* DashboardCell.swift */,
 				D5417F0F1E62FE2100030E15 /* BackgroundView.swift */,
 				D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */,
@@ -372,7 +378,9 @@
 			files = (
 				D59B66AE1E6C4100005DFE39 /* LoginViewController.swift in Sources */,
 				D5417F101E62FE2100030E15 /* BackgroundView.swift in Sources */,
+				D57942E11E6C91D80071E286 /* GoToCalvinController.swift in Sources */,
 				D521F0851E3BC50E0058026C /* DashboardController.swift in Sources */,
+				D50732E31E6CA09D00B6A98D /* Calvin.swift in Sources */,
 				D5417F0C1E62E38100030E15 /* TutorialViewController.swift in Sources */,
 				D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */,
 				D512CA781E64B748006861C1 /* DashboardCell.swift in Sources */,

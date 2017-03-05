@@ -10,7 +10,7 @@ import UIKit
 import EventKit
 import SideMenu
 
-class DashboardController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class DashboardController : UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let eventStore = EKEventStore()
     var news = [NSAttributedString]()
@@ -127,18 +127,25 @@ class DashboardController: UICollectionViewController, UICollectionViewDelegateF
             
             var id = 0
             
-            for entry in splitted {
-                if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+
+                do {
+                    for index in 0...999999 {
+                        try FileManager.default.removeItem(at: dir.appendingPathComponent("news" + String(index) + ".html"))
+                    }
+                } catch {}
+            
+                for entry in splitted {
                     let path = dir.appendingPathComponent("news" + String(id) + ".html")
                     
                     do {
-                        try ("<section style='color: white; text-align: justify'>" + entry + "</section>").write(to: path, atomically: false, encoding: String.Encoding.utf8)
+                        try ("<section style='color: white; text-align: justify'>" + entry + "</section>").write(to: path, atomically: false,   encoding: String.Encoding.utf8)
                     } catch let error {
                         print(error)
                     }
+                    
+                    id += 1
                 }
-                
-                id += 1
             }
             
             DispatchQueue.main.async() {

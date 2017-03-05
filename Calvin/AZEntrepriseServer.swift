@@ -31,9 +31,11 @@ func request(withID: String, controller: UIViewController, callback:@escaping ((
 }
 
 func showError(controller: UIViewController, description: String) {
-    let alert = UIAlertController(title: "Erreur", message: description, preferredStyle: .alert)
-    let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-    alert.addAction(ok)
-    
-    controller.present(alert, animated: true, completion: nil)
+    DispatchQueue.main.async {
+        let alert = UIAlertController(title: "Erreur", message: description, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(ok)
+        
+        controller.present(alert, animated: true, completion: nil)
+    } 
 }

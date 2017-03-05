@@ -19,15 +19,24 @@ class LoginViewContrller : UIViewController {
         super.viewDidLoad()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func onContinue(_ sender: UIButton) {
         self.progress.alpha = 1.0
         self.progress.setProgress(0.1, animated: true)
+
         self.state.text = "Vérification du nom..."
         
         let shaData = sha256(string: (name.text?.uppercased())!)
         self.shaHash = shaData!.map { String(format: "%02hhx", $0) }.joined()
         
         request(withID: "timetable&hash=" + self.shaHash, controller: self, callback: login)
+    }
+    
+    @IBAction func dismiss(_ sender: UITextField) {
+        self.view.endEditing(true)
     }
     
     func login(name : String) {
@@ -45,6 +54,7 @@ class LoginViewContrller : UIViewController {
                 self.progress.setProgress(1.0, animated: true)
                 
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "Dashboard")
+               
                 self.present(controller!, animated: true, completion: nil)
             }
         }

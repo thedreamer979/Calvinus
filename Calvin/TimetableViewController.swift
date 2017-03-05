@@ -13,7 +13,7 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
     var timetable = [String]()
     var dayId = 0
     
-    let translations : [String: String] = ["PO": "Philo", "GE": "Géo", "LA": "Latin", "MA": "Maths", "EP": "Sport", "AL": "Allemand", "IN": "Info", "GR": "Grec", "FR": "Français", "BI":"Bio", "PY": "Physique", "HI": "Histoire", "AN": "Anglais"]
+    let translations : [String: String] = ["PO": "Philo", "GE": "Géo", "LA": "Latin", "MA": "Maths", "EP": "Sport", "AL": "Allemand", "IN": "Info", "GR": "Grec", "FR": "Français", "BI":"Bio", "PY": "Physique", "HI": "Histoire", "AN": "Anglais", "EC": "Eco", "DR": "Droit"]
     
     @IBOutlet weak var table: UITableView!
 
@@ -24,7 +24,7 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
         self.table.dataSource = self
         self.table.layer.cornerRadius = 10.0
         
-        request(withID: "timetable&hash=94e4edb69ab77fcf0ba83eeb2dcd2d92a8c52668dfd19813e8911048df0dbd49", controller: self, callback: loadTimetable)
+        request(withID: "timetable&hash=" + AppDelegate.userHash, controller: self, callback: loadTimetable)
         
         self.view.insertSubview(BackgroundView(frame: self.view.bounds), at:0)
     }
@@ -34,6 +34,8 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
         self.timetable.removeAll()
         
         let elements = data.components(separatedBy: "/")
+        
+        var hid = 1
         
         for element in elements {
             let input = element.components(separatedBy: "|")
@@ -52,9 +54,17 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
                 let prof = input[0]
                 let range = prof.range(of: " ", options: .backwards)
                 
-                timetable.append(cours + " en " + input[2] + " avec " + prof[prof.startIndex...(range?.lowerBound)!].capitalized)
+                timetable.append("H\(hid) \(cours): \(input[2]) (\(prof[prof.startIndex..<(range?.lowerBound)!].capitalized))")
             } else if element == "Vide" {
-                timetable.append("Pause")
+                timetable.append("H\(hid)")
+            } else {
+                hid -= 1
+            }
+            
+            hid += 1
+            
+            if hid > 10 {
+                hid = 1
             }
         }
         
