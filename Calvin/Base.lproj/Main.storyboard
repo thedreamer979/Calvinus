@@ -459,7 +459,7 @@ Wei Jonathan et Zimmermann Arion</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-Fm-nO7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="IYf-Fm-nO7">
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <string key="text">Post tenebras lux.
 
@@ -470,8 +470,12 @@ Verra les ténèbres y tenir leur promesse,
 Illuminant l'esprit de l'élève, celui du,
 N'étant point comme autrui, Calviniste G'nevois.
 
-L'application synchronize  les événements les plus importants à Calvin avec le calendrier Apple. Il te sera, par la suite, demandé d'accepter cela. Si tu ne le fais pas, il te faudra accéder à tes réglages et l'autoriser manuellement.</string>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="9"/>
+L'application synchronize  les événements les plus
+importants à Calvin avec le calendrier Apple.
+Il te sera, par la suite, demandé d'accepter cela.
+Si tu ne le fais pas, il te faudra accéder
+à tes réglages et l'autoriser manuellement.</string>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -556,15 +560,40 @@ toutes les possiblités que t'offre cette application ainsi qu'à la configurer 
         <!--Horaires-->
         <scene sceneID="npF-Yj-yj0">
             <objects>
-                <viewController id="SgD-vi-pyj" userLabel="Horaires" customClass="BasicViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SgD-vi-pyj" userLabel="Horaires" customClass="TimetableViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bkE-BE-yG3"/>
-                        <viewControllerLayoutGuide type="bottom" id="XJC-mI-Bi0"/>
+                        <viewControllerLayoutGuide type="top" id="PI1-Gj-4Gs"/>
+                        <viewControllerLayoutGuide type="bottom" id="cZ5-7z-BP7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PHu-Sl-e0b">
+                    <view key="view" contentMode="scaleToFill" id="gbL-iN-14c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oaV-1F-cng">
+                                <rect key="frame" x="16" y="83" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Lundi"/>
+                                    <segment title="Mardi"/>
+                                    <segment title="Mercredi"/>
+                                    <segment title="Jeudi"/>
+                                    <segment title="Vendredi"/>
+                                </segments>
+                                <connections>
+                                    <action selector="dayChanged:" destination="SgD-vi-pyj" eventType="valueChanged" id="VEN-Oh-rzY"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oMZ-hr-HkS">
+                                <rect key="frame" x="16" y="119" width="343" height="540"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oaV-1F-cng" firstAttribute="leading" secondItem="gbL-iN-14c" secondAttribute="leadingMargin" id="2F2-9T-xpe"/>
+                            <constraint firstItem="oaV-1F-cng" firstAttribute="top" secondItem="PI1-Gj-4Gs" secondAttribute="bottom" constant="19" id="6MU-Sy-WoI"/>
+                            <constraint firstItem="oaV-1F-cng" firstAttribute="trailing" secondItem="gbL-iN-14c" secondAttribute="trailingMargin" id="KTI-vm-aJs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Horaires" id="ier-Zh-7nJ" userLabel="Horaires">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="LKo-uM-4Wj">
@@ -624,10 +653,10 @@ git:thedreamer979/Calvinus</string>
             </objects>
             <point key="canvasLocation" x="1054" y="2876"/>
         </scene>
-        <!--Plan-->
+        <!--Plan de Calvin-->
         <scene sceneID="EDx-2f-iLb">
             <objects>
-                <viewController id="CKa-82-ENO" userLabel="Plan" customClass="BasicViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CKa-82-ENO" customClass="BasicViewController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Day-Ud-2i3"/>
                         <viewControllerLayoutGuide type="bottom" id="pOJ-vS-b4x"/>
@@ -648,7 +677,7 @@ git:thedreamer979/Calvinus</string>
                             <constraint firstItem="6Bh-GK-Qgr" firstAttribute="leading" secondItem="bkx-Ub-Oqe" secondAttribute="leading" id="nDR-TZ-990"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Plan" id="8T0-Dm-k6Y" userLabel="Horaires">
+                    <navigationItem key="navigationItem" title="Plan de Calvin" id="8T0-Dm-k6Y" userLabel="Horaires">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="dzf-LC-kpX">
                             <connections>
                                 <segue destination="4r5-73-DvR" kind="presentation" id="RXe-nG-2vA"/>

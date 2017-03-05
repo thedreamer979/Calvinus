@@ -146,6 +146,7 @@ class DashboardController: UICollectionViewController, UICollectionViewDelegateF
             DispatchQueue.main.async() {
                 self.updateNews()
                 self.collectionView?.reloadData()
+                self.collectionViewLayout.invalidateLayout()
             }
         }
     }
@@ -155,7 +156,7 @@ class DashboardController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! DashboardCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DashboardCell
         
         cell.text.attributedText = self.news[indexPath.item]
         cell.text.preferredMaxLayoutWidth = collectionView.bounds.width - 40

@@ -19,6 +19,7 @@
 		D5417F0C1E62E38100030E15 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5417F0B1E62E38100030E15 /* TutorialViewController.swift */; };
 		D5417F0E1E62FB7500030E15 /* calvin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5417F0D1E62FB7500030E15 /* calvin.jpg */; };
 		D5417F101E62FE2100030E15 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5417F0F1E62FE2100030E15 /* BackgroundView.swift */; };
+		D542E14A1E6B60BE00991EFB /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D542E1491E6B60BE00991EFB /* TimetableViewController.swift */; };
 		D5595D6F1E6A10DB00EB160F /* plan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5595D6E1E6A10DB00EB160F /* plan.jpg */; };
 		D5595D711E6A119C00EB160F /* plan_global.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5595D701E6A119C00EB160F /* plan_global.jpg */; };
 		D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */; };
@@ -62,6 +63,7 @@
 		D5417F0B1E62E38100030E15 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		D5417F0D1E62FB7500030E15 /* calvin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = calvin.jpg; sourceTree = "<group>"; };
 		D5417F0F1E62FE2100030E15 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		D542E1491E6B60BE00991EFB /* TimetableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableViewController.swift; sourceTree = "<group>"; };
 		D5595D6E1E6A10DB00EB160F /* plan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plan.jpg; sourceTree = "<group>"; };
 		D5595D701E6A119C00EB160F /* plan_global.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plan_global.jpg; sourceTree = "<group>"; };
 		D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZEntrepriseServer.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				D521F0821E3BC50E0058026C /* AppDelegate.swift */,
 				D5417F0B1E62E38100030E15 /* TutorialViewController.swift */,
 				D521F0841E3BC50E0058026C /* DashboardController.swift */,
+				D542E1491E6B60BE00991EFB /* TimetableViewController.swift */,
 				D5F9D6471E6A194100EFE03E /* BasicViewController.swift */,
 				D512CA771E64B748006861C1 /* DashboardCell.swift */,
 				D5417F0F1E62FE2100030E15 /* BackgroundView.swift */,
@@ -368,6 +371,7 @@
 				D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */,
 				D512CA781E64B748006861C1 /* DashboardCell.swift in Sources */,
 				D521F0831E3BC50E0058026C /* AppDelegate.swift in Sources */,
+				D542E14A1E6B60BE00991EFB /* TimetableViewController.swift in Sources */,
 				D5F9D6481E6A194100EFE03E /* BasicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
