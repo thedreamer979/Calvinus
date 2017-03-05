@@ -22,6 +22,7 @@
 		D542E14A1E6B60BE00991EFB /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D542E1491E6B60BE00991EFB /* TimetableViewController.swift */; };
 		D5595D6F1E6A10DB00EB160F /* plan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5595D6E1E6A10DB00EB160F /* plan.jpg */; };
 		D5595D711E6A119C00EB160F /* plan_global.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5595D701E6A119C00EB160F /* plan_global.jpg */; };
+		D59B66AE1E6C4100005DFE39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B66AD1E6C4100005DFE39 /* LoginViewController.swift */; };
 		D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */; };
 		D5F9D6481E6A194100EFE03E /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F9D6471E6A194100EFE03E /* BasicViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,8 @@
 		D542E1491E6B60BE00991EFB /* TimetableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableViewController.swift; sourceTree = "<group>"; };
 		D5595D6E1E6A10DB00EB160F /* plan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plan.jpg; sourceTree = "<group>"; };
 		D5595D701E6A119C00EB160F /* plan_global.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plan_global.jpg; sourceTree = "<group>"; };
+		D59B66AD1E6C4100005DFE39 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZEntrepriseServer.swift; sourceTree = "<group>"; };
 		D5F9D6471E6A194100EFE03E /* BasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
 		DB3F49783C2035DA2D2AB4F1 /* Pods-Calvin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calvin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calvin/Pods-Calvin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,12 +136,14 @@
 			children = (
 				D521F0821E3BC50E0058026C /* AppDelegate.swift */,
 				D5417F0B1E62E38100030E15 /* TutorialViewController.swift */,
+				D59B66AD1E6C4100005DFE39 /* LoginViewController.swift */,
 				D521F0841E3BC50E0058026C /* DashboardController.swift */,
 				D542E1491E6B60BE00991EFB /* TimetableViewController.swift */,
 				D5F9D6471E6A194100EFE03E /* BasicViewController.swift */,
 				D512CA771E64B748006861C1 /* DashboardCell.swift */,
 				D5417F0F1E62FE2100030E15 /* BackgroundView.swift */,
 				D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */,
+				D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */,
 				D521F0861E3BC50E0058026C /* Main.storyboard */,
 				D521F08B1E3BC50E0058026C /* LaunchScreen.storyboard */,
 				D5417F0D1E62FB7500030E15 /* calvin.jpg */,
@@ -365,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D59B66AE1E6C4100005DFE39 /* LoginViewController.swift in Sources */,
 				D5417F101E62FE2100030E15 /* BackgroundView.swift in Sources */,
 				D521F0851E3BC50E0058026C /* DashboardController.swift in Sources */,
 				D5417F0C1E62E38100030E15 /* TutorialViewController.swift in Sources */,
@@ -531,6 +537,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.azentreprise.Calvin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Calvin/Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -547,6 +554,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.azentreprise.Calvin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Calvin/Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

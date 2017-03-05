@@ -9,6 +9,9 @@
 import UIKit
 
 func request(withID: String, controller: UIViewController, callback:@escaping ((String)->Void)) {
+    
+    print("Request " + withID)
+    
     let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?request=" + withID)!)
     
     let task = URLSession.shared.dataTask(with: request) { data, response, error in

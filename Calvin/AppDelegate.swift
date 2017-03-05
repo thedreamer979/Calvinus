@@ -12,14 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    static var userHash = "none"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let firstLaunch = !UserDefaults.standard.bool(forKey: "notFirstLaunch")
         
-        if firstLaunch {
-            UserDefaults.standard.set(true, forKey: "notFirstLaunch")
+        if let hash = UserDefaults.standard.string(forKey: "user-hash") {
+            AppDelegate.userHash = hash
+        } else {
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "tutorial")
         }
         

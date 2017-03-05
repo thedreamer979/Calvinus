@@ -75,9 +75,7 @@ class DashboardController: UICollectionViewController, UICollectionViewDelegateF
                 (accessGranted: Bool, error: Error?) in
                 
                 if accessGranted {
-                    DispatchQueue.main.async(execute: {
-                        request(withID: "calendar", controller: self, callback: self.addEvents)
-                    })
+                    request(withID: "calendar", controller: self, callback: self.addEvents)
                 }
             })
         } else if status == EKAuthorizationStatus.authorized {
@@ -160,6 +158,7 @@ class DashboardController: UICollectionViewController, UICollectionViewDelegateF
         
         cell.text.attributedText = self.news[indexPath.item]
         cell.text.preferredMaxLayoutWidth = collectionView.bounds.width - 40
+        cell.layer.cornerRadius = 10.0
         
         return cell
     }
