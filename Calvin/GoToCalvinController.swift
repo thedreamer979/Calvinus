@@ -24,11 +24,12 @@ class GoToCalvinController : UIViewController, MKMapViewDelegate, CLLocationMana
         self.locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestLocation()
+            locationManager.startUpdatingLocation()
         }
         
-        self.map.setUserTrackingMode(.follow, animated: false)
+        self.map.setUserTrackingMode(.follow, animated: true)
         let annotation = Calvin()
         self.map.addAnnotation(annotation)
         
@@ -44,19 +45,16 @@ class GoToCalvinController : UIViewController, MKMapViewDelegate, CLLocationMana
             directions.calculate {
                 (response, error) -> Void in
                 
-                guard let response = response else {
+                if let response = response {
+                    for route in response.routes {
+                        self.map.add((route.polyline))
+                    }
+                } else {
                     if let error = error {
                         print(error)
                         showError(controller: self, description: error.localizedDescription)
                     }
-                    return
                 }
-                
-                let route = response.routes[0]
-                self.map.add((route.polyline))
-                
-                let rect = route.polyline.boundingMapRect
-                self.map.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
             }
         })
     }

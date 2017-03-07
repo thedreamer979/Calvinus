@@ -16,7 +16,7 @@ class Calvin : NSObject, MKAnnotation {
 
     override init() {
         self.title = "Calvin"
-        self.coordinate = CLLocationCoordinate2D(latitude: 46.200499198 , longitude: 6.150332732)
+        self.coordinate = CLLocationCoordinate2D(latitude: 46.2008 , longitude: 6.151)
         self.info = "Calvin, la cité de Genève"
     }
 }

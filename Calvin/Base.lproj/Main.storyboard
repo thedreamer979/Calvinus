@@ -138,6 +138,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="3Ik-8h-J6T" kind="show" id="BpS-Yd-hMm"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8As-uW-IZ2">
                                         <rect key="frame" x="0.0" y="264" width="375" height="44"/>
@@ -156,6 +159,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="gFa-HA-4LI" kind="show" id="svo-cZ-WAS"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2S8-iE-oBY">
                                         <rect key="frame" x="0.0" y="308" width="375" height="44"/>
@@ -217,6 +223,24 @@
                                             <segue destination="52Y-rn-hMZ" kind="show" id="O6v-VY-Cko"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AdC-sv-O6L">
+                                        <rect key="frame" x="0.0" y="440" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AdC-sv-O6L" id="tGM-z6-XZT">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Donations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gD0-US-ELy">
+                                                    <rect key="frame" x="8" y="9" width="307" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -229,7 +253,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGh-Di-iHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2412" y="1056"/>
+            <point key="canvasLocation" x="2412" y="1436"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="ulL-X5-0z0">
@@ -248,7 +272,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwx-u6-oBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2412" y="124"/>
+            <point key="canvasLocation" x="2412" y="510"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="394-Nh-D5H">
@@ -692,6 +716,97 @@ toutes les possiblités que t'offre cette application.</string>
             </objects>
             <point key="canvasLocation" x="1053.5999999999999" y="1682.608695652174"/>
         </scene>
+        <!--Passe-temps-->
+        <scene sceneID="UAQ-Kx-HIB">
+            <objects>
+                <tableViewController id="3Ik-8h-J6T" userLabel="Passe-temps" customClass="BoreController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UjQ-Bn-9i8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="hfr-j1-VD1">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VCL-oE-V6u">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VCL-oE-V6u" id="FTo-OU-IDC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minerva" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZY-By-mOt">
+                                                    <rect key="frame" x="8" y="11" width="61" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="3Ik-8h-J6T" id="MIt-2x-ZKN"/>
+                            <outlet property="delegate" destination="3Ik-8h-J6T" id="UKy-yA-P6R"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Passe-temps" id="BgU-wK-oW1" userLabel="Passe-temps">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="43A-rr-nGs">
+                            <connections>
+                                <segue destination="4r5-73-DvR" kind="presentation" id="lbE-MD-yBG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RfL-w8-Stj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.5999999999999" y="2474.2128935532237"/>
+        </scene>
+        <!--Notes-->
+        <scene sceneID="ILt-xu-Lnk">
+            <objects>
+                <collectionViewController id="gFa-HA-4LI" userLabel="Notes" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="XH6-lp-aT5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S4K-A1-Ouj">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ceA-RT-BpJ">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gFa-HA-4LI" id="Vyu-SV-MqX"/>
+                            <outlet property="delegate" destination="gFa-HA-4LI" id="vzT-Ms-IAb"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Passe-temps" id="EDU-XB-P6P" userLabel="Notes">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="DBP-Ca-MTm">
+                            <connections>
+                                <segue destination="4r5-73-DvR" kind="presentation" id="L3S-9w-qFD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iu4-fH-Prb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2412" y="2473"/>
+        </scene>
         <!--License et Contributions-->
         <scene sceneID="ci9-YQ-j3h">
             <objects>
@@ -736,11 +851,11 @@ git:thedreamer979/Calvinus</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gx-yw-36r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="2434"/>
+            <point key="canvasLocation" x="3886" y="2474"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3HS-RR-flg"/>
         <segue reference="UhN-Pm-ZjT"/>
+        <segue reference="3HS-RR-flg"/>
     </inferredMetricsTieBreakers>
 </document>
