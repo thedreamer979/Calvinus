@@ -51,10 +51,13 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
                     cours = translated;
                 }
                 
-                let prof = input[0]
-                let range = prof.range(of: " ", options: .backwards)
+                var prof = input[0].components(separatedBy: " ")
                 
-                timetable.append("H\(hid) \(cours): \(input[2]) (\(prof[prof.startIndex..<(range?.lowerBound)!].capitalized))")
+                if prof.count > 0 {
+                   prof.removeLast()
+                }
+                                
+                timetable.append("H\(hid)   \(cours): \(input[2]) (\(prof.joined(separator: " ").capitalized))")
             } else if element == "Vide" {
                 timetable.append("H\(hid)")
             } else {
@@ -83,6 +86,7 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
         
         cell.textLabel?.text = self.timetable[self.dayId * 10 + indexPath.item]
         cell.textLabel?.textColor = .white
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
         
         return cell
     }

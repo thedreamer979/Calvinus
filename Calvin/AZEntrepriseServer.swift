@@ -37,5 +37,5 @@ func showError(controller: UIViewController, description: String) {
         alert.addAction(ok)
         
         controller.present(alert, animated: true, completion: nil)
-    } 
+    }
 }

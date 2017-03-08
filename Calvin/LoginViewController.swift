@@ -41,7 +41,7 @@ class LoginViewContrller : UIViewController {
     
     func login(name : String) {
         DispatchQueue.main.async {
-            if name.characters.count < 52 {
+            if name.characters.count < 104 {
                 self.progress.setProgress(0.0, animated: true)
                 self.state.text = "La vérification du nom a échouée."
             } else {

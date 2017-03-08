@@ -28,6 +28,7 @@
 		D59B66AE1E6C4100005DFE39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B66AD1E6C4100005DFE39 /* LoginViewController.swift */; };
 		D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */; };
 		D5F9D6481E6A194100EFE03E /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F9D6471E6A194100EFE03E /* BasicViewController.swift */; };
+		D5FC1D981E706C52009C3EE6 /* NotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC1D971E706C52009C3EE6 /* NotesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZEntrepriseServer.swift; sourceTree = "<group>"; };
 		D5F9D6471E6A194100EFE03E /* BasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		D5FC1D971E706C52009C3EE6 /* NotesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesController.swift; sourceTree = "<group>"; };
 		DB3F49783C2035DA2D2AB4F1 /* Pods-Calvin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calvin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calvin/Pods-Calvin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +149,7 @@
 				D542E1491E6B60BE00991EFB /* TimetableViewController.swift */,
 				D57942E01E6C91D80071E286 /* GoToCalvinController.swift */,
 				D50F96191E6DCD1400E126DE /* BoreController.swift */,
+				D5FC1D971E706C52009C3EE6 /* NotesController.swift */,
 				D5F9D6471E6A194100EFE03E /* BasicViewController.swift */,
 				D50732E21E6CA09D00B6A98D /* Calvin.swift */,
 				D512CA771E64B748006861C1 /* DashboardCell.swift */,
@@ -382,6 +385,7 @@
 				D59B66AE1E6C4100005DFE39 /* LoginViewController.swift in Sources */,
 				D5417F101E62FE2100030E15 /* BackgroundView.swift in Sources */,
 				D57942E11E6C91D80071E286 /* GoToCalvinController.swift in Sources */,
+				D5FC1D981E706C52009C3EE6 /* NotesController.swift in Sources */,
 				D50F961A1E6DCD1400E126DE /* BoreController.swift in Sources */,
 				D521F0851E3BC50E0058026C /* DashboardController.swift in Sources */,
 				D50732E31E6CA09D00B6A98D /* Calvin.swift in Sources */,
