@@ -13,18 +13,19 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    static var userHash = "none"
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        if let hash = UserDefaults.standard.string(forKey: "user-hash") {
-            AppDelegate.userHash = hash
-        } else {
-            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "tutorial")
-        }
+        login(controller: (window?.rootViewController)!, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: loginResponse)
         
         return true
+    }
+    
+    func loginResponse(success : Bool) {
+        if !success {
+            DispatchQueue.main.sync {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                window?.rootViewController?.present(storyboard.instantiateViewController(withIdentifier: "tutorial"), animated: true, completion: nil)
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -13,8 +13,8 @@ class LoginViewContrller : UIViewController {
     @IBOutlet weak var state: UILabel!
     @IBOutlet weak var name: UITextField!
     
-    var shaHash = "none"
-   
+    var tempHash : String = "(none)"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,36 +25,33 @@ class LoginViewContrller : UIViewController {
     
     @IBAction func onContinue(_ sender: UIButton) {
         self.progress.alpha = 1.0
-        self.progress.setProgress(0.1, animated: true)
 
-        self.state.text = "Vérification du nom..."
+        self.state.text = "Téléchargement en cours..."
         
-        self.shaHash = sha256(forInput: (name.text?.uppercased())!)
+        self.tempHash = sha256(forInput: (name.text?.uppercased())!)
         
-        request(withID: "timetable&hash=" + self.shaHash, controller: self, callback: login)
+        login(controller: self, userHash: self.tempHash, onResponse: loginResponse)
+        
+        self.progress.setProgress(0.1, animated: true)
     }
     
     @IBAction func dismiss(_ sender: UITextField) {
         self.view.endEditing(true)
     }
     
-    func login(name : String) {
-        DispatchQueue.main.async {
-            if name.characters.count < 104 {
-                self.progress.setProgress(0.0, animated: true)
-                self.state.text = "La vérification du nom a échouée."
-            } else {
-                self.progress.setProgress(0.2, animated: true)
-                self.state.text = "Téléchargement en cours..."
-                
-                UserDefaults.standard.set(self.shaHash, forKey: "user-hash")
-                AppDelegate.userHash = self.shaHash
-
+    func loginResponse(success : Bool) {
+        DispatchQueue.main.sync {
+            if success {
                 self.progress.setProgress(1.0, animated: true)
                 
+                UserDefaults.standard.set(self.tempHash, forKey: "user-hash")
+                
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "Dashboard")
-               
+                
                 self.present(controller!, animated: true, completion: nil)
+            } else {
+                self.progress.setProgress(0.0, animated: true)
+                self.state.text = "La vérification du nom a échouée."
             }
         }
     }

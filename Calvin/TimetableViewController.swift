@@ -25,20 +25,15 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
         self.table.dataSource = self
         self.table.layer.cornerRadius = 10.0
         
-        request(withID: "timetable&hash=" + AppDelegate.userHash, controller: self, callback: loadTimetable)
-        
         self.view.insertSubview(BackgroundView(frame: self.view.bounds), at:0)
-    }
-    
-    func loadTimetable(data : String) {
         
         timetable.removeAll()
         
-        let elements = data.components(separatedBy: "/")
+        let elements = UserDefaults.standard.stringArray(forKey: "offline-user-data")?[0].components(separatedBy: "/")
         
         var hid = 1
         
-        for element in elements {
+        for element in elements! {
             let input = element.components(separatedBy: "|")
             
             if input.count == 3 {
@@ -55,9 +50,9 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
                 var prof = input[0].components(separatedBy: " ")
                 
                 if prof.count > 0 {
-                   prof.removeLast()
+                    prof.removeLast()
                 }
-                                
+                
                 timetable.append("H\(hid)   \(cours): \(input[2]) (\(prof.joined(separator: " ").capitalized))")
             } else if element == "Vide" {
                 timetable.append("H\(hid)")
@@ -72,9 +67,7 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
             }
         }
         
-        DispatchQueue.main.async(execute: {
-            self.table.reloadData()
-        })
+        self.table.reloadData()
     }
     
     @IBAction func dayChanged(_ sender: UISegmentedControl) {

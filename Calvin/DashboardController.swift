@@ -40,27 +40,20 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
         
-        request(withID: "news", controller: self, callback: self.downloadNews)
-        
         self.updateCalendar()
         self.updateNews()
     }
     
     func updateNews() {
-        self.news.removeAll()
-        
-        let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        
         do {
-            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
+            self.news.removeAll()
+
+            let news = UserDefaults.standard.stringArray(forKey: "offline-user-data")!
             
-            let theNews = directoryContents.filter{ $0.pathExtension == "html" }
-            
-            let options = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType,
-                           NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue] as [String : Any]
-            
-            for entry in theNews {
-                try self.news.append(NSAttributedString(url: entry, options: options, documentAttributes: nil))
+            for entry in news {
+                if entry.characters[entry.startIndex] == "<" {
+                    try self.news.append(NSAttributedString(string: entry))
+                }
             }
         } catch let error as NSError {
             print(error.localizedDescription)
@@ -75,18 +68,18 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
                 (accessGranted: Bool, error: Error?) in
                 
                 if accessGranted {
-                    request(withID: "calendar", controller: self, callback: self.addEvents)
+                    self.addEvents(data: UserDefaults.standard.stringArray(forKey: "offline-user-data")!)
                 }
             })
         } else if status == EKAuthorizationStatus.authorized {
-            request(withID: "calendar", controller: self, callback: self.addEvents)
+            self.addEvents(data: UserDefaults.standard.stringArray(forKey: "offline-user-data")!)
         }
     }
 
-    func addEvents(data: String) {
-        let splitted = data.components(separatedBy: "\n")
+    func addEvents(data: [String]) {
+        var data = data
         
-        if splitted.count > 0 && splitted[0] != "NaN" {
+        if data.count > 1 {
             let predicate = self.eventStore.predicateForEvents(withStart: Date(), end: Date(timeIntervalSinceNow: 60 * 60 * 24 * 7 * 52 * 10), calendars: [self.eventStore.defaultCalendarForNewEvents])
             
             let events = self.eventStore.events(matching: predicate)
@@ -99,22 +92,26 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
                 }
             }
             
-            for entry in splitted {
-                let event = entry.components(separatedBy: "|")
+            data.removeFirst()
+            
+            for entry in data {
+                if entry.characters[entry.startIndex] != "<" {
+                    let event = entry.components(separatedBy: "|")
 
-                let newEvent = EKEvent(eventStore: eventStore)
+                    let newEvent = EKEvent(eventStore: eventStore)
                 
-                newEvent.title = event[0]
-                newEvent.notes = event[1]
-                newEvent.startDate = Date(timeIntervalSince1970: TimeInterval(event[2])!)
-                newEvent.endDate = Date(timeIntervalSince1970: TimeInterval(event[3])!)
-                newEvent.calendar = self.eventStore.defaultCalendarForNewEvents
+                    newEvent.title = event[0]
+                    newEvent.notes = event[1]
+                    newEvent.startDate = Date(timeIntervalSince1970: TimeInterval(event[2])!)
+                    newEvent.endDate = Date(timeIntervalSince1970: TimeInterval(event[3])!)
+                    newEvent.calendar = self.eventStore.defaultCalendarForNewEvents
                 
-                do {
-                    try eventStore.save(newEvent, span: .thisEvent, commit: true)
-                } catch let error {
-                    print("Failed to create an event")
-                    print(error)
+                    do {
+                        try eventStore.save(newEvent, span: .thisEvent, commit: true)
+                    } catch let error {
+                        print("Failed to create an event")
+                        print(error)
+                    }
                 }
             }
         }
