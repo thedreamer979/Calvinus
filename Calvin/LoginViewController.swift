@@ -29,8 +29,7 @@ class LoginViewContrller : UIViewController {
 
         self.state.text = "Vérification du nom..."
         
-        let shaData = sha256(string: (name.text?.uppercased())!)
-        self.shaHash = shaData!.map { String(format: "%02hhx", $0) }.joined()
+        self.shaHash = sha256(forInput: (name.text?.uppercased())!)
         
         request(withID: "timetable&hash=" + self.shaHash, controller: self, callback: login)
     }
@@ -58,17 +57,5 @@ class LoginViewContrller : UIViewController {
                 self.present(controller!, animated: true, completion: nil)
             }
         }
-    }
-    
-    func sha256(string: String) -> Data? {
-        guard let messageData = string.data(using:String.Encoding.utf8) else { return nil }
-        var digestData = Data(count: Int(CC_SHA256_DIGEST_LENGTH))
-        
-        _ = digestData.withUnsafeMutableBytes {digestBytes in
-            messageData.withUnsafeBytes {messageBytes in
-                CC_SHA256(messageBytes, CC_LONG(messageData.count), digestBytes)
-            }
-        }
-        return digestData
     }
 }

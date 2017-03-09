@@ -8,9 +8,10 @@
 
 import UIKit
 
+var timetable = [String]()
+
 class TimetableViewController : BasicViewController, UITableViewDataSource {
     
-    var timetable = [String]()
     var dayId = 0
     
     let translations : [String: String] = ["PO": "Philo", "GE": "Géo", "LA": "Latin", "MA": "Maths", "EP": "Sport", "AL": "Allemand", "IN": "Info", "GR": "Grec", "FR": "Français", "BI":"Bio", "PY": "Physique", "HI": "Histoire", "AN": "Anglais", "EC": "Eco", "DR": "Droit"]
@@ -31,7 +32,7 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
     
     func loadTimetable(data : String) {
         
-        self.timetable.removeAll()
+        timetable.removeAll()
         
         let elements = data.components(separatedBy: "/")
         
@@ -84,7 +85,7 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hour")!
         
-        cell.textLabel?.text = self.timetable[self.dayId * 10 + indexPath.item]
+        cell.textLabel?.text = timetable[self.dayId * 10 + indexPath.item]
         cell.textLabel?.textColor = .white
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         
@@ -92,6 +93,6 @@ class TimetableViewController : BasicViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return min(10, self.timetable.count)
+        return min(10, timetable.count)
     }
 }
