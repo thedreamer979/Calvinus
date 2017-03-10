@@ -45,18 +45,17 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
     }
     
     func updateNews() {
-        do {
-            self.news.removeAll()
+        self.news.removeAll()
 
-            let news = UserDefaults.standard.stringArray(forKey: "offline-user-data")!
+        let news = UserDefaults.standard.stringArray(forKey: "offline-user-data")!
             
-            for entry in news {
-                if entry.characters[entry.startIndex] == "<" {
-                    try self.news.append(NSAttributedString(string: entry))
-                }
+        for entry in news {
+            if entry.characters[entry.startIndex] == "<" {
+                do {
+                    let data = "<section style='color: white; text-align: justify; font-size: 1.5em'>" + entry + "</section>"
+                    try self.news.append(NSAttributedString(data: data.data(using: .utf16)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil))
+                } catch {}
             }
-        } catch let error as NSError {
-            print(error.localizedDescription)
         }
     }
     
@@ -102,6 +101,7 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
                 
                     newEvent.title = event[0]
                     newEvent.notes = event[1]
+                    
                     newEvent.startDate = Date(timeIntervalSince1970: TimeInterval(event[2])!)
                     newEvent.endDate = Date(timeIntervalSince1970: TimeInterval(event[3])!)
                     newEvent.calendar = self.eventStore.defaultCalendarForNewEvents

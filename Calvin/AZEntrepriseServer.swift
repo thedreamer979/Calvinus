@@ -9,57 +9,62 @@
 import UIKit
 
 func login(controller : UIViewController, userHash : String?, onResponse : @escaping (Bool)->Void) {
-    guard var news = UserDefaults.standard.stringArray(forKey: "offline-user-data"), let userHash = userHash else {
-        UserDefaults.standard.set([String](), forKey: "offline-user-data")
-        UserDefaults.standard.set("", forKey: "user-hash")
-        onResponse(false)
-        return
-    }
-    
-    var shasum = String()
-    
-    for entry in news {
-        shasum.append(sha4(forInput: entry))
-    }
-    
-    let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?user=\(userHash)&data=\(shasum)")!)
-    
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-        guard let data = data, error == nil else {
-            showError(controller: controller, description: (error?.localizedDescription)!)
-            return
-        }
-    
-        if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-            showError(controller: controller, description: "La réponse du serveur n'a pas pu être validée (" + String(httpStatus.statusCode) + ")")
-        }
+    var news = UserDefaults.standard.stringArray(forKey: "offline-user-data")
 
-        let utfData = String(bytes: data, encoding: .utf8)
-        let elements = utfData?.components(separatedBy: "\n")
+    if news == nil {
+        news = [String]()
+    }
+    
+    if let userHash = userHash {
+        var shasum = String()
         
-        if (utfData?.isEmpty)! {
-            onResponse(false)
-        } else {
-            for element in elements! {
-                let index = element.characters.index(of: ":")
-                let id = element[element.startIndex..<index!]
-                let realData = element[index!..<element.endIndex]
-                let realId = Int(id)!
-                
-                if realId < news.count {
-                    news[realId] = realData
-                } else {
-                    news.append(realData)
-                }
+        for entry in news! {
+            shasum.append(sha4(forInput: entry))
+        }
+        
+        let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?user=\(userHash)&data=\(shasum)")!)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                showError(controller: controller, description: (error?.localizedDescription)!)
+                return
             }
             
-            UserDefaults.standard.set(news, forKey: "offline-user-data")
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                showError(controller: controller, description: "La réponse du serveur n'a pas pu être validée (" + String(httpStatus.statusCode) + ")")
+            }
             
-            onResponse(true)
+            let utfData = String(bytes: data, encoding: .utf8)
+            let elements = utfData?.components(separatedBy: "\n")
+            
+            if (utfData?.isEmpty)! {
+                onResponse(false)
+            } else {
+                for element in elements! {
+                    if let index = element.characters.index(of: ":") {
+                        let id = element[element.startIndex..<index]
+                        let realData = element[element.index(after: index)..<element.endIndex]
+                        let realId = Int(id)!
+                        
+                        if realId < news!.count {
+                            news![realId] = realData
+                        } else {
+                            news!.append(realData)
+                        }
+                    }
+                }
+                
+                UserDefaults.standard.set(news, forKey: "offline-user-data")
+                UserDefaults.standard.set(userHash, forKey: "user-hash")
+                
+                onResponse(true)
+            }
         }
+        
+        task.resume()
+    } else {
+        onResponse(false)
     }
-    
-    task.resume()
 }
 
 

@@ -13,8 +13,6 @@ class LoginViewContrller : UIViewController {
     @IBOutlet weak var state: UILabel!
     @IBOutlet weak var name: UITextField!
     
-    var tempHash : String = "(none)"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -28,9 +26,9 @@ class LoginViewContrller : UIViewController {
 
         self.state.text = "Téléchargement en cours..."
         
-        self.tempHash = sha256(forInput: (name.text?.uppercased())!)
+        let hash = sha256(forInput: (name.text?.uppercased())!)
         
-        login(controller: self, userHash: self.tempHash, onResponse: loginResponse)
+        login(controller: self, userHash: hash, onResponse: loginResponse)
         
         self.progress.setProgress(0.1, animated: true)
     }
@@ -43,8 +41,6 @@ class LoginViewContrller : UIViewController {
         DispatchQueue.main.sync {
             if success {
                 self.progress.setProgress(1.0, animated: true)
-                
-                UserDefaults.standard.set(self.tempHash, forKey: "user-hash")
                 
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "Dashboard")
                 

@@ -21,9 +21,9 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
     
     func loginResponse(success : Bool) {
         if !success {
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                window?.rootViewController?.present(storyboard.instantiateViewController(withIdentifier: "tutorial"), animated: true, completion: nil)
+                self.window?.rootViewController?.present(storyboard.instantiateViewController(withIdentifier: "tutorial"), animated: true, completion: nil)
             }
         }
     }
