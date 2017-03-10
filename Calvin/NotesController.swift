@@ -11,6 +11,8 @@ import UIKit
 class NotesController : BasicViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var table: UITableView!
+    
+    var horaire = [NSAttributedString]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,7 @@ class NotesController : BasicViewController, UITableViewDataSource, UITableViewD
         self.table.delegate = self
         
         self.table.layer.cornerRadius = 10.0
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

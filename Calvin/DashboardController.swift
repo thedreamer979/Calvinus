@@ -47,31 +47,33 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
     func updateNews() {
         self.news.removeAll()
 
-        let news = UserDefaults.standard.stringArray(forKey: "offline-user-data")!
-            
-        for entry in news {
-            if entry.characters[entry.startIndex] == "<" {
-                do {
-                    let data = "<section style='color: white; text-align: justify; font-size: 1.5em'>" + entry + "</section>"
-                    try self.news.append(NSAttributedString(data: data.data(using: .utf16)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil))
-                } catch {}
+        if let news = UserDefaults.standard.stringArray(forKey: "offline-user-data") {
+            for entry in news {
+                if entry.characters[entry.startIndex] == "<" {
+                    do {
+                        let data = "<section style='color: white; text-align: justify; font-size: 1.5em'>" + entry + "</section>"
+                        try self.news.append(NSAttributedString(data: data.data(using: .utf16)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil))
+                    } catch {}
+                }
             }
         }
     }
     
     func updateCalendar() {
-        let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
+        if let data = UserDefaults.standard.stringArray(forKey: "offline-user-data") {
+            let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
         
-        if status == EKAuthorizationStatus.notDetermined {
-            eventStore.requestAccess(to: EKEntityType.event, completion: {
+            if status == EKAuthorizationStatus.notDetermined {
+                eventStore.requestAccess(to: EKEntityType.event, completion: {
                 (accessGranted: Bool, error: Error?) in
                 
-                if accessGranted {
-                    self.addEvents(data: UserDefaults.standard.stringArray(forKey: "offline-user-data")!)
-                }
-            })
-        } else if status == EKAuthorizationStatus.authorized {
-            self.addEvents(data: UserDefaults.standard.stringArray(forKey: "offline-user-data")!)
+                    if accessGranted {
+                        self.addEvents(data: data)
+                    }
+                })
+            } else if status == EKAuthorizationStatus.authorized {
+                self.addEvents(data: data)
+            }
         }
     }
 
@@ -116,43 +118,7 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
             }
         }
     }
-    
-    func downloadNews(data: String) {
-        let splitted = data.components(separatedBy: "\n")
-        
-        if splitted.count > 0 && splitted[0] != "NaN" {
-            
-            var id = 0
-            
-            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
 
-                do {
-                    for index in 0...999999 {
-                        try FileManager.default.removeItem(at: dir.appendingPathComponent("news" + String(index) + ".html"))
-                    }
-                } catch {}
-            
-                for entry in splitted {
-                    let path = dir.appendingPathComponent("news" + String(id) + ".html")
-                    
-                    do {
-                        try ("<section style='color: white; text-align: justify'>" + entry + "</section>").write(to: path, atomically: false,   encoding: String.Encoding.utf8)
-                    } catch let error {
-                        print(error)
-                    }
-                    
-                    id += 1
-                }
-            }
-            
-            DispatchQueue.main.async() {
-                self.updateNews()
-                self.collectionView?.reloadData()
-                self.collectionViewLayout.invalidateLayout()
-            }
-        }
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.news.count
     }
