@@ -8,14 +8,19 @@
 
 import UIKit
 
-class NoteController : BasicController {
+class NoteController : BasicController, UITableViewDataSource, UITableViewDelegate {
     
+    var notes = [String]()
+
+    @IBOutlet weak var navbarTitle: UINavigationItem!
     @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var controllerTitle: UILabel!
     @IBOutlet weak var weight: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.table.dataSource = self
+        self.table.delegate = self
         
         self.table.layer.cornerRadius = 10.0
     }
@@ -26,5 +31,14 @@ class NoteController : BasicController {
     
     @IBAction func dismiss(_ sender: UITextField) {
         
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "note")!
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.notes.count
     }
 }

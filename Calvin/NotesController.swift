@@ -57,10 +57,10 @@ class NotesController : BasicController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = self.storyboard!.instantiateViewController(withIdentifier: "cours") as! NoteController
-        
+    
         self.showDetailViewController(controller, sender: self)
         
-        controller.controllerTitle.text = "Notes en " + self.cours[indexPath.item]
+        controller.navbarTitle.title = "Notes en " + self.cours[indexPath.item]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
