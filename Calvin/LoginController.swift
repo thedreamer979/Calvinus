@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewContrller : UIViewController {
+class LoginController : UIViewController {
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var state: UILabel!
     @IBOutlet weak var name: UITextField!

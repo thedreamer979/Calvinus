@@ -8,62 +8,60 @@
 
 import UIKit
 
-var timetable = [String]()
-
-class TimetableViewController : BasicViewController, UITableViewDataSource {
+class TimetableController : BasicController, UITableViewDataSource {
     
+    var timetable = [String]()
     var dayId = 0
+
+    @IBOutlet weak var table: UITableView!
     
     let translations : [String: String] = ["PO": "Philo", "GE": "Géo", "LA": "Latin", "MA": "Maths", "EP": "Sport", "AL": "Allemand", "IN": "Info", "GR": "Grec", "FR": "Français", "BI":"Bio", "PY": "Physique", "HI": "Histoire", "AN": "Anglais", "EC": "Eco", "DR": "Droit"]
-    
-    @IBOutlet weak var table: UITableView!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.table.dataSource = self
         self.table.layer.cornerRadius = 10.0
-        
-        self.view.insertSubview(BackgroundView(frame: self.view.bounds), at:0)
-        
+                
         timetable.removeAll()
         
-        let elements = UserDefaults.standard.stringArray(forKey: "offline-user-data")?[0].components(separatedBy: "/")
+        if let data = UserDefaults.standard.stringArray(forKey: "offline-user-data") {
+            let elements = data[0].components(separatedBy: "/")
         
-        var hid = 1
+            var hid = 1
         
-        for element in elements! {
-            let input = element.components(separatedBy: "|")
+            for element in elements {
+                let input = element.components(separatedBy: "|")
             
-            if input.count == 3 {
-                var cours = input[1]
+                if input.count == 3 {
+                    var cours = input[1]
                 
-                let start = cours.index(cours.startIndex, offsetBy: 1)
-                let end = cours.index(cours.startIndex, offsetBy: 2)
-                cours = cours[start...end]
+                    let start = cours.index(cours.startIndex, offsetBy: 1)
+                    let end = cours.index(cours.startIndex, offsetBy: 2)
+                    cours = cours[start...end]
                 
-                if let translated = self.translations[cours] {
-                    cours = translated;
+                    if let translated = self.translations[cours] {
+                        cours = translated;
+                    }
+                
+                    var prof = input[0].components(separatedBy: " ")
+                
+                    if prof.count > 0 {
+                        prof.removeLast()
+                    }
+                
+                    timetable.append("H\(hid)   \(cours): \(input[2]) (\(prof.joined(separator: " ").capitalized))")
+                } else if element == "Vide" {
+                    timetable.append("H\(hid)")
+                } else {
+                    hid -= 1
                 }
-                
-                var prof = input[0].components(separatedBy: " ")
-                
-                if prof.count > 0 {
-                    prof.removeLast()
+            
+                hid += 1
+            
+                if hid > 10 {
+                    hid = 1
                 }
-                
-                timetable.append("H\(hid)   \(cours): \(input[2]) (\(prof.joined(separator: " ").capitalized))")
-            } else if element == "Vide" {
-                timetable.append("H\(hid)")
-            } else {
-                hid -= 1
-            }
-            
-            hid += 1
-            
-            if hid > 10 {
-                hid = 1
             }
         }
         

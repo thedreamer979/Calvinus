@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasicViewController : UIViewController {
+class BasicController : UIViewController {
     var pages = [UIViewController]()
     
     override func viewDidLoad() {

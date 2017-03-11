@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TutorialViewController : UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class TutorialController : UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var pages = [UIViewController]()
     
     override func viewDidLoad() {
