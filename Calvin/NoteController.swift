@@ -35,14 +35,27 @@ class NoteController : BasicController, UITableViewDataSource, UITableViewDelega
         self.view.endEditing(true)
         
         if let note = sender.text {
-            if Double(note) != nil || (note.contains(" ") && Double(note.components(separatedBy: " ")[0]) != nil) {
+            var decimalValue : Double? = nil
+                
+            if let value = Double(note) {
+                decimalValue = value
+            } else if let value = Double(note.components(separatedBy: " ")[0]) {
+                decimalValue = value
+            } else {
+                showError(controller: self, description: "Le format de la note est invalide")
+                return
+            }
+                
+            if decimalValue! >= 0 && decimalValue! <= 6 {
                 notes[self.coursId!]?.append(note + "\t" + self.weight.titleForSegment(at: self.weight.selectedSegmentIndex)!)
                 
                 sender.text = ""
-                
+            
                 self.table.reloadData()
                 
                 writeNotes()
+            } else {
+                showError(controller: self, description: "La note doit être comprise entre 0 et 6")
             }
         }
     }
@@ -58,7 +71,7 @@ class NoteController : BasicController, UITableViewDataSource, UITableViewDelega
             note = Double(text.components(separatedBy: " ")[0])
         }
         
-        cell.textLabel?.textColor = UIColor(red: CGFloat(1.0 - (note! - 2) / 4.0), green: CGFloat((note! - 2) / 4.0), blue: 0.0, alpha: 1.0)
+        cell.textLabel?.textColor = colorAlgorithm(withNote: note!)
         
         let style = NSMutableParagraphStyle()
         style.alignment = NSTextAlignment.left

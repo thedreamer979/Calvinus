@@ -6,7 +6,7 @@
 //  Copyright © 2017 AZEntreprise. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 var notes = [String : [String]]()
 
@@ -43,17 +43,32 @@ func writeNotes() {
 func moyenne(of: String) -> Double {
     if let array = notes[of] {
         var i = 0.0
+        var count = 0.0
         
         for element in array {
-            if element.contains(" ") {
-                i += Double(element.components(separatedBy: " ")[0])!
-            } else if !element.isEmpty {
-                i += Double(element.components(separatedBy: "\t")[0])!
+            if !element.isEmpty {
+                let tabs = element.components(separatedBy: "\t")
+                
+                if tabs.count > 1 {
+                    let multiplier = Double(tabs[1].replacingOccurrences(of: "x", with: ""))!
+                    
+                    if let note = Double(element.components(separatedBy: " ")[0]) {
+                        i += note * multiplier
+                    } else {
+                        i += Double(tabs[0])! * multiplier
+                    }
+                    
+                    count += multiplier
+                }
             }
         }
     
-        return i / Double(array.count)
+        return i / count
     } else {
         return -1
     }
+}
+
+func colorAlgorithm(withNote: Double) -> UIColor {
+    return UIColor(red: CGFloat(1.0 - (withNote - 3) / 3.0), green: CGFloat((withNote - 3) / 3.0), blue: 0.0, alpha: 1.0)
 }

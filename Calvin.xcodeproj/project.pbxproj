@@ -11,7 +11,6 @@
 		D50732E31E6CA09D00B6A98D /* Calvin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50732E21E6CA09D00B6A98D /* Calvin.swift */; };
 		D50F961A1E6DCD1400E126DE /* BoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F96191E6DCD1400E126DE /* BoreController.swift */; };
 		D512CA781E64B748006861C1 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D512CA771E64B748006861C1 /* DashboardCell.swift */; };
-		D513B42A1E75E87300E6912A /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = D513B4291E75E87300E6912A /* AppIcon.appiconset */; };
 		D521F0831E3BC50E0058026C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521F0821E3BC50E0058026C /* AppDelegate.swift */; };
 		D521F0851E3BC50E0058026C /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521F0841E3BC50E0058026C /* DashboardController.swift */; };
 		D521F0881E3BC50E0058026C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D521F0861E3BC50E0058026C /* Main.storyboard */; };
@@ -55,7 +54,6 @@
 		D50732E21E6CA09D00B6A98D /* Calvin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calvin.swift; sourceTree = "<group>"; };
 		D50F96191E6DCD1400E126DE /* BoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoreController.swift; sourceTree = "<group>"; };
 		D512CA771E64B748006861C1 /* DashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
-		D513B4291E75E87300E6912A /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		D521F07F1E3BC50E0058026C /* Calvin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calvin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D521F0821E3BC50E0058026C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D521F0841E3BC50E0058026C /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				D521F0861E3BC50E0058026C /* Main.storyboard */,
 				D521F08B1E3BC50E0058026C /* LaunchScreen.storyboard */,
 				D5417F0D1E62FB7500030E15 /* calvin.jpg */,
-				D513B4291E75E87300E6912A /* AppIcon.appiconset */,
 				D521F0891E3BC50E0058026C /* Assets.xcassets */,
 				D521F08E1E3BC50E0058026C /* Info.plist */,
 			);
@@ -310,7 +307,6 @@
 				D521F08D1E3BC50E0058026C /* LaunchScreen.storyboard in Resources */,
 				D521F08A1E3BC50E0058026C /* Assets.xcassets in Resources */,
 				D521F0881E3BC50E0058026C /* Main.storyboard in Resources */,
-				D513B42A1E75E87300E6912A /* AppIcon.appiconset in Resources */,
 				D5417F0E1E62FB7500030E15 /* calvin.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

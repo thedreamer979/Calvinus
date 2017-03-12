@@ -9,11 +9,12 @@
 import UIKit
 
 class NotesController : BasicController, UITableViewDataSource, UITableViewDelegate {
-    
+    @IBOutlet weak var moyenneGeneral: UILabel!
+    @IBOutlet weak var general: UIView!
     @IBOutlet weak var table: UITableView!
     
     var cours = [String]()
-    var notes = [Double]()
+    var moyennes = [Double]()
     
     let translations : [String: String] = ["PO": "Philosophie", "GE": "Géographie", "LA": "Latin", "MA": "Mathématiques", "EP": "Education physique", "AL": "Allemand", "IN": "Informatique", "GR": "Grec ancien", "FR": "Français", "BI":"Biologie", "PY": "Physique", "HI": "Histoire", "AN": "Anglais", "EC": "Economie", "DR": "Droit"]
 
@@ -24,6 +25,7 @@ class NotesController : BasicController, UITableViewDataSource, UITableViewDeleg
         self.table.delegate = self
         
         self.table.layer.cornerRadius = 10.0
+        self.general.layer.cornerRadius = 10.0
         
         readNotes()
         
@@ -32,7 +34,7 @@ class NotesController : BasicController, UITableViewDataSource, UITableViewDeleg
     
     func reload() {
         self.cours.removeAll()
-        self.notes.removeAll()
+        self.moyennes.removeAll()
         
         if let data = UserDefaults.standard.stringArray(forKey: "offline-user-data") {
             let elements = data[0].components(separatedBy: "/")
@@ -45,15 +47,40 @@ class NotesController : BasicController, UITableViewDataSource, UITableViewDeleg
                     
                     if !self.cours.contains(cours) {
                         self.cours.append(cours)
-                        self.notes.append(moyenne(of: cours))
+                        self.moyennes.append(moyenne(of: cours))
                     }
                 }
             }
         }
+        
+        var noteMoyenne = 0.0
+        var total = 0.0
+    
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 1
+        
+        for note in self.moyennes {
+            if note >= 0 {
+                noteMoyenne += round(Double(note) * 10.0) / 10.0
+                total += 1.0
+            }
+        }
+        
+        noteMoyenne /= total
+        
+        self.moyenneGeneral.text = "Moyenne générale: " + String(format: "%.1f", noteMoyenne)
+        self.moyenneGeneral.textColor = colorAlgorithm(withNote: noteMoyenne)
     }
     
     @IBAction func backToMenu(segue: UIStoryboardSegue) {
         self.reload()
+        self.table.reloadData()
+    }
+    
+    @IBAction func onReset(_ sender: UIButton) {
+        notes = [:]
+        writeNotes()
+        reload()
         self.table.reloadData()
     }
     
@@ -90,10 +117,10 @@ class NotesController : BasicController, UITableViewDataSource, UITableViewDeleg
             text = translated;
         }
         
-        if self.notes[indexPath.item] >= 0 {
-            let note = self.notes[indexPath.item]
+        if self.moyennes[indexPath.item] >= 0 {
+            let note = self.moyennes[indexPath.item]
             text += "\t" + String(format: "%.1f", note)
-            cell.textLabel?.textColor = UIColor(red: CGFloat(1.0 - (note - 2) / 4.0), green: CGFloat((note - 2) / 4.0), blue: 0.0, alpha: 1.0)
+            cell.textLabel?.textColor = colorAlgorithm(withNote: note)
         } else {
             cell.textLabel?.textColor = .white
         }
