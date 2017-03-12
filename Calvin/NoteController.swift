@@ -21,8 +21,10 @@ class NoteController : BasicController, UITableViewDataSource, UITableViewDelega
         
         self.table.dataSource = self
         self.table.delegate = self
-        
+
         self.table.layer.cornerRadius = 10.0
+        
+        self.weight.selectedSegmentIndex = 1
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -36,11 +38,11 @@ class NoteController : BasicController, UITableViewDataSource, UITableViewDelega
             if Double(note) != nil || (note.contains(" ") && Double(note.components(separatedBy: " ")[0]) != nil) {
                 notes[self.coursId!]?.append(note + "\t" + self.weight.titleForSegment(at: self.weight.selectedSegmentIndex)!)
                 
-                print(notes[self.coursId!]!)
-                
                 sender.text = ""
                 
                 self.table.reloadData()
+                
+                writeNotes()
             }
         }
     }
@@ -84,6 +86,8 @@ class NoteController : BasicController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             notes[self.coursId!]?.remove(at: indexPath.item)
+            self.table.reloadData()
+            writeNotes()
         }
     }
 }

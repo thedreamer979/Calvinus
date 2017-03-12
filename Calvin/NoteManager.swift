@@ -32,7 +32,9 @@ func writeNotes() {
             buffer += element.replacingOccurrences(of: "|", with: "-") + "|"
         }
         
-        dictionary[key] = buffer[buffer.startIndex..<buffer.index(before: buffer.endIndex)]
+        if !buffer.isEmpty {
+            dictionary[key] = buffer[buffer.startIndex..<buffer.index(before: buffer.endIndex)]
+        }
     }
     
     UserDefaults.standard.set(dictionary, forKey: "notes")
@@ -41,11 +43,11 @@ func writeNotes() {
 func moyenne(of: String) -> Double {
     if let array = notes[of] {
         var i = 0.0
-    
+        
         for element in array {
             if element.contains(" ") {
                 i += Double(element.components(separatedBy: " ")[0])!
-            } else {
+            } else if !element.isEmpty {
                 i += Double(element.components(separatedBy: "\t")[0])!
             }
         }
