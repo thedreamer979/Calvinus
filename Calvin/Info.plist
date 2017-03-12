@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Calvinus</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -26,9 +28,9 @@
 		<true/>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>J&apos;ai besoin de ton accord pour ajouter des évenements importants à ton calendrier.</string>
+	<string>J'ai besoin de ton accord pour ajouter des évenements importants à ton calendrier.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>J&apos;ai besoin de ton accord pour savoir où tu es.</string>
+	<string>J'ai besoin de ton accord pour savoir où tu es.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

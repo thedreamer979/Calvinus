@@ -37,3 +37,21 @@ func writeNotes() {
     
     UserDefaults.standard.set(dictionary, forKey: "notes")
 }
+
+func moyenne(of: String) -> Double {
+    if let array = notes[of] {
+        var i = 0.0
+    
+        for element in array {
+            if element.contains(" ") {
+                i += Double(element.components(separatedBy: " ")[0])!
+            } else {
+                i += Double(element.components(separatedBy: "\t")[0])!
+            }
+        }
+    
+        return i / Double(array.count)
+    } else {
+        return -1
+    }
+}

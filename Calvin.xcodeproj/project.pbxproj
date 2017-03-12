@@ -23,8 +23,8 @@
 		D5417F101E62FE2100030E15 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5417F0F1E62FE2100030E15 /* BackgroundView.swift */; };
 		D542E14A1E6B60BE00991EFB /* TimetableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D542E1491E6B60BE00991EFB /* TimetableController.swift */; };
 		D55425271E7455B700B09891 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55425261E7455B700B09891 /* NoteController.swift */; };
-		D5595D6F1E6A10DB00EB160F /* plan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5595D6E1E6A10DB00EB160F /* plan.jpg */; };
-		D5595D711E6A119C00EB160F /* plan_global.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5595D701E6A119C00EB160F /* plan_global.jpg */; };
+		D56BBC611E75C08200ACDFB4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D56BBC5C1E75C08200ACDFB4 /* README.md */; };
+		D56BBC631E75C14C00ACDFB4 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = D56BBC621E75C14C00ACDFB4 /* AppIcon.appiconset */; };
 		D57942E11E6C91D80071E286 /* GoToCalvinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57942E01E6C91D80071E286 /* GoToCalvinController.swift */; };
 		D59B66AE1E6C4100005DFE39 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B66AD1E6C4100005DFE39 /* LoginController.swift */; };
 		D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */; };
@@ -74,8 +74,8 @@
 		D5417F0F1E62FE2100030E15 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		D542E1491E6B60BE00991EFB /* TimetableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableController.swift; sourceTree = "<group>"; };
 		D55425261E7455B700B09891 /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
-		D5595D6E1E6A10DB00EB160F /* plan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plan.jpg; sourceTree = "<group>"; };
-		D5595D701E6A119C00EB160F /* plan_global.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plan_global.jpg; sourceTree = "<group>"; };
+		D56BBC5C1E75C08200ACDFB4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D56BBC621E75C14C00ACDFB4 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		D57942E01E6C91D80071E286 /* GoToCalvinController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoToCalvinController.swift; sourceTree = "<group>"; };
 		D59B66AD1E6C4100005DFE39 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -165,8 +165,8 @@
 				D521F0861E3BC50E0058026C /* Main.storyboard */,
 				D521F08B1E3BC50E0058026C /* LaunchScreen.storyboard */,
 				D5417F0D1E62FB7500030E15 /* calvin.jpg */,
-				D5595D6E1E6A10DB00EB160F /* plan.jpg */,
-				D5595D701E6A119C00EB160F /* plan_global.jpg */,
+				D56BBC5C1E75C08200ACDFB4 /* README.md */,
+				D56BBC621E75C14C00ACDFB4 /* AppIcon.appiconset */,
 				D521F0891E3BC50E0058026C /* Assets.xcassets */,
 				D521F08E1E3BC50E0058026C /* Info.plist */,
 			);
@@ -311,11 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D521F08D1E3BC50E0058026C /* LaunchScreen.storyboard in Resources */,
-				D5595D6F1E6A10DB00EB160F /* plan.jpg in Resources */,
 				D521F08A1E3BC50E0058026C /* Assets.xcassets in Resources */,
 				D521F0881E3BC50E0058026C /* Main.storyboard in Resources */,
+				D56BBC631E75C14C00ACDFB4 /* AppIcon.appiconset in Resources */,
 				D5417F0E1E62FB7500030E15 /* calvin.jpg in Resources */,
-				D5595D711E6A119C00EB160F /* plan_global.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +393,7 @@
 				D57942E11E6C91D80071E286 /* GoToCalvinController.swift in Sources */,
 				D5FC1D981E706C52009C3EE6 /* NotesController.swift in Sources */,
 				D50F961A1E6DCD1400E126DE /* BoreController.swift in Sources */,
+				D56BBC611E75C08200ACDFB4 /* README.md in Sources */,
 				D521F0851E3BC50E0058026C /* DashboardController.swift in Sources */,
 				D50732E31E6CA09D00B6A98D /* Calvin.swift in Sources */,
 				D5417F0C1E62E38100030E15 /* TutorialController.swift in Sources */,
@@ -559,7 +559,7 @@
 				DEVELOPMENT_TEAM = N3HPDZ979T;
 				INFOPLIST_FILE = Calvin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.azentreprise.Calvin;
+				PRODUCT_BUNDLE_IDENTIFIER = org.azentreprise.Calvinus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Calvin/Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -576,7 +576,7 @@
 				DEVELOPMENT_TEAM = N3HPDZ979T;
 				INFOPLIST_FILE = Calvin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.azentreprise.Calvin;
+				PRODUCT_BUNDLE_IDENTIFIER = org.azentreprise.Calvinus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Calvin/Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

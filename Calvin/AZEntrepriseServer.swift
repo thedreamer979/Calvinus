@@ -27,11 +27,13 @@ func login(controller : UIViewController, userHash : String?, onResponse : @esca
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 showError(controller: controller, description: (error?.localizedDescription)!)
+                onResponse(false)
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                 showError(controller: controller, description: "La réponse du serveur n'a pas pu être validée (" + String(httpStatus.statusCode) + ")")
+                onResponse(false)
             }
             
             let utfData = String(bytes: data, encoding: .utf8)
