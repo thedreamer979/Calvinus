@@ -21,7 +21,7 @@ func login(controller : UIViewController, userHash : String?, onResponse : @esca
         for entry in news! {
             shasum.append(sha4(forInput: entry))
         }
-        
+                
         let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?user=\(userHash)&data=\(shasum)")!)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -39,7 +39,7 @@ func login(controller : UIViewController, userHash : String?, onResponse : @esca
             let utfData = String(bytes: data, encoding: .utf8)
             let elements = utfData?.components(separatedBy: "\n")
             
-            if (utfData?.isEmpty)! {
+            if utfData == "ERR_AUTH_FAILED" {
                 onResponse(false)
             } else {
                 for element in elements! {
@@ -53,6 +53,8 @@ func login(controller : UIViewController, userHash : String?, onResponse : @esca
                         } else {
                             news!.append(realData)
                         }
+                        
+                        print("New update: \(element)")
                     }
                 }
                 
@@ -82,7 +84,7 @@ func showError(controller: UIViewController, description: String) {
 
 func sha4(forInput: String) -> String {
     let sha = sha256(forInput: forInput)
-    return sha[sha.startIndex...sha.index(sha.startIndex, offsetBy: 4)]
+    return sha[sha.startIndex..<sha.index(sha.startIndex, offsetBy: 4)]
 }
 
 func sha256(forInput: String) -> String {

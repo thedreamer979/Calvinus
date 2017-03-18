@@ -61,7 +61,7 @@ class NotesController : BasicController, UITableViewDataSource, UITableViewDeleg
         
         for note in self.moyennes {
             if note >= 0 {
-                noteMoyenne += round(Double(note) * 10.0) / 10.0
+                noteMoyenne += note
                 total += 1.0
             }
         }
@@ -127,7 +127,7 @@ class NotesController : BasicController, UITableViewDataSource, UITableViewDeleg
         
         let style = NSMutableParagraphStyle()
         style.alignment = NSTextAlignment.left
-        style.tabStops = [NSTextTab(textAlignment: NSTextAlignment.right, location: self.view.bounds.width - 90)]
+        style.tabStops = [NSTextTab(textAlignment: NSTextAlignment.right, location: self.view.bounds.width - 100)]
         
         cell.textLabel?.attributedText = NSAttributedString(string: text, attributes: [NSParagraphStyleAttributeName: style])
         cell.textLabel?.adjustsFontSizeToFitWidth = true

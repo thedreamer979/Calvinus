@@ -15,6 +15,8 @@ func readNotes() {
         for element in array {
             notes[element.key] = (element.value as! String).components(separatedBy: "|")
         }
+        
+        print(array)
     } else {
         UserDefaults.standard.set([String : String](), forKey: "notes")
     }
@@ -63,7 +65,7 @@ func moyenne(of: String) -> Double {
             }
         }
     
-        return i / count
+        return round(Double(i / count) * 10.0) / 10.0
     } else {
         return -1
     }

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E2EF0A874A01FFC4D77FBAEED4802A12"
-               BuildableName = "CVCalendar.framework"
-               BlueprintName = "CVCalendar"
+               BlueprintIdentifier = "1B7FB3BAD8AA4A1F7EFBDA7C841CB4CB"
+               BuildableName = "SideMenu.framework"
+               BlueprintName = "SideMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E2EF0A874A01FFC4D77FBAEED4802A12"
-            BuildableName = "CVCalendar.framework"
-            BlueprintName = "CVCalendar"
+            BlueprintIdentifier = "1B7FB3BAD8AA4A1F7EFBDA7C841CB4CB"
+            BuildableName = "SideMenu.framework"
+            BlueprintName = "SideMenu"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

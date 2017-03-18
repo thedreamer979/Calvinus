@@ -75,7 +75,7 @@ class NoteController : BasicController, UITableViewDataSource, UITableViewDelega
         
         let style = NSMutableParagraphStyle()
         style.alignment = NSTextAlignment.left
-        style.tabStops = [NSTextTab(textAlignment: NSTextAlignment.right, location: self.view.bounds.width - 70)]
+        style.tabStops = [NSTextTab(textAlignment: NSTextAlignment.right, location: self.view.bounds.width - 80)]
         
         cell.textLabel?.attributedText = NSAttributedString(string: text, attributes: [NSParagraphStyleAttributeName: style])
         cell.textLabel?.adjustsFontSizeToFitWidth = true
