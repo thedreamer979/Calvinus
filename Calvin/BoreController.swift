@@ -14,4 +14,8 @@ class BoreController : UITableViewController {
         
         self.tableView.backgroundView = BackgroundView(frame: self.view.bounds)
     }
+    
+    @IBAction func backToBoreController(segue: UIStoryboardSegue) {
+        return
+    }
 }

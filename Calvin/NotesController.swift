@@ -72,7 +72,7 @@ class NotesController : BasicController, UITableViewDataSource, UITableViewDeleg
         self.moyenneGeneral.textColor = colorAlgorithm(withNote: noteMoyenne)
     }
     
-    @IBAction func backToMenu(segue: UIStoryboardSegue) {
+    @IBAction func backToNotesController(segue: UIStoryboardSegue) {
         self.reload()
         self.table.reloadData()
     }
