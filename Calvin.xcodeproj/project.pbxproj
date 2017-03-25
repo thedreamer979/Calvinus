@@ -11,6 +11,9 @@
 		D50732E31E6CA09D00B6A98D /* Calvin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50732E21E6CA09D00B6A98D /* Calvin.swift */; };
 		D50F961A1E6DCD1400E126DE /* BoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50F96191E6DCD1400E126DE /* BoreController.swift */; };
 		D512CA781E64B748006861C1 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D512CA771E64B748006861C1 /* DashboardCell.swift */; };
+		D518944E1E86DC9F0053F0BF /* LiberationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D518944D1E86DC9F0053F0BF /* LiberationsController.swift */; };
+		D51894501E86DCB20053F0BF /* RepetitoiresController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D518944F1E86DCB20053F0BF /* RepetitoiresController.swift */; };
+		D51894521E86DD150053F0BF /* AdministrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51894511E86DD150053F0BF /* AdministrationController.swift */; };
 		D51EAC661E7D851500428FE8 /* AskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EAC5F1E7D851500428FE8 /* AskCell.swift */; };
 		D51EAC671E7D851500428FE8 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EAC601E7D851500428FE8 /* ConversationCell.swift */; };
 		D51EAC681E7D851500428FE8 /* ConversationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EAC611E7D851500428FE8 /* ConversationDataSource.swift */; };
@@ -30,6 +33,7 @@
 		D542E14A1E6B60BE00991EFB /* TimetableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D542E1491E6B60BE00991EFB /* TimetableController.swift */; };
 		D55425271E7455B700B09891 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55425261E7455B700B09891 /* NoteController.swift */; };
 		D57942E11E6C91D80071E286 /* GoToCalvinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57942E01E6C91D80071E286 /* GoToCalvinController.swift */; };
+		D5805D041E8445F700837675 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5805D031E8445F700837675 /* CommunityController.swift */; };
 		D59B66AE1E6C4100005DFE39 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B66AD1E6C4100005DFE39 /* LoginController.swift */; };
 		D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */; };
 		D5F9D6481E6A194100EFE03E /* BasicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F9D6471E6A194100EFE03E /* BasicController.swift */; };
@@ -60,6 +64,9 @@
 		D50732E21E6CA09D00B6A98D /* Calvin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calvin.swift; sourceTree = "<group>"; };
 		D50F96191E6DCD1400E126DE /* BoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoreController.swift; sourceTree = "<group>"; };
 		D512CA771E64B748006861C1 /* DashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
+		D518944D1E86DC9F0053F0BF /* LiberationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiberationsController.swift; sourceTree = "<group>"; };
+		D518944F1E86DCB20053F0BF /* RepetitoiresController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepetitoiresController.swift; sourceTree = "<group>"; };
+		D51894511E86DD150053F0BF /* AdministrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdministrationController.swift; sourceTree = "<group>"; };
 		D51EAC5F1E7D851500428FE8 /* AskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskCell.swift; sourceTree = "<group>"; };
 		D51EAC601E7D851500428FE8 /* ConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		D51EAC611E7D851500428FE8 /* ConversationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationDataSource.swift; sourceTree = "<group>"; };
@@ -85,6 +92,7 @@
 		D542E1491E6B60BE00991EFB /* TimetableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableController.swift; sourceTree = "<group>"; };
 		D55425261E7455B700B09891 /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		D57942E01E6C91D80071E286 /* GoToCalvinController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoToCalvinController.swift; sourceTree = "<group>"; };
+		D5805D031E8445F700837675 /* CommunityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
 		D59B66AD1E6C4100005DFE39 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZEntrepriseServer.swift; sourceTree = "<group>"; };
@@ -160,14 +168,18 @@
 				D51EAC641E7D851500428FE8 /* QuestionAnswerer.swift */,
 				D51EAC5F1E7D851500428FE8 /* AskCell.swift */,
 				D51EAC601E7D851500428FE8 /* ConversationCell.swift */,
+				D51894511E86DD150053F0BF /* AdministrationController.swift */,
 				D51EAC651E7D851500428FE8 /* ThinkingCell.swift */,
 				D521F0821E3BC50E0058026C /* AppDelegate.swift */,
 				D5417F0B1E62E38100030E15 /* TutorialController.swift */,
 				D59B66AD1E6C4100005DFE39 /* LoginController.swift */,
 				D521F0841E3BC50E0058026C /* DashboardController.swift */,
+				D518944D1E86DC9F0053F0BF /* LiberationsController.swift */,
+				D518944F1E86DCB20053F0BF /* RepetitoiresController.swift */,
 				D542E1491E6B60BE00991EFB /* TimetableController.swift */,
 				D57942E01E6C91D80071E286 /* GoToCalvinController.swift */,
 				D50F96191E6DCD1400E126DE /* BoreController.swift */,
+				D5805D031E8445F700837675 /* CommunityController.swift */,
 				D5FC1D971E706C52009C3EE6 /* NotesController.swift */,
 				D55425261E7455B700B09891 /* NoteController.swift */,
 				D5FF84E91E748B8000278B88 /* NoteManager.swift */,
@@ -402,14 +414,18 @@
 				D5417F101E62FE2100030E15 /* BackgroundView.swift in Sources */,
 				D57942E11E6C91D80071E286 /* GoToCalvinController.swift in Sources */,
 				D51EAC6B1E7D851500428FE8 /* QuestionAnswerer.swift in Sources */,
+				D51894521E86DD150053F0BF /* AdministrationController.swift in Sources */,
 				D5FC1D981E706C52009C3EE6 /* NotesController.swift in Sources */,
 				D51EAC671E7D851500428FE8 /* ConversationCell.swift in Sources */,
+				D51894501E86DCB20053F0BF /* RepetitoiresController.swift in Sources */,
 				D50F961A1E6DCD1400E126DE /* BoreController.swift in Sources */,
 				D521F0851E3BC50E0058026C /* DashboardController.swift in Sources */,
 				D51EAC6C1E7D851500428FE8 /* ThinkingCell.swift in Sources */,
 				D51EAC661E7D851500428FE8 /* AskCell.swift in Sources */,
 				D50732E31E6CA09D00B6A98D /* Calvin.swift in Sources */,
 				D51EAC691E7D851500428FE8 /* ConversationViewController.swift in Sources */,
+				D5805D041E8445F700837675 /* CommunityController.swift in Sources */,
+				D518944E1E86DC9F0053F0BF /* LiberationsController.swift in Sources */,
 				D5417F0C1E62E38100030E15 /* TutorialController.swift in Sources */,
 				D51EAC681E7D851500428FE8 /* ConversationDataSource.swift in Sources */,
 				D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */,
