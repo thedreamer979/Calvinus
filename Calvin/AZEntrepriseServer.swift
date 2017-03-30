@@ -8,7 +8,7 @@
 
 import UIKit
 
-func login(controller : UIViewController, userHash : String?, onResponse : @escaping (Bool)->Void) {
+func login(controller: UIViewController, userHash: String?, onResponse: @escaping (Bool)->Void) {
     var news = UserDefaults.standard.stringArray(forKey: "offline-user-data")
 
     if news == nil {
@@ -71,10 +71,44 @@ func login(controller : UIViewController, userHash : String?, onResponse : @esca
     }
 }
 
+func uploadData(controller: UIViewController, data: String, passwd: String, done: @escaping (Void)->Void) {
+    let utf8data = data.data(using: String.Encoding.utf8)
+    
+    if let base64 = utf8data?.base64EncodedString() {
+        let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?passwd=\(sha256(forInput: passwd))&data=\(base64)")!)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                done()
+                return showError(controller: controller, description: (error?.localizedDescription)!)
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                done()
+                return showError(controller: controller, description: "La réponse du serveur n'a pas pu être validée (" + String(httpStatus.statusCode) + ")")
+            }
+            
+            let response = String(bytes: data, encoding: .utf8)
+            
+            done()
+            
+            if response == "ERR_UPLOAD_FAILED" {
+                showError(controller: controller, description: "L'envoi des données a échoué")
+            } else {
+                showError(controller: controller, description: "L'envoi des données a réussi", notAnError: "Victoire")
+            }
+        }
+        
+        task.resume()
+    } else {
+        done()
+        showError(controller: controller, description: "L'envoi des données a échoué")
+    }
+}
 
-func showError(controller: UIViewController, description: String) {
+func showError(controller: UIViewController, description: String, notAnError: String = "Erreur") {
     DispatchQueue.main.async {
-        let alert = UIAlertController(title: "Erreur", message: description, preferredStyle: .alert)
+        let alert = UIAlertController(title: notAnError, message: description, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(ok)
         

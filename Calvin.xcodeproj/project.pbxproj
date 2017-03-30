@@ -162,37 +162,37 @@
 		D521F0811E3BC50E0058026C /* Calvin */ = {
 			isa = PBXGroup;
 			children = (
+				D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */,
+				D521F08E1E3BC50E0058026C /* Info.plist */,
+				D51894511E86DD150053F0BF /* AdministrationController.swift */,
+				D521F0821E3BC50E0058026C /* AppDelegate.swift */,
+				D51EAC5F1E7D851500428FE8 /* AskCell.swift */,
+				D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */,
+				D5417F0F1E62FE2100030E15 /* BackgroundView.swift */,
+				D5F9D6471E6A194100EFE03E /* BasicController.swift */,
+				D50F96191E6DCD1400E126DE /* BoreController.swift */,
+				D50732E21E6CA09D00B6A98D /* Calvin.swift */,
+				D5805D031E8445F700837675 /* CommunityController.swift */,
+				D51EAC601E7D851500428FE8 /* ConversationCell.swift */,
 				D51EAC611E7D851500428FE8 /* ConversationDataSource.swift */,
 				D51EAC621E7D851500428FE8 /* ConversationViewController.swift */,
-				D51EAC631E7D851500428FE8 /* Message.swift */,
-				D51EAC641E7D851500428FE8 /* QuestionAnswerer.swift */,
-				D51EAC5F1E7D851500428FE8 /* AskCell.swift */,
-				D51EAC601E7D851500428FE8 /* ConversationCell.swift */,
-				D51894511E86DD150053F0BF /* AdministrationController.swift */,
-				D51EAC651E7D851500428FE8 /* ThinkingCell.swift */,
-				D521F0821E3BC50E0058026C /* AppDelegate.swift */,
-				D5417F0B1E62E38100030E15 /* TutorialController.swift */,
-				D59B66AD1E6C4100005DFE39 /* LoginController.swift */,
+				D512CA771E64B748006861C1 /* DashboardCell.swift */,
 				D521F0841E3BC50E0058026C /* DashboardController.swift */,
-				D518944D1E86DC9F0053F0BF /* LiberationsController.swift */,
-				D518944F1E86DCB20053F0BF /* RepetitoiresController.swift */,
-				D542E1491E6B60BE00991EFB /* TimetableController.swift */,
 				D57942E01E6C91D80071E286 /* GoToCalvinController.swift */,
-				D50F96191E6DCD1400E126DE /* BoreController.swift */,
-				D5805D031E8445F700837675 /* CommunityController.swift */,
-				D5FC1D971E706C52009C3EE6 /* NotesController.swift */,
+				D518944D1E86DC9F0053F0BF /* LiberationsController.swift */,
+				D59B66AD1E6C4100005DFE39 /* LoginController.swift */,
+				D51EAC631E7D851500428FE8 /* Message.swift */,
 				D55425261E7455B700B09891 /* NoteController.swift */,
 				D5FF84E91E748B8000278B88 /* NoteManager.swift */,
-				D5F9D6471E6A194100EFE03E /* BasicController.swift */,
-				D50732E21E6CA09D00B6A98D /* Calvin.swift */,
-				D512CA771E64B748006861C1 /* DashboardCell.swift */,
-				D5417F0F1E62FE2100030E15 /* BackgroundView.swift */,
-				D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */,
-				D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */,
-				D521F0861E3BC50E0058026C /* Main.storyboard */,
-				D521F08B1E3BC50E0058026C /* LaunchScreen.storyboard */,
+				D5FC1D971E706C52009C3EE6 /* NotesController.swift */,
+				D51EAC641E7D851500428FE8 /* QuestionAnswerer.swift */,
+				D518944F1E86DCB20053F0BF /* RepetitoiresController.swift */,
+				D51EAC651E7D851500428FE8 /* ThinkingCell.swift */,
+				D542E1491E6B60BE00991EFB /* TimetableController.swift */,
+				D5417F0B1E62E38100030E15 /* TutorialController.swift */,
 				D521F0891E3BC50E0058026C /* Assets.xcassets */,
-				D521F08E1E3BC50E0058026C /* Info.plist */,
+				D521F08B1E3BC50E0058026C /* LaunchScreen.storyboard */,
+				D521F0861E3BC50E0058026C /* Main.storyboard */,
 			);
 			path = Calvin;
 			sourceTree = "<group>";
@@ -289,7 +289,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = AZEntreprise;
 				TargetAttributes = {
 					D521F07E1E3BC50E0058026C = {
