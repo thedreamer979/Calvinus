@@ -96,7 +96,7 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
             data.removeFirst()
             
             for entry in data {
-                if entry.characters[entry.startIndex] != "<" {
+                if entry.characters[entry.startIndex] != "<" && !entry.hasPrefix("repet") && !entry.hasPrefix("liberation") {
                     let event = entry.components(separatedBy: "|")
 
                     let newEvent = EKEvent(eventStore: eventStore)

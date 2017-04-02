@@ -106,6 +106,60 @@ func uploadData(controller: UIViewController, data: String, passwd: String, done
     }
 }
 
+func requestDeletion(controller: UIViewController, data: String) {
+    DispatchQueue.main.async {
+        let alert = UIAlertController(title: "Entre le mot de passe", message: "", preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: { (field) in
+            field.placeholder = "Mot de passe"
+            field.isSecureTextEntry = true
+        })
+        
+        let del = UIAlertAction(title: "Supprimer", style: .destructive, handler: { (action) in
+            deleteData(controller: controller, data: data, passwd: alert.textFields![0].text!)
+        })
+        
+        let cancel = UIAlertAction(title: "Annuler", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        
+        alert.addAction(del)
+        alert.addAction(cancel)
+        
+        controller.present(alert, animated: true, completion: nil)
+    }
+}
+
+func deleteData(controller: UIViewController, data: String, passwd: String) {
+    let utf8data = data.data(using: String.Encoding.utf8)
+    
+    if let base64 = utf8data?.base64EncodedString() {
+        let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?delete=true&passwd=\(sha256(forInput: passwd))&data=\(base64)")!)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                return showError(controller: controller, description: (error?.localizedDescription)!)
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                return showError(controller: controller, description: "La réponse du serveur n'a pas pu être validée (" + String(httpStatus.statusCode) + ")")
+            }
+            
+            let response = String(bytes: data, encoding: .utf8)
+            
+            if response == "ERR_AUTH_FAILED" {
+                showError(controller: controller, description: "Authentification échouée")
+            } else {
+                showError(controller: controller, description: "La suppression a réussi", notAnError: "Victoire")
+            }
+        }
+        
+        task.resume()
+    } else {
+        showError(controller: controller, description: "La suppression a échoué")
+    }
+}
+
 func showError(controller: UIViewController, description: String, notAnError: String = "Erreur") {
     DispatchQueue.main.async {
         let alert = UIAlertController(title: notAnError, message: description, preferredStyle: .alert)

@@ -77,7 +77,7 @@ class CommunityController : BasicController, UITextFieldDelegate {
         let price = self.price.titleForSegment(at: self.price.selectedSegmentIndex)
         let oor = self.offerOrRequest.titleForSegment(at: self.offerOrRequest.selectedSegmentIndex)
         
-        let data = "\(name)|\(desc)|\(phone)|\(price!)|\(oor!)|\(passwd)"
+        let data = "repet|\(name)|\(desc)|\(phone)|\(price!)|\(oor!)|\(sha256(forInput: passwd))"
         
         uploadData(controller: self, data: data, passwd: "repetitoires", done: uploadDone)
     }

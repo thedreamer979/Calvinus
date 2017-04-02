@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdministrationController : BasicController {
+class AdministrationController : BasicController, UITextFieldDelegate {
    
     @IBOutlet weak var data: UITextView!
     @IBOutlet weak var passwd: UITextField!
@@ -21,6 +21,12 @@ class AdministrationController : BasicController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ field: UITextField) -> Bool {
+        self.view.endEditing(true)
+        send(self.send)
+        return true
     }
     
     func uploadDone() {
@@ -46,7 +52,7 @@ class AdministrationController : BasicController {
             uploadDone()
             return showError(controller: self, description: "Mot de passe invalide")
         }
-        
+                
         uploadData(controller: self, data: data, passwd: passwd, done: uploadDone)
     }
 }
