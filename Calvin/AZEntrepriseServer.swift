@@ -90,11 +90,14 @@ func uploadData(controller: UIViewController, data: String, passwd: String, done
             
             let response = String(bytes: data, encoding: .utf8)
             
+            print(response ?? String())
+            
             done()
             
             if response == "ERR_UPLOAD_FAILED" {
                 showError(controller: controller, description: "L'envoi des données a échoué")
             } else {
+                login(controller: controller, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: dummyOnResponse)
                 showError(controller: controller, description: "L'envoi des données a réussi", notAnError: "Victoire")
             }
         }
@@ -134,7 +137,7 @@ func deleteData(controller: UIViewController, data: String, passwd: String) {
     let utf8data = data.data(using: String.Encoding.utf8)
     
     if let base64 = utf8data?.base64EncodedString() {
-        let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?delete=true&passwd=\(sha256(forInput: passwd))&data=\(base64)")!)
+        let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?delete=true&passwd=\(passwd)&data=\(base64)")!)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
@@ -147,9 +150,12 @@ func deleteData(controller: UIViewController, data: String, passwd: String) {
             
             let response = String(bytes: data, encoding: .utf8)
             
+            print(response ?? String())
+            
             if response == "ERR_AUTH_FAILED" {
                 showError(controller: controller, description: "Authentification échouée")
             } else {
+                login(controller: controller, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: dummyOnResponse)
                 showError(controller: controller, description: "La suppression a réussi", notAnError: "Victoire")
             }
         }
@@ -168,6 +174,10 @@ func showError(controller: UIViewController, description: String, notAnError: St
         
         controller.present(alert, animated: true, completion: nil)
     }
+}
+
+func dummyOnResponse(dummy : Bool) {
+    UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "Dashboard")
 }
 
 func sha4(forInput: String) -> String {

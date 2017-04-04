@@ -36,7 +36,7 @@ class RepetitoiresController : UICollectionViewController, UICollectionViewDeleg
                         let price = splitted[4].replacingOccurrences(of: "<", with: "(").replacingOccurrences(of: ">", with: ")")
                         let oor = splitted[5].replacingOccurrences(of: "<", with: "(").replacingOccurrences(of: ">", with: ")")
                         
-                        let text = "<section style='color: white; text-align: justify; font-size: 1.5em'><h1>\(oor)</h1>Nom: \(name)<br>Description: \(desc)<br>Prix: \(price)<br>Contact: \(phone)</section>"
+                        let text = "<section style='color: white; text-align: justify; font-size: 1.5em'><h1>\(oor)</h1>Nom: \(name)<br>Description: \(desc)<br>Prix: \(price)<br>Contact: \(phone)<br><br>Si vous êtes l'auteur de cette section, vous pouvez cliquer dessus pour la supprimer.</section>"
                         
                         try self.data.append(NSAttributedString(data: text.data(using: .utf16)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil))
                     } catch {}
@@ -60,6 +60,6 @@ class RepetitoiresController : UICollectionViewController, UICollectionViewDeleg
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        requestDeletion(controller: self, data: self.rawData[indexPath.item].string)
+        requestDeletion(controller: self, data: self.rawData[indexPath.item])
     }
 }
