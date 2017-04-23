@@ -56,29 +56,29 @@ class CommunityController : BasicController, UITextFieldDelegate {
         
         guard let name = self.name.text?.replacingOccurrences(of: "|", with: "/") else {
             uploadDone()
-            return showError(controller: self, description: "Ton nom / pseudo est invalide")
+            return AZEntrepriseServer.showError(controller: self, description: "Ton nom / pseudo est invalide")
         }
         
         guard let desc = self.desc.text?.replacingOccurrences(of: "|", with: "/") else {
             uploadDone()
-            return showError(controller: self, description: "Ta description est invalide")
+            return AZEntrepriseServer.showError(controller: self, description: "Ta description est invalide")
         }
         
         guard let phone = self.phone.text?.replacingOccurrences(of: "|", with: "/") else {
             uploadDone()
-            return showError(controller: self, description: "Ton numéro de téléphone est invalide")
+            return AZEntrepriseServer.showError(controller: self, description: "Ton numéro de téléphone est invalide")
         }
         
         guard let passwd = self.passwd.text else {
             uploadDone()
-            return showError(controller: self, description: "Ton mot de passe est invalide")
+            return AZEntrepriseServer.showError(controller: self, description: "Ton mot de passe est invalide")
         }
         
         let price = self.price.titleForSegment(at: self.price.selectedSegmentIndex)
         let oor = self.offerOrRequest.titleForSegment(at: self.offerOrRequest.selectedSegmentIndex)
         
-        let data = "repet|\(name)|\(desc)|\(phone)|\(price!)|\(oor!)|\(sha256(forInput: passwd))"
+        let data = "repet|\(name)|\(desc)|\(phone)|\(price!)|\(oor!)|\(AZEntrepriseServer.sha256(forInput: passwd))"
         
-        uploadData(controller: self, data: data, passwd: "repetitoires", done: uploadDone)
+        AZEntrepriseServer.uploadData(controller: self, data: data, passwd: "repetitoires", done: uploadDone)
     }
 }

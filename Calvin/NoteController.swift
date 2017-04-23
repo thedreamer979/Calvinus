@@ -42,7 +42,7 @@ class NoteController : BasicController, UITableViewDataSource, UITableViewDelega
             } else if let value = Double(note.components(separatedBy: " ")[0]) {
                 decimalValue = value
             } else {
-                showError(controller: self, description: "Le format de la note est invalide")
+                AZEntrepriseServer.showError(controller: self, description: "Le format de la note est invalide")
                 return
             }
                 
@@ -55,7 +55,7 @@ class NoteController : BasicController, UITableViewDataSource, UITableViewDelega
                 
                 writeNotes()
             } else {
-                showError(controller: self, description: "La note doit être comprise entre 0 et 6")
+                AZEntrepriseServer.showError(controller: self, description: "La note doit être comprise entre 0 et 6")
             }
         }
     }

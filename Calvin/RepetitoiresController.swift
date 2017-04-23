@@ -21,6 +21,16 @@ class RepetitoiresController : UICollectionViewController, UICollectionViewDeleg
         if let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.load()
+    }
+    
+    func load() {
+        data.removeAll()
+        rawData.removeAll()
         
         if let news = UserDefaults.standard.stringArray(forKey: "offline-user-data") {
             for entry in news {
@@ -45,6 +55,13 @@ class RepetitoiresController : UICollectionViewController, UICollectionViewDeleg
         }
     }
     
+    func reload() {
+        self.load()
+        
+        self.collectionView?.reloadData()
+        self.collectionViewLayout.invalidateLayout()
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.data.count
     }
@@ -60,6 +77,6 @@ class RepetitoiresController : UICollectionViewController, UICollectionViewDeleg
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        requestDeletion(controller: self, data: self.rawData[indexPath.item])
+        AZEntrepriseServer.requestDeletion(controller: self, data: self.rawData[indexPath.item])
     }
 }

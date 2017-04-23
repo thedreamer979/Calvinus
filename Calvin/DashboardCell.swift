@@ -13,5 +13,6 @@ class DashboardCell : UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.layer.cornerRadius = 10.0
     }
 }

@@ -7,16 +7,40 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate : UIResponder, UIApplicationDelegate {
+class AppDelegate : UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
+    @available(iOS 10.0, *)
+    static let center = UNUserNotificationCenter.current()
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        login(controller: (window?.rootViewController)!, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: loginResponse)
+        if #available(iOS 10.0, *) {
+            AppDelegate.center.delegate = self
+            
+            let options: UNAuthorizationOptions = [.alert, .badge, .sound]
+            
+            AppDelegate.center.requestAuthorization(options: options) {
+                (granted, error) in
+                if !granted {
+                    print(error ?? "Undefined")
+                }
+            }
+        } else {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+        };
+        
+
+        AZEntrepriseServer.login(controller: window?.rootViewController, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: loginResponse)
         
         return true
+    }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        
+        application.applicationIconBadgeNumber = 0
     }
     
     func loginResponse(success : Bool) {
@@ -26,6 +50,11 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
                 self.window?.rootViewController?.present(storyboard.instantiateViewController(withIdentifier: "tutorial"), animated: true, completion: nil)
             }
         }
+    }
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

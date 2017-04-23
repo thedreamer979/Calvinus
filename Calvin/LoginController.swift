@@ -26,9 +26,9 @@ class LoginController : UIViewController {
 
         self.state.text = "Téléchargement en cours..."
         
-        let hash = sha256(forInput: (name.text?.uppercased().trimmingCharacters(in: .whitespaces))!)
+        let hash = AZEntrepriseServer.sha256(forInput: (name.text?.uppercased().trimmingCharacters(in: .whitespaces))!)
         
-        login(controller: self, userHash: hash, onResponse: loginResponse)
+        AZEntrepriseServer.login(controller: self, userHash: hash, onResponse: loginResponse)
         
         self.progress.setProgress(0.1, animated: true)
     }

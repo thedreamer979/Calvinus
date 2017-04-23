@@ -20,6 +20,15 @@ class LiberationsController : UICollectionViewController, UICollectionViewDelega
         if let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.load()
+    }
+    
+    func load() {
+        data.removeAll()
         
         if let news = UserDefaults.standard.stringArray(forKey: "offline-user-data") {
             for entry in news {
@@ -36,6 +45,12 @@ class LiberationsController : UICollectionViewController, UICollectionViewDelega
                 }
             }
         }
+    }
+    
+    func reload() {
+        self.load()
+        self.collectionView?.reloadData()
+        self.collectionViewLayout.invalidateLayout()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,6 +70,6 @@ class LiberationsController : UICollectionViewController, UICollectionViewDelega
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let dataString = self.data[indexPath.item].string.replacingOccurrences(of: "<section style='color: white; text-align: justify; font-size: 1.5em'>", with: "").replacingOccurrences(of: "</section>", with: "")
 
-        requestDeletion(controller: self, data: dataString)
+        AZEntrepriseServer.requestDeletion(controller: self, data: dataString)
     }
 }

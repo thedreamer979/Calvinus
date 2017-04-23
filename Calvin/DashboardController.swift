@@ -39,17 +39,25 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
         if let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        self.updateCalendar()
+        self.reload()
+    }
+    
+    func reload() {
+        // self.updateCalendar()
         self.updateNews()
     }
     
     func updateNews() {
         self.news.removeAll()
-
+        
         if let news = UserDefaults.standard.stringArray(forKey: "offline-user-data") {
             for entry in news {
-                if entry.characters[entry.startIndex] == "<" {
+                if entry.hasPrefix("<") {
                     do {
                         let data = "<section style='color: white; text-align: justify; font-size: 1.5em'>" + entry + "</section>"
                         try self.news.append(NSAttributedString(data: data.data(using: .utf16)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil))
@@ -57,6 +65,11 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
                 }
             }
         }
+        
+        self.news.reverse()
+        
+        self.collectionView?.reloadData()
+        self.collectionViewLayout.invalidateLayout()
     }
     
     func updateCalendar() {
@@ -128,7 +141,6 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
         
         cell.text.attributedText = self.news[indexPath.item]
         cell.text.preferredMaxLayoutWidth = collectionView.bounds.width - 40
-        cell.layer.cornerRadius = 10.0
         
         return cell
     }

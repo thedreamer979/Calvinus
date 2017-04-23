@@ -31,10 +31,14 @@
 		D5417F0C1E62E38100030E15 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5417F0B1E62E38100030E15 /* TutorialController.swift */; };
 		D5417F101E62FE2100030E15 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5417F0F1E62FE2100030E15 /* BackgroundView.swift */; };
 		D542E14A1E6B60BE00991EFB /* TimetableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D542E1491E6B60BE00991EFB /* TimetableController.swift */; };
+		D5517D871E9E9AE30042A815 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5517D861E9E9AE30042A815 /* Restaurant.swift */; };
+		D5517D891E9E9B950042A815 /* FoodMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5517D881E9E9B950042A815 /* FoodMapController.swift */; };
 		D55425271E7455B700B09891 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55425261E7455B700B09891 /* NoteController.swift */; };
 		D57942E11E6C91D80071E286 /* GoToCalvinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57942E01E6C91D80071E286 /* GoToCalvinController.swift */; };
 		D5805D041E8445F700837675 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5805D031E8445F700837675 /* CommunityController.swift */; };
 		D59B66AE1E6C4100005DFE39 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B66AD1E6C4100005DFE39 /* LoginController.swift */; };
+		D5A80AF31EABCD5200C95B6C /* CafeteriaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A80AF21EABCD5200C95B6C /* CafeteriaController.swift */; };
+		D5C6DE6C1EAB8D5D006CECEB /* FoodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6DE6B1EAB8D5D006CECEB /* FoodController.swift */; };
 		D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */; };
 		D5F9D6481E6A194100EFE03E /* BasicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F9D6471E6A194100EFE03E /* BasicController.swift */; };
 		D5FC1D981E706C52009C3EE6 /* NotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC1D971E706C52009C3EE6 /* NotesController.swift */; };
@@ -90,11 +94,17 @@
 		D5417F0B1E62E38100030E15 /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
 		D5417F0F1E62FE2100030E15 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		D542E1491E6B60BE00991EFB /* TimetableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableController.swift; sourceTree = "<group>"; };
+		D54FA03D1EAC6E7400FD6D14 /* Calvin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calvin.entitlements; sourceTree = "<group>"; };
+		D54FA03E1EAC6F4D00FD6D14 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		D5517D861E9E9AE30042A815 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		D5517D881E9E9B950042A815 /* FoodMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodMapController.swift; sourceTree = "<group>"; };
 		D55425261E7455B700B09891 /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		D57942E01E6C91D80071E286 /* GoToCalvinController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoToCalvinController.swift; sourceTree = "<group>"; };
 		D5805D031E8445F700837675 /* CommunityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
 		D59B66AD1E6C4100005DFE39 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		D5A80AF21EABCD5200C95B6C /* CafeteriaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeteriaController.swift; sourceTree = "<group>"; };
+		D5C6DE6B1EAB8D5D006CECEB /* FoodController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodController.swift; sourceTree = "<group>"; };
 		D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZEntrepriseServer.swift; sourceTree = "<group>"; };
 		D5F9D6471E6A194100EFE03E /* BasicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicController.swift; sourceTree = "<group>"; };
 		D5FC1D971E706C52009C3EE6 /* NotesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesController.swift; sourceTree = "<group>"; };
@@ -162,6 +172,7 @@
 		D521F0811E3BC50E0058026C /* Calvin */ = {
 			isa = PBXGroup;
 			children = (
+				D54FA03D1EAC6E7400FD6D14 /* Calvin.entitlements */,
 				D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */,
 				D521F08E1E3BC50E0058026C /* Info.plist */,
 				D51894511E86DD150053F0BF /* AdministrationController.swift */,
@@ -172,6 +183,8 @@
 				D5F9D6471E6A194100EFE03E /* BasicController.swift */,
 				D50F96191E6DCD1400E126DE /* BoreController.swift */,
 				D50732E21E6CA09D00B6A98D /* Calvin.swift */,
+				D5517D861E9E9AE30042A815 /* Restaurant.swift */,
+				D5A80AF21EABCD5200C95B6C /* CafeteriaController.swift */,
 				D5805D031E8445F700837675 /* CommunityController.swift */,
 				D51EAC601E7D851500428FE8 /* ConversationCell.swift */,
 				D51EAC611E7D851500428FE8 /* ConversationDataSource.swift */,
@@ -179,6 +192,8 @@
 				D512CA771E64B748006861C1 /* DashboardCell.swift */,
 				D521F0841E3BC50E0058026C /* DashboardController.swift */,
 				D57942E01E6C91D80071E286 /* GoToCalvinController.swift */,
+				D5C6DE6B1EAB8D5D006CECEB /* FoodController.swift */,
+				D5517D881E9E9B950042A815 /* FoodMapController.swift */,
 				D518944D1E86DC9F0053F0BF /* LiberationsController.swift */,
 				D59B66AD1E6C4100005DFE39 /* LoginController.swift */,
 				D51EAC631E7D851500428FE8 /* Message.swift */,
@@ -218,6 +233,7 @@
 		EA5D23E96CE4CD4B34DE94B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D54FA03E1EAC6F4D00FD6D14 /* UserNotifications.framework */,
 				36F827CEDA8C25212D42B25B /* Pods_Calvin.framework */,
 			);
 			name = Frameworks;
@@ -296,6 +312,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = VAX3WKM5B8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					D521F0921E3BC50E0058026C = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -421,8 +442,10 @@
 				D50F961A1E6DCD1400E126DE /* BoreController.swift in Sources */,
 				D521F0851E3BC50E0058026C /* DashboardController.swift in Sources */,
 				D51EAC6C1E7D851500428FE8 /* ThinkingCell.swift in Sources */,
+				D5517D891E9E9B950042A815 /* FoodMapController.swift in Sources */,
 				D51EAC661E7D851500428FE8 /* AskCell.swift in Sources */,
 				D50732E31E6CA09D00B6A98D /* Calvin.swift in Sources */,
+				D5C6DE6C1EAB8D5D006CECEB /* FoodController.swift in Sources */,
 				D51EAC691E7D851500428FE8 /* ConversationViewController.swift in Sources */,
 				D5805D041E8445F700837675 /* CommunityController.swift in Sources */,
 				D518944E1E86DC9F0053F0BF /* LiberationsController.swift in Sources */,
@@ -435,6 +458,8 @@
 				D51EAC6A1E7D851500428FE8 /* Message.swift in Sources */,
 				D542E14A1E6B60BE00991EFB /* TimetableController.swift in Sources */,
 				D5F9D6481E6A194100EFE03E /* BasicController.swift in Sources */,
+				D5A80AF31EABCD5200C95B6C /* CafeteriaController.swift in Sources */,
+				D5517D871E9E9AE30042A815 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +616,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = VAX3WKM5B8;
 				INFOPLIST_FILE = Calvin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.azentreprise.calvin.Calvinus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -611,6 +637,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = VAX3WKM5B8;
 				INFOPLIST_FILE = Calvin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.azentreprise.calvin.Calvinus;
 				PRODUCT_NAME = "$(TARGET_NAME)";

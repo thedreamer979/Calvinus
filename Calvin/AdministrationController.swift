@@ -41,18 +41,18 @@ class AdministrationController : BasicController, UITextFieldDelegate {
         self.loading.startAnimating()
         self.view.endEditing(true)
         
-        let data = self.data.text.replacingOccurrences(of: "|", with: "/")
+        let data = self.data.text!
         
         if data.isEmpty {
             uploadDone()
-            return showError(controller: self, description: "Tes données sont invalides")
+            return AZEntrepriseServer.showError(controller: self, description: "Tes données sont invalides")
         }
         
         guard let passwd = self.passwd.text else {
             uploadDone()
-            return showError(controller: self, description: "Mot de passe invalide")
+            return AZEntrepriseServer.showError(controller: self, description: "Mot de passe invalide")
         }
                 
-        uploadData(controller: self, data: data, passwd: passwd, done: uploadDone)
+        AZEntrepriseServer.uploadData(controller: self, data: data, passwd: passwd, done: uploadDone)
     }
 }

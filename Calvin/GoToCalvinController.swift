@@ -25,7 +25,11 @@ class GoToCalvinController : UIViewController, MKMapViewDelegate, CLLocationMana
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestLocation()
+            
+            if #available(iOS 9.0, *) {
+                locationManager.requestLocation()
+            }
+            
             locationManager.startUpdatingLocation()
         }
         
@@ -52,7 +56,7 @@ class GoToCalvinController : UIViewController, MKMapViewDelegate, CLLocationMana
                 } else {
                     if let error = error {
                         print(error)
-                        showError(controller: self, description: error.localizedDescription)
+                        AZEntrepriseServer.showError(controller: self, description: error.localizedDescription)
                     }
                 }
             }
