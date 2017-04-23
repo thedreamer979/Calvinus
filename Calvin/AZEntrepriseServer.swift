@@ -73,7 +73,10 @@ class AZEntrepriseServer {
                                 print("Addition: \(element)")
                             
                                 if elements?.count == 2 {
-                                    notify(forEvent: realData.components(separatedBy: "<")[1])
+                                    let components = realData.components(separatedBy: "<")
+                                    if components.count > 1 {
+                                        notify(forEvent: components[1])
+                                    }
                                 }
                             }
                         }

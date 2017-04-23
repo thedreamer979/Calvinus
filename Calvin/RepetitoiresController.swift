@@ -21,10 +21,7 @@ class RepetitoiresController : UICollectionViewController, UICollectionViewDeleg
         if let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        
         self.load()
     }
     

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -677,13 +678,13 @@ toutes les possiblités que t'offre cette application.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le menu du jour n'est pas disponible pour le moment." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="70C-Jv-S40">
-                                <rect key="frame" x="16" y="128" width="343" height="519"/>
+                                <rect key="frame" x="16" y="172" width="343" height="475"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La Caf' Calviniste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="5gf-4r-mts">
-                                <rect key="frame" x="24" y="28" width="327" height="92"/>
+                                <rect key="frame" x="24" y="72" width="327" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="I8k-yy-DlE"/>
                                 </constraints>
@@ -703,6 +704,7 @@ toutes les possiblités que t'offre cette application.</string>
                             <constraint firstItem="70C-Jv-S40" firstAttribute="leading" secondItem="cLN-oO-TEb" secondAttribute="leadingMargin" id="pq9-Fn-Wiw"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="label" destination="70C-Jv-S40" id="Zae-h8-qZ6"/>
                     </connections>
@@ -793,34 +795,55 @@ toutes les possiblités que t'offre cette application.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maisonsandwich" translatesAutoresizingMaskIntoConstraints="NO" id="Z99-ji-Bz8">
-                                <rect key="frame" x="16" y="20" width="343" height="223"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="223" id="H8F-X9-6F2"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="72" width="343" height="152"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="15T-jQ-BlU">
-                                <rect key="frame" x="16" y="251" width="343" height="408"/>
-                                <string key="text">Menu Calviniste: un sandwich et une boisson pour seulement 10.- !
-
-Les différents sandwichs:
-
-Thon, Poulet, jambon cuit, poulet exotique, tomate mozzarella, dinde, salami, végétarien, fromage (Edam), jambon cuit fromage, jambon cru mozzarella, jambon cru, poulet braisé, Kebab veau, poulet, roastbeef, poulet pané, poulet Yakitori, saveur crabe, saumon fumé, jambon cru fromage, jambon cru brie</string>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="42"/>
+                                <rect key="frame" x="16" y="361" width="343" height="298"/>
+                                <string key="text">Thon, poulet, jambon cuit, poulet exotique, tomate mozzarella, dinde, salami, végétarien, fromage (Edam), jambon cuit fromage, jambon cru mozzarella, jambon cru, poulet braisé, Kebab veau, poulet, roastbeef, poulet pané, poulet Yakitori, saveur crabe, saumon fumé, jambon cru fromage, jambon cru brie</string>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="25"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgY-0V-Qxa">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Iso-M6-EtV"/>
+                                </constraints>
+                                <string key="text">Les différents sandwichs:
+</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Calviniste: un sandwich et une boisson pour seulement 10.- !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekn-8J-0Ms">
+                                <rect key="frame" x="16" y="232" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="saT-UL-O84"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.67052667470000005" green="0.3035507838" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="leading" secondItem="15T-jQ-BlU" secondAttribute="leading" id="3oa-nP-NB5"/>
-                            <constraint firstItem="15T-jQ-BlU" firstAttribute="top" secondItem="Z99-ji-Bz8" secondAttribute="bottom" constant="8" symbolic="YES" id="OsR-5w-qcA"/>
-                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="leading" secondItem="H8m-w9-HVI" secondAttribute="leadingMargin" id="Pw8-Vz-9aT"/>
-                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="top" secondItem="p6x-rF-dq7" secondAttribute="bottom" id="bC1-Of-Qry"/>
-                            <constraint firstItem="lMU-j4-dEG" firstAttribute="top" secondItem="15T-jQ-BlU" secondAttribute="bottom" constant="8" symbolic="YES" id="cuw-3k-QL8"/>
-                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="trailing" secondItem="15T-jQ-BlU" secondAttribute="trailing" id="nmX-wI-Cya"/>
-                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="trailing" secondItem="H8m-w9-HVI" secondAttribute="trailingMargin" id="t6l-Oj-Mns"/>
+                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="leading" secondItem="H8m-w9-HVI" secondAttribute="leadingMargin" id="4Pq-2k-oD5"/>
+                            <constraint firstItem="RgY-0V-Qxa" firstAttribute="centerY" secondItem="H8m-w9-HVI" secondAttribute="centerY" id="AeU-CU-rdF"/>
+                            <constraint firstItem="RgY-0V-Qxa" firstAttribute="leading" secondItem="15T-jQ-BlU" secondAttribute="leading" id="HA3-GV-FbT"/>
+                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="trailing" secondItem="ekn-8J-0Ms" secondAttribute="trailing" id="K7r-yU-OLB"/>
+                            <constraint firstItem="lMU-j4-dEG" firstAttribute="top" secondItem="15T-jQ-BlU" secondAttribute="bottom" constant="8" symbolic="YES" id="OAu-3v-3U7"/>
+                            <constraint firstItem="15T-jQ-BlU" firstAttribute="top" secondItem="RgY-0V-Qxa" secondAttribute="bottom" constant="17" id="UAJ-H5-qw9"/>
+                            <constraint firstItem="ekn-8J-0Ms" firstAttribute="trailing" secondItem="RgY-0V-Qxa" secondAttribute="trailing" id="WfE-uC-dDx"/>
+                            <constraint firstItem="ekn-8J-0Ms" firstAttribute="leading" secondItem="RgY-0V-Qxa" secondAttribute="leading" id="X59-Ru-SNX"/>
+                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="leading" secondItem="ekn-8J-0Ms" secondAttribute="leading" id="aoW-EI-QkD"/>
+                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="top" secondItem="p6x-rF-dq7" secondAttribute="bottom" constant="8" symbolic="YES" id="fDR-4Z-dFS"/>
+                            <constraint firstItem="RgY-0V-Qxa" firstAttribute="trailing" secondItem="15T-jQ-BlU" secondAttribute="trailing" id="gxc-em-dGB"/>
+                            <constraint firstItem="RgY-0V-Qxa" firstAttribute="top" secondItem="ekn-8J-0Ms" secondAttribute="bottom" constant="41" id="i5x-gt-TQu"/>
+                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="trailing" secondItem="H8m-w9-HVI" secondAttribute="trailingMargin" id="lwN-lM-EO2"/>
+                            <constraint firstItem="ekn-8J-0Ms" firstAttribute="top" secondItem="Z99-ji-Bz8" secondAttribute="bottom" constant="8" symbolic="YES" id="x0d-FJ-vzs"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKu-Dj-dc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -887,13 +910,14 @@ Thon, Poulet, jambon cuit, poulet exotique, tomate mozzarella, dinde, salami, v�
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blaqk" translatesAutoresizingMaskIntoConstraints="NO" id="RmZ-fn-J6x">
-                                <rect key="frame" x="16" y="20" width="343" height="84"/>
+                                <rect key="frame" x="16" y="64" width="343" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="yoX-HB-mSr"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="IKt-zb-kg7">
-                                <rect key="frame" x="16" y="112" width="343" height="547"/>
-                                <string key="text">15% de réduction pour tout achat à l'emporter!
-
-Menu étudiant:
+                                <rect key="frame" x="16" y="231" width="343" height="428"/>
+                                <string key="text">Menu étudiant:
 	Classic ou cheese Burger
 	Frites ou potatoes
 	Deux sauces au choix
@@ -913,22 +937,35 @@ Les différents burgers:
 	Foccacia à la Mozzarella 11.-
 	Salade poulet grillé et mozzarella cerises 14.90
 	Mini salade de poulet grillé aux herbes 8.90</string>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="27"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15% de réduction pour tout achat à l'emporter!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hr-1X-7Tr">
+                                <rect key="frame" x="16" y="156" width="343" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="h7c-IN-poa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.67052667470000005" green="0.3035507838" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RmZ-fn-J6x" firstAttribute="leading" secondItem="IKt-zb-kg7" secondAttribute="leading" id="1vu-qE-h9v"/>
-                            <constraint firstItem="RmZ-fn-J6x" firstAttribute="trailing" secondItem="Xa0-S6-RuO" secondAttribute="trailingMargin" id="CxC-Zz-Kzm"/>
-                            <constraint firstItem="RmZ-fn-J6x" firstAttribute="leading" secondItem="Xa0-S6-RuO" secondAttribute="leadingMargin" id="PA4-LB-u3J"/>
-                            <constraint firstItem="IKt-zb-kg7" firstAttribute="top" secondItem="RmZ-fn-J6x" secondAttribute="bottom" constant="8" symbolic="YES" id="WA3-rL-MfP"/>
-                            <constraint firstItem="RmZ-fn-J6x" firstAttribute="top" secondItem="tf3-WJ-fCc" secondAttribute="bottom" id="i9P-qx-Aco"/>
-                            <constraint firstItem="RmZ-fn-J6x" firstAttribute="trailing" secondItem="IKt-zb-kg7" secondAttribute="trailing" id="la1-2Y-aa3"/>
-                            <constraint firstItem="Kgr-9x-Pgu" firstAttribute="top" secondItem="IKt-zb-kg7" secondAttribute="bottom" constant="8" symbolic="YES" id="rpp-vl-ItA"/>
+                            <constraint firstItem="RmZ-fn-J6x" firstAttribute="leading" secondItem="3Hr-1X-7Tr" secondAttribute="leading" id="3mg-EU-vKo"/>
+                            <constraint firstItem="RmZ-fn-J6x" firstAttribute="trailing" secondItem="Xa0-S6-RuO" secondAttribute="trailingMargin" id="5UA-VF-67M"/>
+                            <constraint firstItem="3Hr-1X-7Tr" firstAttribute="trailing" secondItem="IKt-zb-kg7" secondAttribute="trailing" id="6DK-q8-EQM"/>
+                            <constraint firstItem="3Hr-1X-7Tr" firstAttribute="top" secondItem="RmZ-fn-J6x" secondAttribute="bottom" constant="8" symbolic="YES" id="A4P-YF-T5M"/>
+                            <constraint firstItem="3Hr-1X-7Tr" firstAttribute="leading" secondItem="IKt-zb-kg7" secondAttribute="leading" id="K2b-ba-PYM"/>
+                            <constraint firstItem="RmZ-fn-J6x" firstAttribute="leading" secondItem="Xa0-S6-RuO" secondAttribute="leadingMargin" id="KZz-0u-c0V"/>
+                            <constraint firstItem="Kgr-9x-Pgu" firstAttribute="top" secondItem="IKt-zb-kg7" secondAttribute="bottom" constant="8" symbolic="YES" id="MxF-Pg-chX"/>
+                            <constraint firstItem="RmZ-fn-J6x" firstAttribute="trailing" secondItem="3Hr-1X-7Tr" secondAttribute="trailing" id="pri-Lu-TUM"/>
+                            <constraint firstItem="RmZ-fn-J6x" firstAttribute="top" secondItem="tf3-WJ-fCc" secondAttribute="bottom" id="qut-9q-HDk"/>
+                            <constraint firstItem="IKt-zb-kg7" firstAttribute="top" secondItem="3Hr-1X-7Tr" secondAttribute="bottom" constant="8" symbolic="YES" id="ySF-6D-duh"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gi3-Hi-VrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -946,8 +983,18 @@ Les différents burgers:
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8J-HC-UJ4">
+                                <rect key="frame" x="46" y="72" width="282" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aex-1X-I9T"/>
+                                </constraints>
+                                <state key="normal" title="Clique ici pour bénéficier d'une réduction"/>
+                                <connections>
+                                    <segue destination="bnT-Qo-W9e" kind="show" id="kys-cB-IGB"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4M-yv-MwJ" customClass="DashboardCell" customModule="Calvin" customModuleProvider="target">
-                                <rect key="frame" x="16" y="188" width="343" height="108"/>
+                                <rect key="frame" x="16" y="226" width="343" height="108"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maisonsandwich" translatesAutoresizingMaskIntoConstraints="NO" id="C67-Un-3hr">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="108"/>
@@ -955,7 +1002,7 @@ Les différents burgers:
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-21%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dA-35-RmY">
                                         <rect key="frame" x="225" y="27" width="110" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="110" id="uuI-7R-bJl"/>
+                                            <constraint firstAttribute="width" constant="110" id="opj-fS-8Mu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -965,20 +1012,20 @@ Les différents burgers:
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="C67-Un-3hr" secondAttribute="trailing" id="3dJ-80-erJ"/>
-                                    <constraint firstItem="C67-Un-3hr" firstAttribute="leading" secondItem="f4M-yv-MwJ" secondAttribute="leading" id="541-RT-eCh"/>
-                                    <constraint firstAttribute="bottom" secondItem="C67-Un-3hr" secondAttribute="bottom" id="C6J-Vk-YQs"/>
-                                    <constraint firstItem="C67-Un-3hr" firstAttribute="centerY" secondItem="1dA-35-RmY" secondAttribute="centerY" id="Lpk-US-d50"/>
-                                    <constraint firstItem="1dA-35-RmY" firstAttribute="top" secondItem="f4M-yv-MwJ" secondAttribute="top" constant="27" id="PXQ-Ct-pzg"/>
-                                    <constraint firstItem="1dA-35-RmY" firstAttribute="trailing" secondItem="f4M-yv-MwJ" secondAttribute="trailingMargin" id="ZQI-FT-Qv7"/>
-                                    <constraint firstItem="C67-Un-3hr" firstAttribute="top" secondItem="f4M-yv-MwJ" secondAttribute="top" id="aLW-Ho-HQF"/>
+                                    <constraint firstItem="C67-Un-3hr" firstAttribute="top" secondItem="f4M-yv-MwJ" secondAttribute="top" id="NDv-1U-7Ib"/>
+                                    <constraint firstItem="1dA-35-RmY" firstAttribute="trailing" secondItem="f4M-yv-MwJ" secondAttribute="trailingMargin" id="UwB-be-Hcs"/>
+                                    <constraint firstAttribute="bottom" secondItem="C67-Un-3hr" secondAttribute="bottom" id="XGc-ER-ZuJ"/>
+                                    <constraint firstItem="C67-Un-3hr" firstAttribute="centerY" secondItem="1dA-35-RmY" secondAttribute="centerY" id="d0P-WC-gFd"/>
+                                    <constraint firstAttribute="trailing" secondItem="C67-Un-3hr" secondAttribute="trailing" id="dbI-Ua-RE4"/>
+                                    <constraint firstItem="C67-Un-3hr" firstAttribute="leading" secondItem="f4M-yv-MwJ" secondAttribute="leading" id="kNN-Pb-gJo"/>
+                                    <constraint firstItem="1dA-35-RmY" firstAttribute="top" secondItem="f4M-yv-MwJ" secondAttribute="top" constant="27" id="t28-e9-Stj"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="rEd-zo-Z7J" appends="YES" id="bJ1-5t-jtg"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jb-Kp-FmV" customClass="DashboardCell" customModule="Calvin" customModuleProvider="target">
-                                <rect key="frame" x="16" y="72" width="343" height="108"/>
+                                <rect key="frame" x="16" y="110" width="343" height="108"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La Caf' Calviniste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="SEx-2j-du6">
                                         <rect key="frame" x="8" y="16" width="327" height="92"/>
@@ -990,22 +1037,22 @@ Les différents burgers:
                                 <color key="backgroundColor" red="1" green="0.8269124718432852" blue="0.77754946316114348" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="SEx-2j-du6" firstAttribute="top" secondItem="8jb-Kp-FmV" secondAttribute="top" constant="16" id="8YW-F4-NBF"/>
-                                    <constraint firstItem="SEx-2j-du6" firstAttribute="trailing" secondItem="8jb-Kp-FmV" secondAttribute="trailingMargin" id="M9n-7N-FEh"/>
-                                    <constraint firstAttribute="bottom" secondItem="SEx-2j-du6" secondAttribute="bottom" id="QZV-Pb-TeH"/>
-                                    <constraint firstItem="SEx-2j-du6" firstAttribute="leading" secondItem="8jb-Kp-FmV" secondAttribute="leadingMargin" id="lti-tv-4zA"/>
+                                    <constraint firstItem="SEx-2j-du6" firstAttribute="leading" secondItem="8jb-Kp-FmV" secondAttribute="leadingMargin" id="4c0-rV-6lk"/>
+                                    <constraint firstItem="SEx-2j-du6" firstAttribute="trailing" secondItem="8jb-Kp-FmV" secondAttribute="trailingMargin" id="51e-7S-Gae"/>
+                                    <constraint firstAttribute="bottom" secondItem="SEx-2j-du6" secondAttribute="bottom" id="EoM-fB-4FK"/>
+                                    <constraint firstItem="SEx-2j-du6" firstAttribute="top" secondItem="8jb-Kp-FmV" secondAttribute="top" constant="16" id="bya-Oe-7Vw"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Ke5-YW-iI8" appends="YES" id="dYZ-cc-v3D"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DcZ-Td-w3D" customClass="DashboardCell" customModule="Calvin" customModuleProvider="target">
-                                <rect key="frame" x="16" y="304" width="343" height="108"/>
+                                <rect key="frame" x="16" y="342" width="343" height="108"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-15%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K67-YN-iUY">
                                         <rect key="frame" x="225" y="27" width="110" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="110" id="2sm-GO-oav"/>
+                                            <constraint firstAttribute="width" constant="110" id="Bae-7P-Wj7"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -1018,25 +1065,25 @@ Les différents burgers:
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="K67-YN-iUY" firstAttribute="trailing" secondItem="DcZ-Td-w3D" secondAttribute="trailingMargin" id="3Ej-wO-C1I"/>
-                                    <constraint firstItem="Jdc-nu-jxX" firstAttribute="leading" secondItem="DcZ-Td-w3D" secondAttribute="leading" constant="30" id="3GN-DF-wnl"/>
-                                    <constraint firstItem="K67-YN-iUY" firstAttribute="top" secondItem="DcZ-Td-w3D" secondAttribute="top" constant="27" id="IWR-q3-pfa"/>
-                                    <constraint firstItem="Jdc-nu-jxX" firstAttribute="centerY" secondItem="K67-YN-iUY" secondAttribute="centerY" id="Zh4-hy-rxH"/>
-                                    <constraint firstItem="Jdc-nu-jxX" firstAttribute="centerY" secondItem="DcZ-Td-w3D" secondAttribute="centerY" id="klU-q0-0wS"/>
-                                    <constraint firstItem="Jdc-nu-jxX" firstAttribute="top" secondItem="DcZ-Td-w3D" secondAttribute="top" constant="30" id="oxZ-HM-GYX"/>
-                                    <constraint firstItem="Jdc-nu-jxX" firstAttribute="centerX" secondItem="DcZ-Td-w3D" secondAttribute="centerX" id="pVL-dr-Yr5"/>
+                                    <constraint firstItem="Jdc-nu-jxX" firstAttribute="top" secondItem="DcZ-Td-w3D" secondAttribute="top" constant="30" id="0Mb-1E-XaS"/>
+                                    <constraint firstItem="K67-YN-iUY" firstAttribute="trailing" secondItem="DcZ-Td-w3D" secondAttribute="trailingMargin" id="0PT-2R-fan"/>
+                                    <constraint firstItem="Jdc-nu-jxX" firstAttribute="centerX" secondItem="DcZ-Td-w3D" secondAttribute="centerX" id="DwQ-FM-wqM"/>
+                                    <constraint firstItem="K67-YN-iUY" firstAttribute="top" secondItem="DcZ-Td-w3D" secondAttribute="top" constant="27" id="OE7-DL-RQx"/>
+                                    <constraint firstItem="Jdc-nu-jxX" firstAttribute="leading" secondItem="DcZ-Td-w3D" secondAttribute="leading" constant="30" id="Qvp-x0-YVG"/>
+                                    <constraint firstItem="Jdc-nu-jxX" firstAttribute="centerY" secondItem="DcZ-Td-w3D" secondAttribute="centerY" id="rDw-e2-yPo"/>
+                                    <constraint firstItem="Jdc-nu-jxX" firstAttribute="centerY" secondItem="K67-YN-iUY" secondAttribute="centerY" id="uMD-Rb-pHN"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="gZb-NK-h4O" appends="YES" id="U4x-DA-SsT"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qf-8m-0tU" customClass="DashboardCell" customModule="Calvin" customModuleProvider="target">
-                                <rect key="frame" x="16" y="420" width="343" height="108"/>
+                                <rect key="frame" x="16" y="458" width="343" height="108"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-10%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHQ-78-He3">
                                         <rect key="frame" x="225" y="27" width="110" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="110" id="T8u-VW-mSJ"/>
+                                            <constraint firstAttribute="width" constant="110" id="4Pl-rC-182"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -1049,13 +1096,13 @@ Les différents burgers:
                                 <color key="backgroundColor" red="0.67052667471754457" green="0.30355078375062272" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="UOR-7j-lL6" secondAttribute="trailing" id="Ff8-Pp-UYt"/>
-                                    <constraint firstItem="DHQ-78-He3" firstAttribute="top" secondItem="6qf-8m-0tU" secondAttribute="top" constant="27" id="IN2-Gh-Y73"/>
-                                    <constraint firstItem="DHQ-78-He3" firstAttribute="trailing" secondItem="6qf-8m-0tU" secondAttribute="trailingMargin" id="Kqp-uk-ch6"/>
-                                    <constraint firstItem="UOR-7j-lL6" firstAttribute="centerY" secondItem="DHQ-78-He3" secondAttribute="centerY" id="MYc-pM-9ZY"/>
-                                    <constraint firstAttribute="bottom" secondItem="UOR-7j-lL6" secondAttribute="bottom" id="QWF-gZ-uGk"/>
-                                    <constraint firstItem="UOR-7j-lL6" firstAttribute="leading" secondItem="6qf-8m-0tU" secondAttribute="leading" id="nVH-eM-NCI"/>
-                                    <constraint firstItem="UOR-7j-lL6" firstAttribute="top" secondItem="6qf-8m-0tU" secondAttribute="top" id="tJB-4l-nG2"/>
+                                    <constraint firstItem="UOR-7j-lL6" firstAttribute="top" secondItem="6qf-8m-0tU" secondAttribute="top" id="GiD-B2-7b7"/>
+                                    <constraint firstAttribute="bottom" secondItem="UOR-7j-lL6" secondAttribute="bottom" id="Lxl-tj-Bu5"/>
+                                    <constraint firstItem="DHQ-78-He3" firstAttribute="trailing" secondItem="6qf-8m-0tU" secondAttribute="trailingMargin" id="Pyn-GH-bnl"/>
+                                    <constraint firstItem="UOR-7j-lL6" firstAttribute="centerY" secondItem="DHQ-78-He3" secondAttribute="centerY" id="TkO-8v-sox"/>
+                                    <constraint firstItem="UOR-7j-lL6" firstAttribute="leading" secondItem="6qf-8m-0tU" secondAttribute="leading" id="VzX-o8-zHO"/>
+                                    <constraint firstAttribute="trailing" secondItem="UOR-7j-lL6" secondAttribute="trailing" id="aSE-3A-Lbf"/>
+                                    <constraint firstItem="DHQ-78-He3" firstAttribute="top" secondItem="6qf-8m-0tU" secondAttribute="top" constant="27" id="tjA-gG-yMO"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="LhR-PW-1zc" appends="YES" id="fZ1-Tn-2u3"/>
@@ -1064,22 +1111,24 @@ Les différents burgers:
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6qf-8m-0tU" firstAttribute="top" secondItem="K5f-Lh-dwu" secondAttribute="top" constant="420" id="4LK-bg-luP"/>
-                            <constraint firstItem="8jb-Kp-FmV" firstAttribute="top" secondItem="hbY-wu-Xng" secondAttribute="bottom" constant="8" symbolic="YES" id="Bog-HQ-TYR"/>
-                            <constraint firstItem="DcZ-Td-w3D" firstAttribute="leading" secondItem="6qf-8m-0tU" secondAttribute="leading" id="PgE-X7-Mm7"/>
-                            <constraint firstItem="f4M-yv-MwJ" firstAttribute="trailing" secondItem="DcZ-Td-w3D" secondAttribute="trailing" id="Toa-Xn-JYb"/>
-                            <constraint firstItem="8jb-Kp-FmV" firstAttribute="trailing" secondItem="K5f-Lh-dwu" secondAttribute="trailingMargin" id="VEZ-JY-Gsi"/>
-                            <constraint firstItem="8jb-Kp-FmV" firstAttribute="leading" secondItem="K5f-Lh-dwu" secondAttribute="leadingMargin" id="Ve7-b0-Wxi"/>
-                            <constraint firstItem="f4M-yv-MwJ" firstAttribute="leading" secondItem="DcZ-Td-w3D" secondAttribute="leading" id="ZGj-G4-2hc"/>
-                            <constraint firstItem="6qf-8m-0tU" firstAttribute="top" secondItem="DcZ-Td-w3D" secondAttribute="bottom" constant="8" symbolic="YES" id="azw-bX-T6n"/>
-                            <constraint firstItem="DcZ-Td-w3D" firstAttribute="top" secondItem="f4M-yv-MwJ" secondAttribute="bottom" constant="8" symbolic="YES" id="dNG-xY-cqT"/>
-                            <constraint firstItem="rRY-5N-sPJ" firstAttribute="top" secondItem="6qf-8m-0tU" secondAttribute="bottom" constant="139" id="fxj-Lc-jkk"/>
-                            <constraint firstItem="8jb-Kp-FmV" firstAttribute="leading" secondItem="f4M-yv-MwJ" secondAttribute="leading" id="hG5-br-fTx"/>
-                            <constraint firstItem="DcZ-Td-w3D" firstAttribute="top" secondItem="K5f-Lh-dwu" secondAttribute="top" constant="304" id="kfT-eD-iBr"/>
-                            <constraint firstItem="8jb-Kp-FmV" firstAttribute="trailing" secondItem="f4M-yv-MwJ" secondAttribute="trailing" id="kiY-hl-Ndb"/>
-                            <constraint firstItem="f4M-yv-MwJ" firstAttribute="top" secondItem="K5f-Lh-dwu" secondAttribute="top" constant="188" id="pE9-fu-h62"/>
-                            <constraint firstItem="f4M-yv-MwJ" firstAttribute="top" secondItem="8jb-Kp-FmV" secondAttribute="bottom" constant="8" symbolic="YES" id="rnc-HI-TfF"/>
-                            <constraint firstItem="DcZ-Td-w3D" firstAttribute="trailing" secondItem="6qf-8m-0tU" secondAttribute="trailing" id="teD-7T-oLF"/>
+                            <constraint firstItem="DcZ-Td-w3D" firstAttribute="trailing" secondItem="6qf-8m-0tU" secondAttribute="trailing" id="6Zc-eZ-1eP"/>
+                            <constraint firstItem="6qf-8m-0tU" firstAttribute="top" secondItem="K5f-Lh-dwu" secondAttribute="top" constant="458" id="8wz-2t-9Wc"/>
+                            <constraint firstItem="8jb-Kp-FmV" firstAttribute="leading" secondItem="f4M-yv-MwJ" secondAttribute="leading" id="A5y-c9-AVl"/>
+                            <constraint firstItem="DcZ-Td-w3D" firstAttribute="top" secondItem="K5f-Lh-dwu" secondAttribute="top" constant="342" id="ApG-6w-Z5P"/>
+                            <constraint firstItem="W8J-HC-UJ4" firstAttribute="centerX" secondItem="8jb-Kp-FmV" secondAttribute="centerX" id="Ilw-PR-82F"/>
+                            <constraint firstItem="f4M-yv-MwJ" firstAttribute="leading" secondItem="DcZ-Td-w3D" secondAttribute="leading" id="J6q-vw-vaa"/>
+                            <constraint firstItem="6qf-8m-0tU" firstAttribute="top" secondItem="DcZ-Td-w3D" secondAttribute="bottom" constant="8" symbolic="YES" id="Ng1-oY-5nY"/>
+                            <constraint firstItem="DcZ-Td-w3D" firstAttribute="top" secondItem="f4M-yv-MwJ" secondAttribute="bottom" constant="8" symbolic="YES" id="S1F-Uk-PMY"/>
+                            <constraint firstItem="f4M-yv-MwJ" firstAttribute="top" secondItem="K5f-Lh-dwu" secondAttribute="top" constant="226" id="SgC-jS-TXe"/>
+                            <constraint firstItem="W8J-HC-UJ4" firstAttribute="top" secondItem="hbY-wu-Xng" secondAttribute="bottom" constant="8" symbolic="YES" id="Wut-U2-8rd"/>
+                            <constraint firstItem="8jb-Kp-FmV" firstAttribute="trailing" secondItem="K5f-Lh-dwu" secondAttribute="trailingMargin" id="YA7-1r-7i4"/>
+                            <constraint firstItem="f4M-yv-MwJ" firstAttribute="top" secondItem="8jb-Kp-FmV" secondAttribute="bottom" constant="8" symbolic="YES" id="g98-mr-vFU"/>
+                            <constraint firstItem="8jb-Kp-FmV" firstAttribute="trailing" secondItem="f4M-yv-MwJ" secondAttribute="trailing" id="he6-Ye-oaT"/>
+                            <constraint firstItem="rRY-5N-sPJ" firstAttribute="top" secondItem="6qf-8m-0tU" secondAttribute="bottom" constant="101" id="iNL-4e-Anm"/>
+                            <constraint firstItem="DcZ-Td-w3D" firstAttribute="leading" secondItem="6qf-8m-0tU" secondAttribute="leading" id="qjo-Dc-d4v"/>
+                            <constraint firstItem="f4M-yv-MwJ" firstAttribute="trailing" secondItem="DcZ-Td-w3D" secondAttribute="trailing" id="sh9-B4-Rwv"/>
+                            <constraint firstItem="8jb-Kp-FmV" firstAttribute="leading" secondItem="K5f-Lh-dwu" secondAttribute="leadingMargin" id="wre-0Z-TXb"/>
+                            <constraint firstItem="8jb-Kp-FmV" firstAttribute="top" secondItem="W8J-HC-UJ4" secondAttribute="bottom" constant="8" symbolic="YES" id="y1X-ut-8z2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Bouffe" id="29b-9L-wr1" userLabel="Maannnggggeeeeerrrrrr">
@@ -1133,13 +1182,13 @@ Les différents burgers:
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="streetgourmet" translatesAutoresizingMaskIntoConstraints="NO" id="Flw-PB-qyd">
-                                <rect key="frame" x="0.0" y="20" width="375" height="136"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="136"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="136" id="KEq-zs-gLP"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="uMI-G4-t4B">
-                                <rect key="frame" x="16" y="164" width="343" height="495"/>
+                                <rect key="frame" x="16" y="208" width="343" height="451"/>
                                 <string key="text">Réduction de 10% sur tout!
 
 Sandwich au porc 16.-
@@ -1166,6 +1215,7 @@ Pop-corn 2.-</string>
                             <constraint firstItem="Flw-PB-qyd" firstAttribute="top" secondItem="Mh6-rY-m0b" secondAttribute="bottom" id="arZ-5c-SW2"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L38-1w-oEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1206,6 +1256,39 @@ Pop-corn 2.-</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJU-li-Oqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1053.5999999999999" y="3304.4977511244379"/>
+        </scene>
+        <!--Basic Controller-->
+        <scene sceneID="2CG-g7-XKY">
+            <objects>
+                <viewController id="bnT-Qo-W9e" customClass="BasicController" customModule="Calvin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yP7-V3-VAe"/>
+                        <viewControllerLayoutGuide type="bottom" id="QJ9-cG-UnF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r1O-51-Ff4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="n0o-sw-H9J">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.67052667470000005" green="0.3035507838" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="L'offre est en cours de validation..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F75-IV-Nf7">
+                                <rect key="frame" x="16" y="72" width="343" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b26-MR-CQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.5999999999999" y="4042.1289355322342"/>
         </scene>
         <!--Passe-temps-->
         <scene sceneID="UAQ-Kx-HIB">
@@ -1691,7 +1774,7 @@ Pop-corn 2.-</string>
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fwj-ff-NPE" id="t8b-z7-8pm">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

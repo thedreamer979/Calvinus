@@ -16,7 +16,7 @@ class NotesController : BasicController, UITableViewDataSource, UITableViewDeleg
     var cours = [String]()
     var moyennes = [Double]()
     
-    let translations : [String: String] = ["PO": "Philosophie", "GE": "Géographie", "LA": "Latin", "MA": "Mathématiques", "EP": "Education physique", "AL": "Allemand", "IN": "Informatique", "GR": "Grec ancien", "FR": "Français", "BI":"Biologie", "PY": "Physique", "HI": "Histoire", "AN": "Anglais", "EC": "Economie", "DR": "Droit"]
+    let translations : [String: String] = ["PO": "Philosophie", "GE": "Géographie", "LA": "Latin", "MA": "Mathématiques", "EP": "Education physique", "AL": "Allemand", "IN": "Informatique", "GR": "Grec ancien", "FR": "Français", "BI":"Biologie", "PY": "Physique", "HI": "Histoire", "AN": "Anglais", "EC": "Economie", "DR": "Droit", "CH": "Chimie", "MU": "Musique"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
