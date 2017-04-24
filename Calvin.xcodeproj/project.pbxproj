@@ -38,6 +38,7 @@
 		D5805D041E8445F700837675 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5805D031E8445F700837675 /* CommunityController.swift */; };
 		D59B66AE1E6C4100005DFE39 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B66AD1E6C4100005DFE39 /* LoginController.swift */; };
 		D5A80AF31EABCD5200C95B6C /* CafeteriaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A80AF21EABCD5200C95B6C /* CafeteriaController.swift */; };
+		D5BBE7BA1EAE6EEA002E64A6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BBE7B91EAE6EEA002E64A6 /* NavigationController.swift */; };
 		D5C6DE6C1EAB8D5D006CECEB /* FoodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C6DE6B1EAB8D5D006CECEB /* FoodController.swift */; };
 		D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */; };
 		D5F9D6481E6A194100EFE03E /* BasicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F9D6471E6A194100EFE03E /* BasicController.swift */; };
@@ -104,6 +105,7 @@
 		D59B66AD1E6C4100005DFE39 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D5A80AF21EABCD5200C95B6C /* CafeteriaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeteriaController.swift; sourceTree = "<group>"; };
+		D5BBE7B91EAE6EEA002E64A6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D5C6DE6B1EAB8D5D006CECEB /* FoodController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodController.swift; sourceTree = "<group>"; };
 		D5DC9FC41E62045300EF5567 /* AZEntrepriseServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZEntrepriseServer.swift; sourceTree = "<group>"; };
 		D5F9D6471E6A194100EFE03E /* BasicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				D518944D1E86DC9F0053F0BF /* LiberationsController.swift */,
 				D59B66AD1E6C4100005DFE39 /* LoginController.swift */,
 				D51EAC631E7D851500428FE8 /* Message.swift */,
+				D5BBE7B91EAE6EEA002E64A6 /* NavigationController.swift */,
 				D55425261E7455B700B09891 /* NoteController.swift */,
 				D5FF84E91E748B8000278B88 /* NoteManager.swift */,
 				D5FC1D971E706C52009C3EE6 /* NotesController.swift */,
@@ -313,6 +316,9 @@
 						DevelopmentTeam = VAX3WKM5B8;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 0;
 							};
@@ -452,6 +458,7 @@
 				D5417F0C1E62E38100030E15 /* TutorialController.swift in Sources */,
 				D51EAC681E7D851500428FE8 /* ConversationDataSource.swift in Sources */,
 				D5DC9FC51E62045300EF5567 /* AZEntrepriseServer.swift in Sources */,
+				D5BBE7BA1EAE6EEA002E64A6 /* NavigationController.swift in Sources */,
 				D512CA781E64B748006861C1 /* DashboardCell.swift in Sources */,
 				D521F0831E3BC50E0058026C /* AppDelegate.swift in Sources */,
 				D55425271E7455B700B09891 /* NoteController.swift in Sources */,

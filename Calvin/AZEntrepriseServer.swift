@@ -10,12 +10,16 @@ import UIKit
 import UserNotifications
 
 class AZEntrepriseServer {
-
-    static var updater : Updater? = nil
+    
+    static var timer : Timer? = nil
 
     class func login(controller: UIViewController?, userHash: String?, onResponse: @escaping (Bool)->Void) {
         print("Logging in...")
-    
+        
+        if AZEntrepriseServer.timer == nil {
+            AZEntrepriseServer.timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        }
+        
         var objects = UserDefaults.standard.stringArray(forKey: "offline-user-data")
 
         if objects == nil {
@@ -49,11 +53,6 @@ class AZEntrepriseServer {
                 if utfData == "ERR_AUTH_FAILED" {
                     onResponse(false)
                 } else {
-                    if updater == nil {
-                        updater = Updater()
-                        print("Update timer initialized")
-                    }
-                
                     for element in elements! {
                         if let index = element.characters.index(of: ":") {
                             let id = element[element.startIndex..<index]
@@ -94,6 +93,10 @@ class AZEntrepriseServer {
             onResponse(false)
         }
     }
+    
+    @objc class func timerUpdate() {
+        AZEntrepriseServer.login(controller: nil, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: dummyOnResponse)
+    }
 
     class func notify(forEvent: String) {
         print("Sending notification...")
@@ -121,7 +124,7 @@ class AZEntrepriseServer {
     }
 
     class func uploadData(controller: UIViewController, data: String, passwd: String, done: @escaping (Void)->Void) {
-        let utf8data = data.data(using: String.Encoding.utf8)
+        let utf8data = data.trimmingCharacters(in: .whitespaces).data(using: String.Encoding.utf8)
     
         if let base64 = utf8data?.base64EncodedString() {
             let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?passwd=\(sha256(forInput: passwd))&data=\(base64)")!)
@@ -258,17 +261,5 @@ class AZEntrepriseServer {
         }
     
         return digestData.map { String(format: "%02hhx", $0) }.joined()
-    }
-
-    class Updater {
-        init() {
-            DispatchQueue.main.async {
-                Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(Updater.performBackgroundUpdate), userInfo: nil, repeats: true)
-            }
-        }
-    
-        @objc func performBackgroundUpdate() {
-            AZEntrepriseServer.login(controller: nil, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: AZEntrepriseServer.dummyOnResponse)
-        }
     }
 }

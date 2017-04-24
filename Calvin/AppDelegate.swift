@@ -20,6 +20,8 @@ class AppDelegate : UIResponder, UIApplicationDelegate, UNUserNotificationCenter
         if #available(iOS 10.0, *) {
             AppDelegate.center.delegate = self
             
+            application.setMinimumBackgroundFetchInterval(30)
+            
             let options: UNAuthorizationOptions = [.alert, .badge, .sound]
             
             AppDelegate.center.requestAuthorization(options: options) {
@@ -38,9 +40,9 @@ class AppDelegate : UIResponder, UIApplicationDelegate, UNUserNotificationCenter
         return true
     }
     
-    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        
-        application.applicationIconBadgeNumber = 0
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        AZEntrepriseServer.login(controller: nil, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: loginResponse)
+        completionHandler(.newData)
     }
     
     func loginResponse(success : Bool) {
@@ -49,6 +51,8 @@ class AppDelegate : UIResponder, UIApplicationDelegate, UNUserNotificationCenter
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 self.window?.rootViewController?.present(storyboard.instantiateViewController(withIdentifier: "tutorial"), animated: true, completion: nil)
             }
+        } else {
+            AZEntrepriseServer.dummyOnResponse(dummy: true)
         }
     }
     

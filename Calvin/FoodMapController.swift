@@ -32,10 +32,15 @@ class FoodMapController : UIViewController, MKMapViewDelegate, CLLocationManager
             
             locationManager.startUpdatingLocation()
         }
-        
+
         self.map.setUserTrackingMode(.follow, animated: true)
 
-        self.map.addAnnotation(Restaurant(name: "swag", latitude: 46.2, longitude: 6.15))
+        self.map.addAnnotation(Restaurant(name: "Blaqk", latitude: 46.201858, longitude: 6.1540286))
+        self.map.addAnnotation(Restaurant(name: "Street Gourmet", latitude: 46.202663, longitude: 6.150859))
+        self.map.addAnnotation(Restaurant(name: "Maison du Sandwich", latitude: 46.2016319, longitude: 6.1522996))
+        self.map.addAnnotation(Restaurant(name: "Maison du Sandwich", latitude: 46.2024709, longitude: 6.1547259))
+        self.map.addAnnotation(Restaurant(name: "Maison du Sandwich", latitude: 46.2003257, longitude: 6.1496456))
+        self.map.addAnnotation(Restaurant(name: "Just Bubble", latitude: 46.193981, longitude: 6.140108))
         
         let calvin = Calvin()
         self.map.addAnnotation(calvin)
@@ -46,10 +51,10 @@ class FoodMapController : UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+        return
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
+        return
     }
 }
