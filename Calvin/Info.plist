@@ -28,9 +28,9 @@
 		<true/>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>J'ai besoin de ton accord pour ajouter des évenements importants à ton calendrier.</string>
+	<string>J&apos;ai besoin de ton accord pour ajouter des évenements importants à ton calendrier.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>J'ai besoin de ton accord pour savoir où tu es.</string>
+	<string>J&apos;ai besoin de ton accord pour savoir où tu es.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

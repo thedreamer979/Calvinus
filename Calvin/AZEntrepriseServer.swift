@@ -73,7 +73,7 @@ class AZEntrepriseServer {
                             
                                 if elements?.count == 2 {
                                     let components = realData.components(separatedBy: "<")
-                                    if components.count > 1 {
+                                    if realData.hasPrefix("<") && components.count > 1 {
                                         notify(forEvent: components[1])
                                     }
                                 }
@@ -127,8 +127,14 @@ class AZEntrepriseServer {
         let utf8data = data.trimmingCharacters(in: .whitespaces).data(using: String.Encoding.utf8)
     
         if let base64 = utf8data?.base64EncodedString() {
-            let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?passwd=\(sha256(forInput: passwd))&data=\(base64)")!)
+            var request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?passwd=\(sha256(forInput: passwd))")!)
         
+            var charset = NSCharacterSet.urlQueryAllowed
+            charset.remove(charactersIn: ";/?:@&+=$, ")
+            
+            request.httpMethod = "POST"
+            request.httpBody = ("data=" + base64.addingPercentEncoding(withAllowedCharacters: charset)!).data(using: .utf8)
+            
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {
                     done()
@@ -189,8 +195,14 @@ class AZEntrepriseServer {
         let utf8data = data.data(using: String.Encoding.utf8)
     
         if let base64 = utf8data?.base64EncodedString() {
-            let request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?delete=true&passwd=\(passwd)&data=\(base64)")!)
+            var request = URLRequest(url: URL(string: "https://www.azentreprise.org/calvin.php?delete=true&passwd=\(passwd)")!)
         
+            var charset = NSCharacterSet.urlQueryAllowed
+            charset.remove(charactersIn: ";/?:@&+=$, ")
+            
+            request.httpMethod = "POST"
+            request.httpBody = ("data=" + base64.addingPercentEncoding(withAllowedCharacters: charset)!).data(using: .utf8)
+            
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {
                     return showError(controller: controller, description: (error?.localizedDescription)!)

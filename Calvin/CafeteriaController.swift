@@ -24,9 +24,12 @@ class CafeteriaController : UIViewController {
             
             while index > 0 {
                 if objects[index].hasPrefix("cafet|") {
-                    let object = objects[index].replacingOccurrences(of: "cafet|", with: "")
-                    self.label.text = object
-                    break
+                    do {
+                        let object = objects[index].replacingOccurrences(of: "cafet|", with: "")
+                        let data = "<section style='font-family: savoye let; font-size: 30px'>" + object + "</section>"
+                        try self.label.attributedText = NSAttributedString(data: data.data(using: .utf16)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
+                        break
+                    } catch {}
                 } else {
                     index -= 1
                 }

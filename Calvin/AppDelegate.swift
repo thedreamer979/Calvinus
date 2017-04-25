@@ -15,12 +15,13 @@ class AppDelegate : UIResponder, UIApplicationDelegate, UNUserNotificationCenter
     @available(iOS 10.0, *)
     static let center = UNUserNotificationCenter.current()
     var window: UIWindow?
+    var completionHandler : ((UIBackgroundFetchResult) -> Void)? = nil
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {        
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+
         if #available(iOS 10.0, *) {
             AppDelegate.center.delegate = self
-            
-            application.setMinimumBackgroundFetchInterval(30)
             
             let options: UNAuthorizationOptions = [.alert, .badge, .sound]
             
@@ -41,8 +42,15 @@ class AppDelegate : UIResponder, UIApplicationDelegate, UNUserNotificationCenter
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        AZEntrepriseServer.login(controller: nil, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: loginResponse)
-        completionHandler(.newData)
+        self.completionHandler = completionHandler
+        AZEntrepriseServer.login(controller: nil, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: handle)
+    }
+    
+    func handle(dummy : Bool) {
+        if self.completionHandler != nil {
+            self.completionHandler!(.newData)
+            self.completionHandler = nil
+        }
     }
     
     func loginResponse(success : Bool) {
