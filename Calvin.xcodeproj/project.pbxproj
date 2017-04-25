@@ -95,7 +95,6 @@
 		D5417F0B1E62E38100030E15 /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
 		D5417F0F1E62FE2100030E15 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		D542E1491E6B60BE00991EFB /* TimetableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableController.swift; sourceTree = "<group>"; };
-		D54FA03D1EAC6E7400FD6D14 /* Calvin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calvin.entitlements; sourceTree = "<group>"; };
 		D54FA03E1EAC6F4D00FD6D14 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		D5517D861E9E9AE30042A815 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		D5517D881E9E9B950042A815 /* FoodMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodMapController.swift; sourceTree = "<group>"; };
@@ -174,7 +173,6 @@
 		D521F0811E3BC50E0058026C /* Calvin */ = {
 			isa = PBXGroup;
 			children = (
-				D54FA03D1EAC6E7400FD6D14 /* Calvin.entitlements */,
 				D59B66AF1E6C4A71005DFE39 /* Swift-Bridging-Header.h */,
 				D521F08E1E3BC50E0058026C /* Info.plist */,
 				D51894511E86DD150053F0BF /* AdministrationController.swift */,
