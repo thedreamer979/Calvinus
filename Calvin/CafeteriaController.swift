@@ -27,8 +27,8 @@ class CafeteriaController : UIViewController {
             while index > 0 {
                 if objects[index].hasPrefix("cafet|") {
                     do {
-                        let object = objects[index].replacingOccurrences(of: "cafet|", with: "")
-                        let data = "<section style='font-family: savoye let; font-size: 30px'>" + object + "</section>"
+                        let object = objects[index].replacingOccurrences(of: "cafet|", with: "").replacingOccurrences(of: "<h1>", with: "<br><br><h1>")
+                        let data = "<section style='font-family: savoye let; font-size: 25px'>" + object + "</section>"
                         try self.label.attributedText = NSAttributedString(data: data.data(using: .utf16)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
                         break
                     } catch {}

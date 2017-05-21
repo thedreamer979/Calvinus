@@ -72,7 +72,7 @@ class RepetitoiresController : UICollectionViewController, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repet", for: indexPath) as! DashboardCell
         
         cell.text.attributedText = self.data[indexPath.item]
-        cell.text.preferredMaxLayoutWidth = collectionView.bounds.width - 40
+        cell.text.preferredMaxLayoutWidth = collectionView.bounds.width - 50
         cell.layer.cornerRadius = 10.0
         
         return cell
