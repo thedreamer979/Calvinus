@@ -19,6 +19,8 @@ class CafeteriaController : UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        AZEntrepriseServer.login(controller: nil, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: AZEntrepriseServer.dummyOnResponse)
+        
         if let objects = UserDefaults.standard.stringArray(forKey: "offline-user-data") {
             var index = objects.count - 1
             

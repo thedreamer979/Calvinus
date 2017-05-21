@@ -186,45 +186,98 @@ struct QuestionAnswerer {
             let newLine = trimmedQuestion.replacingOccurrences(of: "comment s'appelle", with: "")
             return newLine.replacingOccurrences(of: "?", with: "")
             
+        case let x where x.hasPrefix("suis-je"):
+            let newLine = trimmedQuestion.replacingOccurrences(of: "suis-je", with: "tu es")
+            return newLine.replacingOccurrences(of: "?", with: ".")
+            
+            
             //régler problème espacement entre un mot et ?!
             
             
-        //calculs
-        case let x where (x.range(of: "+") != nil):
-            let myArray = trimmedQuestion.components(separatedBy: "+")
-            let var1 = Double(myArray[0])
-            let var2 = Double(myArray[1])
-            if let var1 = var1, let var2 = var2 {
-                return String(var1 + var2)
-            }else {
-                return "safe optional unwrapping compilation error: the elements on both sides of the + must be of type Float, Int or Double 😉"}
+            //calculs
             
-        case let x where (x.range(of: "-") != nil):
-            let myArray = trimmedQuestion.components(separatedBy: "-")
-            let var1 = Double(myArray[0])
-            let var2 = Double(myArray[1])
-            if let var1 = var1, let var2 = var2 {
-                return String(var1 - var2)
-            }else {
-                return "safe optional unwrapping compilation error: the elements on both sides of the + must be of type Float, Int or Double 😉"}
+        case let x where x.hasPrefix("calc "):
+            if x.range(of: "+") != nil {
+                let myArray = trimmedQuestion.components(separatedBy: "+")
+                let firstArray = myArray[0].components(separatedBy: " ")
+                let var1 = Double(firstArray[1])
+                let var2 = Double(myArray[1])
+                if let var1 = var1, let var2 = var2 {
+                    return String(var1 + var2)
+                }else {
+                    return "tu ne peux additionner que deux nombres"}
+            }
+                
+            else if x.range(of: "-") != nil {
+                let myArray = trimmedQuestion.components(separatedBy: "-")
+                let firstArray = myArray[0].components(separatedBy: " ")
+                let var1 = Double(firstArray[1])
+                let var2 = Double(myArray[1])
+                if let var1 = var1, let var2 = var2 {
+                    return String(var1 - var2)
+                }else {
+                    return "tu ne peux soustraire que deux nombres"}
+            }
+                
+            else if x.range(of: "*") != nil {
+                let myArray = trimmedQuestion.components(separatedBy: "*")
+                let firstArray = myArray[0].components(separatedBy: " ")
+                let var1 = Double(firstArray[1])
+                let var2 = Double(myArray[1])
+                if let var1 = var1, let var2 = var2 {
+                    return String(var1 * var2)
+                }else {
+                    return "tu ne peux multiplier que deux nombres"}
+            }
+                
+            else if x.range(of: "/") != nil {
+                let myArray = trimmedQuestion.components(separatedBy: "/")
+                let firstArray = myArray[0].components(separatedBy: " ")
+                let var1 = Double(firstArray[1])
+                let var2 = Double(myArray[1])
+                if let var1 = var1, let var2 = var2 {
+                    return String(var1 / var2)
+                }else {
+                    return "tu ne peux diviser que deux nombres"}
+            }
+                
+            else {
+                return ("je ne sais point")
+            }
             
-        case let x where (x.range(of: "*") != nil):
-            let myArray = trimmedQuestion.components(separatedBy: "*")
-            let var1 = Double(myArray[0])
-            let var2 = Double(myArray[1])
-            if let var1 = var1, let var2 = var2 {
-                return String(var1 * var2)
-            }else {
-                return "safe optional unwrapping compilation error: the elements on both sides of the + must be of type Float, Int or Double 😉"}
+            //équations
             
-        case let x where (x.range(of: "/") != nil):
-            let myArray = trimmedQuestion.components(separatedBy: "/")
-            let var1 = Double(myArray[0])
-            let var2 = Double(myArray[1])
-            if let var1 = var1, let var2 = var2 {
-                return String(var1 / var2)
-            }else {
-                return "safe optional unwrapping compilation error: the elements on both sides of the + must be of type Float, Int or Double 😉"}
+        case let x where x.hasPrefix("calc2 "):
+            
+            let myArray = trimmedQuestion.components(separatedBy: " ")
+            let var1 = Double(myArray[1])
+            let var2 = Double(myArray[2])
+            let var3 = Double(myArray[3])
+            func equation2Solver (a : Double, b : Double, c : Double) -> String {
+                
+                let delta = pow((b*b-4*a*c),0.5)
+                if delta > 0 {
+                    let solution1 = (-b + delta)/(2*a)
+                    let solution2 = (-b - delta)/(2*a)
+                    return "x= \(solution1) ou x= \(solution2)"
+                } else if delta == 0 {
+                    let solution = (-b)/(2*a)
+                    return "x= \(solution)"
+                } else {
+                    return "no solution"
+                }
+            }
+            
+            
+            if let var1 = var1, let var2 = var2, let var3=var3 {
+                return String(equation2Solver (a: var1, b: var2, c: var3))
+            } else {
+                return "il y a un problème... Désolé j'y arrive pas."
+            }
+            
+            
+            
+            
             
             
         //recherche de salle

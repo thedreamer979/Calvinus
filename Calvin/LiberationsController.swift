@@ -25,6 +25,11 @@ class LiberationsController : UICollectionViewController, UICollectionViewDelega
         self.load()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AZEntrepriseServer.login(controller: nil, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: AZEntrepriseServer.dummyOnResponse)
+    }
+    
     func load() {
         data.removeAll()
         rawData.removeAll()

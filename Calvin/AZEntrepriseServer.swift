@@ -11,14 +11,8 @@ import UserNotifications
 
 class AZEntrepriseServer {
     
-    static var timer : Timer? = nil
-
     class func login(controller: UIViewController?, userHash: String?, onResponse: @escaping (Bool)->Void) {
         print("Logging in...")
-        
-        if AZEntrepriseServer.timer == nil {
-            AZEntrepriseServer.timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
-        }
         
         var objects = UserDefaults.standard.stringArray(forKey: "offline-user-data")
 
@@ -92,10 +86,6 @@ class AZEntrepriseServer {
         } else {
             onResponse(false)
         }
-    }
-    
-    @objc class func timerUpdate() {
-        AZEntrepriseServer.login(controller: nil, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: dummyOnResponse)
     }
 
     class func notify(forEvent: String) {

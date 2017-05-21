@@ -26,6 +26,11 @@ class DashboardController : UICollectionViewController, UICollectionViewDelegate
         self.reload()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AZEntrepriseServer.login(controller: nil, userHash: UserDefaults.standard.string(forKey: "user-hash"), onResponse: AZEntrepriseServer.dummyOnResponse)
+    }
+    
     func reload() {
         // self.updateCalendar()
         self.updateNews()
