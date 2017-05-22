@@ -41,6 +41,7 @@ class FoodMapController : UIViewController, MKMapViewDelegate, CLLocationManager
         self.map.addAnnotation(Restaurant(name: "Maison du Sandwich", latitude: 46.2024709, longitude: 6.1547259))
         self.map.addAnnotation(Restaurant(name: "Maison du Sandwich", latitude: 46.2003257, longitude: 6.1496456))
         self.map.addAnnotation(Restaurant(name: "Just Bubble", latitude: 46.193981, longitude: 6.140108))
+        self.map.addAnnotation(Restaurant(name: "Epoca", latitude: 46.2013272, longitude: 6.1504261))
         
         let calvin = Calvin()
         self.map.addAnnotation(calvin)
