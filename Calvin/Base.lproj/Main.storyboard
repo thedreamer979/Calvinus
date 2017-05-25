@@ -789,27 +789,54 @@ toutes les possiblités que t'offre cette application.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maisonsandwich" translatesAutoresizingMaskIntoConstraints="NO" id="Z99-ji-Bz8">
-                                <rect key="frame" x="16" y="72" width="343" height="152"/>
+                                <rect key="frame" x="16" y="72" width="343" height="153"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="3rx-jY-0bt"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekn-8J-0Ms">
-                                <rect key="frame" x="1" y="246" width="373" height="174"/>
+                                <rect key="frame" x="1" y="246" width="373" height="157"/>
                                 <string key="text">4 maxi pains au chocolat achetés, 
-1 offert</string>
+1 offert
+
+Un sandwich et une boisson pour seulement 10.- au lieu de 12.90!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.67052667470000005" green="0.3035507838" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="nR7-Mf-Akl">
+                                <rect key="frame" x="16" y="428" width="343" height="219"/>
+                                <string key="text">Thon, poulet, jambon cuit, poulet exotique, tomate mozzarella, dinde, salami, végétarien, fromage (Edam), jambon cuit fromage, jambon cru mozzarella, jambon cru, poulet braisé, Kebab veau, poulet, roastbeef, poulet pané, poulet Yakitori, saveur crabe, saumon fumé, jambon cru fromage, jambon cru brie</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les différents sandwichs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdv-Gt-qgy">
+                                <rect key="frame" x="16" y="411" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="G1y-Ky-cRc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="leading" secondItem="H8m-w9-HVI" secondAttribute="leadingMargin" id="1oD-U5-rf8"/>
-                            <constraint firstItem="lMU-j4-dEG" firstAttribute="top" secondItem="ekn-8J-0Ms" secondAttribute="bottom" constant="247" id="6As-F1-Kdl"/>
-                            <constraint firstItem="ekn-8J-0Ms" firstAttribute="leading" secondItem="H8m-w9-HVI" secondAttribute="leadingMargin" constant="-15" id="97m-D0-My4"/>
-                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="top" secondItem="p6x-rF-dq7" secondAttribute="bottom" constant="8" symbolic="YES" id="W9C-md-gLi"/>
-                            <constraint firstItem="ekn-8J-0Ms" firstAttribute="top" secondItem="Z99-ji-Bz8" secondAttribute="bottom" constant="22" id="X8I-8d-jsz"/>
-                            <constraint firstItem="ekn-8J-0Ms" firstAttribute="centerY" secondItem="H8m-w9-HVI" secondAttribute="centerY" id="XAq-sZ-w62"/>
-                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="centerX" secondItem="ekn-8J-0Ms" secondAttribute="centerX" id="djg-KZ-nww"/>
-                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="trailing" secondItem="H8m-w9-HVI" secondAttribute="trailingMargin" id="wfT-Mi-wKm"/>
+                            <constraint firstItem="ekn-8J-0Ms" firstAttribute="top" secondItem="Z99-ji-Bz8" secondAttribute="bottom" constant="21" id="6OK-Bw-Lt4"/>
+                            <constraint firstItem="ekn-8J-0Ms" firstAttribute="leading" secondItem="H8m-w9-HVI" secondAttribute="leadingMargin" constant="-15" id="90c-IH-NWR"/>
+                            <constraint firstItem="Pdv-Gt-qgy" firstAttribute="top" secondItem="ekn-8J-0Ms" secondAttribute="bottom" constant="8" symbolic="YES" id="BJW-vl-47t"/>
+                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="trailing" secondItem="Pdv-Gt-qgy" secondAttribute="trailing" id="IMq-M3-2O3"/>
+                            <constraint firstItem="nR7-Mf-Akl" firstAttribute="top" secondItem="ekn-8J-0Ms" secondAttribute="bottom" constant="25" id="Jv4-G4-XV1"/>
+                            <constraint firstItem="Pdv-Gt-qgy" firstAttribute="trailing" secondItem="nR7-Mf-Akl" secondAttribute="trailing" id="Qkt-yb-n7I"/>
+                            <constraint firstItem="ekn-8J-0Ms" firstAttribute="centerX" secondItem="Pdv-Gt-qgy" secondAttribute="centerX" id="avx-Cb-7xF"/>
+                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="trailing" secondItem="H8m-w9-HVI" secondAttribute="trailingMargin" id="bVs-td-EPr"/>
+                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="top" secondItem="p6x-rF-dq7" secondAttribute="bottom" constant="8" symbolic="YES" id="hCe-nP-HiV"/>
+                            <constraint firstItem="Pdv-Gt-qgy" firstAttribute="leading" secondItem="nR7-Mf-Akl" secondAttribute="leading" id="hHZ-oN-cjX"/>
+                            <constraint firstAttribute="bottom" secondItem="nR7-Mf-Akl" secondAttribute="bottom" constant="20" symbolic="YES" id="nvY-7B-Qa4"/>
+                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="leading" secondItem="Pdv-Gt-qgy" secondAttribute="leading" id="qI0-hK-Evh"/>
+                            <constraint firstItem="Z99-ji-Bz8" firstAttribute="leading" secondItem="H8m-w9-HVI" secondAttribute="leadingMargin" id="sG8-sZ-HHn"/>
+                            <constraint firstItem="lMU-j4-dEG" firstAttribute="top" secondItem="Pdv-Gt-qgy" secondAttribute="bottom" constant="235" id="uSE-pa-QA5"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
@@ -1886,7 +1913,7 @@ Frappés: vanille, fraise, café, oreo,… 6,90 ou 7.90</string>
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fwj-ff-NPE" id="t8b-z7-8pm">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
